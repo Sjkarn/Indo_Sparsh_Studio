@@ -4,7 +4,6 @@
 
 import "./Contact.css";
 import { useState } from "react";
-import AIChatWidget from "./AIChatWidget";
 import SocialLinks from "./SocialLinks";
 
 export default function Contact() {
@@ -48,6 +47,16 @@ export default function Contact() {
               <label>Last Name</label>
               <input type="text" placeholder="Your last name" />
             </div>
+          </div>
+
+          <div className="form-group">
+            <label>Contact *</label>
+            <input
+              type="tel"
+              placeholder="Your contact number"
+              pattern="[0-9]{10}"
+              maxLength="10"
+            />
           </div>
 
           <div className="form-group">
@@ -102,14 +111,13 @@ export default function Contact() {
       <div className="map-card">
         <iframe
           title="Indo Sparsh Studio Location"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47368.58728462816!2d-72.489639!3d42.095975!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6e9e097eeecb1%3A0x887f2b47a3a2e8d2!2sExcel-Experts!5e0!3m2!1sen!2sus!4v1768910734535!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2887749198094!2d80.99241317414739!3d26.862564862246256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2c9d61cb27b%3A0x2b7487eae56b0919!2sSumit%20Complex%2C%20Vibhuti%20Khand%2C%20Gomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh%20226010!5e0!3m2!1sen!2sin!4v1769161850031!5m2!1sen!2sin"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <AIChatWidget />
       <SocialLinks />
     </section>
   );

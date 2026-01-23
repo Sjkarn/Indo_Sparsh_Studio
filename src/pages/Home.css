@@ -1,15 +1,171 @@
 .home-hero {
-  min-height: calc(100vh - 75px);
+  /* min-height: calc(100vh - 75px); */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 60px 8%;
-  background: radial-gradient(circle at top, #020617, #000);
+  /* background: radial-gradient(circle at top, #020617, #000); */
+  background: #000;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌌 background image */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/public/tech/cyber-bg.png") center/cover no-repeat;
+  /* opacity: 0.25; */
+  opacity: 0.95; /* ✅ MUCH clearer */
+  /* filter: saturate(1.3) contrast(1.1); */
+  filter: saturate(1.25) contrast(1.15) brightness(1.05);
+  transform: scale(1.08);
+  /* animation: slowZoom 22s ease-in-out infinite alternate; */
+  animation: slowZoom 24s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+/* 🌈 glow + dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* background:
+    radial-gradient(circle at 30% 20%, rgba(34,211,238,0.18), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(168,85,247,0.15), transparent 65%),
+    linear-gradient(to bottom, rgba(2,6,23,0.85), rgba(0,0,0,0.95)); */
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      rgba(34, 211, 238, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(168, 85, 247, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(to bottom, rgba(2, 6, 23, 0.55), rgba(0, 0, 0, 0.75)); /* ✅ reduced darkness */
+  /* backdrop-filter: blur(1px); */
+  z-index: 2;
+}
+
+.cyber-particles {
+  position: absolute;
+  inset: 0;
+  /* z-index: 1; */
+  z-index: 3;
+  pointer-events: none;
 }
 
 .home-container {
   max-width: 900px;
+  position: relative;
+  /* z-index: 2;  */
+  z-index: 4;
+}
+
+/* ===== background animation ===== */
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+.cyber-particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #22d3ee, transparent 70%);
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.6;
+  animation: floatParticle 18s linear infinite;
+}
+
+/* different sizes + speeds */
+.cyber-particles span:nth-child(1) {
+  left: 10%;
+  top: 90%;
+  animation-duration: 20s;
+  transform: scale(0.8);
+}
+.cyber-particles span:nth-child(2) {
+  left: 20%;
+  top: 30%;
+  animation-duration: 16s;
+  transform: scale(1.2);
+}
+.cyber-particles span:nth-child(3) {
+  left: 35%;
+  top: 80%;
+  animation-duration: 22s;
+  transform: scale(0.6);
+}
+.cyber-particles span:nth-child(4) {
+  left: 50%;
+  top: 40%;
+  animation-duration: 18s;
+  transform: scale(1.4);
+}
+.cyber-particles span:nth-child(5) {
+  left: 65%;
+  top: 95%;
+  animation-duration: 24s;
+  transform: scale(0.9);
+}
+.cyber-particles span:nth-child(6) {
+  left: 75%;
+  top: 20%;
+  animation-duration: 17s;
+  transform: scale(1.1);
+}
+.cyber-particles span:nth-child(7) {
+  left: 85%;
+  top: 60%;
+  animation-duration: 26s;
+  transform: scale(0.7);
+}
+.cyber-particles span:nth-child(8) {
+  left: 30%;
+  top: 10%;
+  animation-duration: 19s;
+  transform: scale(1.3);
+}
+.cyber-particles span:nth-child(9) {
+  left: 55%;
+  top: 85%;
+  animation-duration: 23s;
+  transform: scale(0.6);
+}
+.cyber-particles span:nth-child(10) {
+  left: 90%;
+  top: 30%;
+  animation-duration: 21s;
+  transform: scale(1.2);
+}
+
+/* movement */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-300px) translateX(40px) scale(1.4);
+  }
+  100% {
+    transform: translateY(-700px) translateX(-40px) scale(0.8);
+    opacity: 0;
+  }
 }
 
 .home-container h1 {
@@ -558,5 +714,124 @@
 @media (max-width: 768px) {
   .tech-section {
     padding: 90px 6% 80px;
+  }
+}
+
+/* ================= INDUSTRIES WE SERVE ================= */
+
+.industries-section {
+  padding: 110px 8%;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: white;
+  position: relative;
+}
+
+.industries-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 70px;
+}
+
+.industries-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  text-shadow: 0 0 30px #22d3ee;
+}
+
+.industries-hero span {
+  color: #22d3ee;
+}
+
+.industries-hero p {
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* ===== GRID ===== */
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+}
+
+/* ===== CARD ===== */
+
+.industry-card {
+  background: rgba(2, 6, 23, 0.9);
+  border-radius: 22px;
+  padding: 40px 26px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.15),
+    inset 0 0 20px rgba(34, 211, 238, 0.05);
+
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: 0.45s ease;
+}
+
+/* hologram shine */
+.industry-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(34, 211, 238, 0.2),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.industry-card:hover::before {
+  opacity: 1;
+}
+
+.industry-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow:
+    0 0 45px rgba(34, 211, 238, 0.45),
+    0 0 90px rgba(168, 85, 247, 0.25);
+}
+
+/* text */
+.industry-card h3 {
+  color: #22d3ee;
+  margin-bottom: 12px;
+  letter-spacing: 1.5px;
+}
+
+.industry-card p {
+  color: #cbd5f5;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* glowing cards */
+.industry-card.glow {
+  animation: industryGlow 6s ease-in-out infinite;
+}
+
+@keyframes industryGlow {
+  0% {
+    box-shadow: 0 0 20px #22d3ee;
+  }
+  50% {
+    box-shadow: 0 0 40px #a855f7;
+  }
+  100% {
+    box-shadow: 0 0 20px #22d3ee;
+  }
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .industries-section {
+    padding: 80px 6%;
   }
 }

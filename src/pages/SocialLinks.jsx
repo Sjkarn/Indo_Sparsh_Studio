@@ -4,15 +4,13 @@ import {
   FaLinkedinIn,
   FaXTwitter,
   FaYoutube,
-  FaEnvelope,
-  FaGlobe,
 } from "react-icons/fa6";
 import "./SocialLinks.css";
 
 export default function SocialLinks() {
   return (
     <div className="social-mini">
-      <h3>Connect With Indo Sparsh</h3>
+      <h3>Connect With Us</h3>
 
       <div className="social-mini-row">
         <a
@@ -59,22 +57,6 @@ export default function SocialLinks() {
           title="YouTube"
         >
           <FaYoutube />
-        </a>
-        <a
-          href="mailto:contact@indosparsh.com"
-          className="s-icon email"
-          title="Email"
-        >
-          <FaEnvelope />
-        </a>
-        <a
-          href="https://www.indosparsh.com"
-          target="_blank"
-          rel="noreferrer"
-          className="s-icon website"
-          title="Website"
-        >
-          <FaGlobe />
         </a>
       </div>
     </div>

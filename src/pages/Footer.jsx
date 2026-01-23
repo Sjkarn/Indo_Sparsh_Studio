@@ -7,12 +7,8 @@ export default function Footer() {
 
       <div className="footer-content">
         <p>
-          © {new Date().getFullYear()} <span>Indo Sparsh Studio</span>. All
-          rights reserved.
-        </p>
-
-        <p className="footer-tagline">
-          Crafting futuristic digital experiences 🚀
+          Copyright {new Date().getFullYear()} <span>Indo Sparsh Studio</span>.
+          All rights reserved.
         </p>
       </div>
     </footer>

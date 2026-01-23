@@ -8,12 +8,32 @@
 // }
 
 import "./Home.css";
+import ScrollBeam from "./ScrollBeam";
 
 export default function Home() {
   return (
     <>
       {/* ================= HERO ================= */}
       <section className="home-hero">
+        {/* 🌌 BACKGROUND IMAGE LAYER */}
+        <div className="hero-bg"></div>
+
+        {/* 🌈 GRADIENT + GLOW OVERLAY */}
+        <div className="hero-overlay"></div>
+        {/* 🔥 PARTICLES */}
+        <div className="cyber-particles">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <div className="home-container">
           <h1>
             Crafting <span>Digital Experiences</span>
@@ -33,6 +53,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ScrollBeam />
 
       {/* ================= PROJECTS WE DISCUSS ================= */}
       <section className="projects-discuss">
@@ -99,6 +121,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ScrollBeam />
+
       {/* ================= OUR CLIENTS ================= */}
       <section className="clients-section">
         <div className="clients-hero">
@@ -150,6 +174,65 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ScrollBeam />
+
+      {/* ================= INDUSTRIES WE SERVE ================= */}
+      <section className="industries-section">
+        <div className="industries-hero">
+          <h1>
+            Industries <span>We Serve</span>
+          </h1>
+          <p>
+            We design and develop powerful digital products across multiple
+            industries, combining technology, creativity, and innovation.
+          </p>
+        </div>
+
+        <div className="industries-grid">
+          <div className="industry-card">
+            <h3>🏥 Healthcare</h3>
+            <p>Hospital systems, health apps, dashboards.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <h3>🛒 E-Commerce</h3>
+            <p>Online stores, marketplaces, booking platforms.</p>
+          </div>
+
+          <div className="industry-card">
+            <h3>📚 Education</h3>
+            <p>E-learning platforms, LMS systems, portals.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <h3>💼 Business & Startups</h3>
+            <p>CRMs, automation tools, admin panels.</p>
+          </div>
+
+          <div className="industry-card">
+            <h3>🏦 Finance & FinTech</h3>
+            <p>Secure apps, analytics platforms, fintech tools.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <h3>🎮 Media & Gaming</h3>
+            <p>Interactive apps, communities, creative tech.</p>
+          </div>
+
+          <div className="industry-card">
+            <h3>🚚 Logistics</h3>
+            <p>Tracking systems, fleet dashboards.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <h3>🤖 AI & Automation</h3>
+            <p>Chatbots, smart tools, intelligent systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <ScrollBeam />
 
       {/* ================= TECHNOLOGY WE USED ================= */}
       <section className="tech-section">
