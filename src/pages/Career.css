@@ -430,8 +430,9 @@
     animation: fadeUp 1s ease forwards;
   }
 
-  .pipeline-step::after {
-    display: none;
+  /* ✅ THIS IS THE REAL FIX */
+  .pipeline-card::after {
+    display: none !important;
   }
 
   .pipeline-card {
