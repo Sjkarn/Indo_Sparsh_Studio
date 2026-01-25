@@ -40,28 +40,28 @@ export default function Contact() {
           <div className="form-row">
             <div className="form-group">
               <label>Name *</label>
-              <input type="text" placeholder="Your name" />
+              <input type="text" placeholder="First Name" />
             </div>
 
             <div className="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="Your last name" />
+              <input type="text" placeholder="Last Name" />
             </div>
           </div>
 
           <div className="form-group">
-            <label>Contact *</label>
+            <label>Contact No. *</label>
             <input
               type="tel"
-              placeholder="Your contact number"
+              placeholder="Contact Number"
               pattern="[0-9]{10}"
               maxLength="10"
             />
           </div>
 
           <div className="form-group">
-            <label>Email *</label>
-            <input type="email" placeholder="Your email address" />
+            <label>Email Id *</label>
+            <input type="email" placeholder="Email Address" />
           </div>
 
           <div className="form-group">
