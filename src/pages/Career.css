@@ -225,7 +225,7 @@
 
 /* glowing energy track */
 .pipeline-track {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 0%;
   right: 2.5%;
@@ -233,7 +233,8 @@
   transform: translateY(-50%);
   background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899, #22d3ee);
   box-shadow: 0 0 30px #22d3ee;
-  animation: trackFlow 5s linear infinite;
+  animation: trackFlow 5s linear infinite; */
+  display: none;
 }
 
 /* steps */
@@ -243,9 +244,54 @@
   transform: translateY(-50%);
   text-align: center;
   animation: floatStep 5s ease-in-out infinite;
+  z-index: 2; /* cards stay above */
 }
 
-.s1 {
+/* ===== SEGMENT CONNECTOR ===== */
+/* ===== CONNECTOR BETWEEN CARDS ONLY ===== */
+.pipeline-card::after {
+  content: "";
+  position: absolute;
+
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #22d3ee,
+    #a855f7,
+    transparent
+  );
+
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 22px rgba(168, 85, 247, 0.6);
+
+  animation: segmentFlow 4s linear infinite;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* ❌ no line after last card */
+.pipeline-step:last-child .pipeline-card::after {
+  display: none;
+}
+
+@keyframes segmentFlow {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* .s1 {
   left: 0%;
 }
 .s2 {
@@ -263,6 +309,22 @@
 .s5 {
   left: 80%;
   animation-delay: -4s;
+} */
+
+.s1 {
+  left: 0%;
+}
+.s2 {
+  left: 20%;
+}
+.s3 {
+  left: 40%;
+}
+.s4 {
+  left: 60%;
+}
+.s5 {
+  left: 80%;
 }
 
 /* glowing core */
@@ -276,6 +338,8 @@
     0 0 20px #22d3ee,
     0 0 50px #22d3ee;
   animation: pulseCore 2s infinite;
+  position: relative;
+  z-index: 3;
 }
 
 /* card */
@@ -288,6 +352,8 @@
   backdrop-filter: blur(14px);
   box-shadow: 0 0 28px rgba(34, 211, 238, 0.18);
   transition: 0.4s ease;
+  position: relative;
+  z-index: 3;
 }
 
 .pipeline-card:hover {
@@ -362,6 +428,10 @@
     left: auto;
     transform: none;
     animation: fadeUp 1s ease forwards;
+  }
+
+  .pipeline-step::after {
+    display: none;
   }
 
   .pipeline-card {

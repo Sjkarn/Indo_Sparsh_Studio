@@ -1,12 +1,3 @@
-// export default function Home() {
-//   return (
-//     <div>
-//       <h1>Home Page</h1>
-//       <p>Indo Sparsh Studio – Home</p>
-//     </div>
-//   );
-// }
-
 import "./Home.css";
 import ScrollBeam from "./ScrollBeam";
 

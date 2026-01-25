@@ -1,8 +1,4 @@
-﻿// export default function Career() {
-//   return <h1>Career Page</h1>;
-// }
-
-import "./Career.css";
+﻿import "./Career.css";
 
 export default function Career() {
   return (

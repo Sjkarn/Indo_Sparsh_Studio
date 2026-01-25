@@ -1,8 +1,4 @@
-﻿// export default function About() {
-//   return <h1>About Page</h1>;
-// }
-
-import "./About.css";
+﻿import "./About.css";
 
 export default function About() {
   return (

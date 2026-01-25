@@ -1,31 +1,27 @@
-﻿// export default function Blog() {
-//   return <h1>Blog Page</h1>;
-// }
-
-import "./Blog.css";
+﻿import "./Blog.css";
 
 export default function Blog() {
   const posts = [
     {
-      title: "Your blog post",
+      title: "Digital Marketing Tips",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
     },
     {
-      title: "Your blog post",
+      title: "IT Trends",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
     },
     {
-      title: "Your blog post",
+      title: "Business Growth Strategies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
     },
     {
-      title: "Your blog post",
+      title: "Case Studies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",

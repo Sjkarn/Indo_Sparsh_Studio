@@ -1,24 +1,52 @@
-﻿// export default function Contact() {
-//   return <h1>Contact Page</h1>;
-// }
-
-import "./Contact.css";
+﻿import "./Contact.css";
 import { useState } from "react";
 import SocialLinks from "./SocialLinks";
 
 export default function Contact() {
   const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    // simulate API call
-    setTimeout(() => {
-      setSuccess(true);
+    try {
+      const res = await fetch("https://indosparsh-backend.onrender.com/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      // auto hide after 3s
-      setTimeout(() => setSuccess(false), 3000);
-    }, 800);
+      const data = await res.json();
+
+      if (data.success) {
+        setSuccess(true);
+        setFormData({
+          name: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+
+        setTimeout(() => setSuccess(false), 3000);
+      }
+    } catch (err) {
+      alert("❌ Failed to send message");
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <section className="contact-section">
@@ -28,9 +56,8 @@ export default function Contact() {
           Contact <span>Us</span>
         </h1>
         <p>
-          Feel free to contact us with any questions or concerns. You can use
-          the form below or email us directly. We appreciate your interest and
-          look forward to hearing from you.
+          Feel free to contact us with any questions or concerns. We will get
+          back to you within 24 hours.
         </p>
       </div>
 
@@ -40,44 +67,67 @@ export default function Contact() {
           <div className="form-row">
             <div className="form-group">
               <label>Name *</label>
-              <input type="text" placeholder="First Name" />
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="First Name"
+                required
+              />
             </div>
-
             <div className="form-group">
               <label>Last Name</label>
-              <input type="text" placeholder="Last Name" />
+              <input
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Last Name"
+              />
             </div>
           </div>
 
           <div className="form-group">
-            <label>Contact No. *</label>
+            <label>Conatct No. *</label>
             <input
-              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               placeholder="Contact Number"
-              pattern="[0-9]{10}"
-              maxLength="10"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Email Id *</label>
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Message *</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Write your message..."
+              required
             />
           </div>
 
-          <div className="form-group">
-            <label>Email Id *</label>
-            <input type="email" placeholder="Email Address" />
-          </div>
-
-          <div className="form-group">
-            <label>Message *</label>
-            <textarea placeholder="Write your message..."></textarea>
-          </div>
-
-          <button className="contact-btn">Send Message</button>
+          <button className="contact-btn" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
+          </button>
         </form>
-        {/* SUCCESS OVERLAY */}
+
         {success && (
           <div className="success-overlay">
             <div className="success-box">
               <div className="success-check">✓</div>
               <h2>Message Sent</h2>
-              <p>We’ll get back to you very soon.</p>
+              <p>We’ll contact you very soon.</p>
             </div>
           </div>
         )}

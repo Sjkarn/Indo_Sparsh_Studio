@@ -1,8 +1,4 @@
-﻿// export default function Services() {
-//   return <h1>Services Page</h1>;
-// }
-
-import "./Services.css";
+﻿import "./Services.css";
 
 export default function Services() {
   return (
