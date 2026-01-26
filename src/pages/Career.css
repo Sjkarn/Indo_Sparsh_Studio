@@ -225,15 +225,6 @@
 
 /* glowing energy track */
 .pipeline-track {
-  /* position: absolute;
-  top: 50%;
-  left: 0%;
-  right: 2.5%;
-  height: 4px;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899, #22d3ee);
-  box-shadow: 0 0 30px #22d3ee;
-  animation: trackFlow 5s linear infinite; */
   display: none;
 }
 
@@ -290,26 +281,6 @@
     filter: hue-rotate(360deg);
   }
 }
-
-/* .s1 {
-  left: 0%;
-}
-.s2 {
-  left: 20%;
-  animation-delay: -1s;
-}
-.s3 {
-  left: 40%;
-  animation-delay: -2s;
-}
-.s4 {
-  left: 60%;
-  animation-delay: -3s;
-}
-.s5 {
-  left: 80%;
-  animation-delay: -4s;
-} */
 
 .s1 {
   left: 0%;
