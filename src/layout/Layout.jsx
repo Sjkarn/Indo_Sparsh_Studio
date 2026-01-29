@@ -5,6 +5,8 @@ import AIChatWidget from "../pages/AIChatWidget";
 import Footer from "../pages/Footer";
 import WhatsAppButton from "../pages/WhatsAppButton";
 import CallButton from "../pages/CallButton";
+import ScrollToTop from "../pages/ScrollToTop";
+import AIHackerCursor from "../pages/AIHackerCursor";
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
@@ -47,6 +49,8 @@ export default function Layout() {
       <main className="cyber-main">
         <Outlet />
       </main>
+      <AIHackerCursor />
+      <ScrollToTop />
       <AIChatWidget />
       <Footer /> {/* 🔥 always at bottom */}
       <CallButton />

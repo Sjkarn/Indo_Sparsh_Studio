@@ -364,3 +364,160 @@
 .service-card:hover .energy-particles span {
   box-shadow: 0 0 18px currentColor;
 }
+
+/* ================= WHY CHOOSE US ================= */
+
+.why-section {
+  padding: 140px 8% 120px;
+  text-align: center;
+  position: relative;
+}
+
+.why-header h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 14px;
+}
+
+.why-header span {
+  color: #22d3ee;
+  text-shadow: 0 0 22px #22d3ee;
+}
+
+.why-header p {
+  max-width: 700px;
+  margin: auto;
+  color: #b6c3ff;
+  opacity: 0.85;
+}
+
+/* ===== GRID ===== */
+
+.why-grid {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ===== CARD ===== */
+
+.why-card {
+  position: relative;
+  background: rgba(2, 6, 23, 0.9);
+  border-radius: 22px;
+  padding: 38px 28px 34px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.22);
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+.why-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow:
+    0 0 35px rgba(34, 211, 238, 0.5),
+    0 0 80px rgba(168, 85, 247, 0.35);
+}
+
+/* glowing core */
+
+.why-card h3 {
+  color: #22d3ee;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* floating energy line */
+
+.why-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(34, 211, 238, 0.12),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: whyScan 5s linear infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes whyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+}
+
+@keyframes whyScan {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1100px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-section {
+    padding: 90px 6% 80px;
+  }
+}
+
+/* ===== ICON CORE ===== */
+
+.why-icon {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  color: #22d3ee;
+
+  filter: drop-shadow(0 0 6px #22d3ee)
+    drop-shadow(0 0 18px rgba(34, 211, 238, 0.8))
+    drop-shadow(0 0 40px rgba(168, 85, 247, 0.6));
+
+  animation: iconPulse 2.2s ease-in-out infinite;
+}
+
+/* hover upgrade */
+
+.why-card:hover .why-icon {
+  color: #a855f7;
+  transform: scale(1.2) rotate(4deg);
+  filter: drop-shadow(0 0 10px #a855f7)
+    drop-shadow(0 0 28px rgba(168, 85, 247, 0.9));
+}
+
+/* animation */
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.75;
+  }
+}

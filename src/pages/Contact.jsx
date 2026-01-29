@@ -22,11 +22,14 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://indosparsh-backend.onrender.com/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://indosparsh-backend.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        },
+      );
 
       const data = await res.json();
 
@@ -76,7 +79,6 @@ export default function Contact() {
               />
             </div>
             <div className="form-group">
-              <label>Last Name</label>
               <input
                 name="lastName"
                 value={formData.lastName}

@@ -8,7 +8,8 @@
   display: grid;
   place-items: center;
   cursor: pointer;
-  z-index: 999;
+  /* z-index: 999; */
+  z-index: 999999;   /* still high, but lower than cursor */
 
   /* 🎯 ONE COLOR THEME */
   background: radial-gradient(circle at top, #38bdf8, #0ea5e9, #020617);

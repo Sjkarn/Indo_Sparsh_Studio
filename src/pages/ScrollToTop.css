@@ -1,0 +1,202 @@
+.rocket-only {
+  position: fixed;
+  right: 35px;
+  bottom: 150px;
+  cursor: pointer;
+  z-index: 999;
+
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+  transition: 0.4s ease;
+
+  animation: idleFloat 2s ease-in-out infinite;
+}
+
+.rocket-only.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* 🚀 rocket */
+.rocket-icon {
+  font-size: 42px;
+  transform: rotate(-45deg);
+  filter: drop-shadow(0 0 6px white) drop-shadow(0 0 16px #22d3ee)
+    drop-shadow(0 0 28px #a855f7);
+}
+
+.rocket-only:hover {
+  transform: scale(1.25);
+  animation: boostShake 0.25s infinite;
+}
+
+/* ===== animations ===== */
+
+@keyframes idleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes sparkFlash {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.4);
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+    transform: scaleY(1.6);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes boostShake {
+  0% {
+    transform: translate(0, 0) scale(1.25);
+  }
+  25% {
+    transform: translate(1px, -2px) scale(1.25);
+  }
+  50% {
+    transform: translate(-1px, 2px) scale(1.25);
+  }
+  75% {
+    transform: translate(2px, 1px) scale(1.25);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.25);
+  }
+}
+
+/* 📱 mobile */
+@media (max-width: 600px) {
+  .rocket-icon {
+    font-size: 34px;
+  }
+}
+
+/* 🔥 SMALL ORANGE FIRE BLOOM */
+.blast-flash {
+  position: absolute;
+  inset: -16px; /* 👈 small size */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+
+  background: radial-gradient(
+    circle at center,
+    #fff7ed 0%,
+    #fed7aa 18%,
+    #fb923c 38%,
+    #f97316 55%,
+    rgba(249, 115, 22, 0.6) 68%,
+    transparent 80%
+  );
+
+  filter: blur(1.5px);
+  animation: fireBloom 0.28s ease-out forwards;
+}
+
+/* 🔥 subtle hot pulse */
+.rocket-only.blast::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #fb923c, transparent 70%);
+  filter: blur(4px);
+  animation: corePulse 0.25s ease-out forwards;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fireBloom {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes corePulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* 💨 exhaust smoke */
+.smoke {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9),
+    rgba(200, 200, 200, 0.6),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(2px);
+  transform: translateX(-50%) scale(0.4);
+  opacity: 0;
+  animation: smokeRise 0.9s ease-out forwards;
+  pointer-events: none;
+}
+
+.smoke.s1 {
+  animation-delay: 0s;
+  left: 48%;
+}
+.smoke.s2 {
+  animation-delay: 0.08s;
+  left: 52%;
+  width: 22px;
+  height: 22px;
+}
+.smoke.s3 {
+  animation-delay: 0.15s;
+  left: 46%;
+  width: 18px;
+  height: 18px;
+}
+.smoke.s4 {
+  animation-delay: 0.22s;
+  left: 54%;
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes smokeRise {
+  0% {
+    transform: translate(-50%, 0) scale(0.3);
+    opacity: 0.8;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, 36px) scale(1.4);
+    opacity: 0;
+  }
+}

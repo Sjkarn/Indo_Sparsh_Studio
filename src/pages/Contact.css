@@ -113,6 +113,16 @@
   animation: rgbGlow 3s linear infinite;
 }
 
+/* Align inputs when label is missing */
+.form-row .form-group {
+  position: relative;
+}
+
+/* If a form-group has NO label, push input down */
+.form-row .form-group:not(:has(label)) input {
+  margin-top: 22px; /* match label + gap height */
+}
+
 /* ================= BUTTON ================= */
 
 .contact-btn {
