@@ -1,6 +1,6 @@
 .rocket-only {
   position: fixed;
-  right: 35px;
+  right: 30px;
   bottom: 150px;
   cursor: pointer;
   z-index: 999;
