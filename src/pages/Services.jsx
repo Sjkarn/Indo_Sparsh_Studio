@@ -200,6 +200,22 @@ export default function Services() {
             <h3>Business Consultancy</h3>
             <p>Business Growth Planning, Digital Transformation Strategy</p>
           </div>
+
+          <div className="service-card">
+            <div className="service-icon holo dev">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Web Development</h3>
+            <p>Static Website, Dynamic Website, Landing Page, Portfolio etc...</p>
+          </div>
         </div>
       </section>
 

@@ -377,6 +377,7 @@
   letter-spacing: 1px;
   text-decoration: none;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .pd-cta a:hover {
@@ -648,6 +649,7 @@
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 0 6px #22d3ee);
+  cursor: pointer;
 }
 
 @keyframes marqueeScroll {

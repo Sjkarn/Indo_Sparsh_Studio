@@ -1,5 +1,5 @@
-﻿import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
+﻿import { Outlet, Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Layout.css";
 import AIChatWidget from "../pages/AIChatWidget";
 import Footer from "../pages/Footer";
@@ -7,12 +7,22 @@ import WhatsAppButton from "../pages/WhatsAppButton";
 import CallButton from "../pages/CallButton";
 import ScrollToTop from "../pages/ScrollToTop";
 import AIHackerCursor from "../pages/AIHackerCursor";
+import PageLoader from "../pages/PageLoader";
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 1000); // ⏱️ duration
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <>
+      <PageLoader show={loading} />
       <header className="cyber-header">
         <div className="cyber-logo">INDO SPARSH STUDIO</div>
 

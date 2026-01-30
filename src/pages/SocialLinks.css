@@ -43,6 +43,7 @@
   text-decoration: none;
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 /* Hover */

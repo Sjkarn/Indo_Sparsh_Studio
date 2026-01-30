@@ -28,6 +28,7 @@
   color: white;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
   animation: phoneFloat 2s ease-in-out infinite;
+  cursor: pointer;
 }
 
 /* glowing ring */

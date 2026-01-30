@@ -257,3 +257,249 @@
     gap: 18px;
   }
 }
+
+/* ================= LEADING COMPANY SECTION ================= */
+
+.about-leader {
+  margin: 140px auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.leader-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+}
+
+.leader-header h1 span {
+  color: #22d3ee;
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.6);
+}
+
+.leader-header p {
+  max-width: 720px;
+  margin: 0 auto 80px;
+  color: #cbd5f5;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* GRID */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* CARD */
+.leader-card {
+  position: relative;
+  background: rgba(2, 6, 23, 0.88);
+  border-radius: 26px;
+  padding: 38px 30px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.18);
+  transition: all 0.45s ease;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.leader-card.glow {
+  box-shadow:
+    0 0 40px rgba(34, 211, 238, 0.35),
+    0 0 90px rgba(168, 85, 247, 0.25);
+}
+
+/* ICON */
+.leader-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.7));
+}
+
+/* TEXT */
+.leader-card h3 {
+  color: #22d3ee;
+  margin-bottom: 10px;
+}
+
+.leader-card p {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* HOVER */
+.leader-card:hover {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 0 60px rgba(34, 211, 238, 0.55),
+    0 0 120px rgba(168, 85, 247, 0.35);
+}
+
+/* ANIMATION */
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .leader-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .leader-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ================= LET'S GET IN TOUCH CTA ================= */
+
+.about-cta {
+  padding: 140px 8% 120px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cta-glass {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 70px 50px;
+  border-radius: 36px;
+
+  background:
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.15), transparent 60%),
+    rgba(2, 6, 23, 0.88);
+
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 40px rgba(34, 211, 238, 0.25),
+    0 0 120px rgba(168, 85, 247, 0.25);
+
+  animation: ctaFloat 6s ease-in-out infinite;
+}
+
+/* heading */
+.cta-glass h1 {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+
+.cta-glass h1 span {
+  color: #22d3ee;
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.7);
+}
+
+/* text */
+.cta-glass p {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+  color: #cbd5f5;
+  line-height: 1.7;
+}
+
+/* button */
+.cta-btn {
+  position: relative;
+  padding: 16px 54px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  color: #020617;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-size: 1rem;
+
+  box-shadow:
+    0 0 30px rgba(34, 211, 238, 0.6),
+    0 0 70px rgba(168, 85, 247, 0.45);
+
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* glowing pulse */
+.cta-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6),
+    transparent 70%
+  );
+  opacity: 0;
+  animation: ctaPulse 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* hover */
+.cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 50px rgba(34, 211, 238, 0.9),
+    0 0 120px rgba(168, 85, 247, 0.7);
+}
+
+/* click */
+.cta-btn:active {
+  transform: scale(0.95);
+}
+
+/* animations */
+@keyframes ctaFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes ctaPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.2);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .cta-glass {
+    padding: 50px 28px;
+  }
+
+  .cta-glass h1 {
+    font-size: 2.1rem;
+  }
+
+  .cta-glass p {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    padding: 14px 42px;
+  }
+}
