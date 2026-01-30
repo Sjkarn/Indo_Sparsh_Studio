@@ -59,6 +59,24 @@ export default function Services() {
                 <span></span>
               </div>
             </div>
+            <h3>Web Development</h3>
+            <p>
+              Static Website, Dynamic Website, Landing Page, Portfolio etc...
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo dev">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <h3>App Development</h3>
             <p>Android Apps, iOS Apps, Cross-Platform Solutions</p>
           </div>
@@ -200,22 +218,6 @@ export default function Services() {
             <h3>Business Consultancy</h3>
             <p>Business Growth Planning, Digital Transformation Strategy</p>
           </div>
-
-          <div className="service-card">
-            <div className="service-icon holo dev">
-              <span className="holo-core"></span>
-              <div className="energy-particles">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <h3>Web Development</h3>
-            <p>Static Website, Dynamic Website, Landing Page, Portfolio etc...</p>
-          </div>
         </div>
       </section>
 
@@ -332,7 +334,7 @@ export default function Services() {
       <section className="why-section">
         <div className="why-header">
           <h1>
-            Why <span>Choose Us</span>
+            Why <span>Choose Us?</span>
           </h1>
           <p>
             We don’t just build digital products — we engineer growth,
