@@ -21,6 +21,7 @@ export default function ScrollToTop() {
       onClick={goTop}
       aria-label="Scroll to top"
     >
+      <span className="arrow-core"></span>
       <FaArrowUp />
     </button>
   );
