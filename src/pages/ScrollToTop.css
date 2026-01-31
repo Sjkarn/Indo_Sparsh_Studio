@@ -158,8 +158,8 @@
   .scroll-arrow {
     width: 46px;
     height: 46px;
-    right: 16px;
-    bottom: 90px;
+    right: 25px;
+    bottom: 120px;
   }
 
   .scroll-arrow svg {
