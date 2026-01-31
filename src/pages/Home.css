@@ -14,8 +14,8 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* background: url("/public/tech/cyber-bg.png") center/cover no-repeat; */
-  background: url("/public/tech/tech-bg.jpg") center/cover no-repeat;
+  /* background: url("/tech/cyber-bg.png") center/cover no-repeat; */
+  background: url("/tech/tech-bg.jpg") center/cover no-repeat;
   opacity: 0.95; /* ✅ MUCH clearer */
   filter: saturate(1.25) contrast(1.15) brightness(1.05);
   transform: scale(1.08);
