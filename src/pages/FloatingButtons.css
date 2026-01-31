@@ -1,15 +1,15 @@
 .call-float {
   position: fixed;
-  left: 22px;
+  left: 26px;
   bottom: 150px; /* above WhatsApp icon */
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   cursor: pointer;
   /* z-index: 999; */
-  z-index: 999999;   /* still high, but lower than cursor */
+  z-index: 999999; /* still high, but lower than cursor */
 
   /* 🎯 ONE COLOR THEME */
   background: radial-gradient(circle at top, #38bdf8, #0ea5e9, #020617);
@@ -82,13 +82,13 @@
 /* 📱 mobile */
 @media (max-width: 600px) {
   .call-float {
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
     bottom: 120px;
-    left: 16px;
+    left: 18px;
   }
 
   .call-icon {
-    font-size: 22px;
+    font-size: 28px;
   }
 }

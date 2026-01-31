@@ -39,8 +39,26 @@ export default function Home() {
           </p>
 
           <div className="home-buttons">
-            <button className="btn-primary">Get Started</button>
-            <button className="btn-secondary">View Portfolio</button>
+            <button
+              className="btn-primary"
+              onClick={() => {
+                document
+                  .getElementById("project")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Get Started
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={() => {
+                document
+                  .getElementById("portfolio")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              View Portfolio
+            </button>
           </div>
         </div>
       </section>
@@ -48,7 +66,7 @@ export default function Home() {
       <ScrollBeam />
 
       {/* ================= PROJECTS WE DISCUSS ================= */}
-      <section className="projects-discuss">
+      <section className="projects-discuss" id="project">
         <div className="pd-hero">
           <h1>
             Projects <span>We Discuss</span>
@@ -109,6 +127,254 @@ export default function Home() {
           <h2>Have a project in mind?</h2>
           <p>Let’s discuss it and transform your idea into reality.</p>
           <a href="https://wa.me/918005351770">Start a Discussion</a>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      {/* ================= PORTFOLIO SHOWCASE ================= */}
+      <section className="portfolio-section" id="portfolio">
+        <div className="portfolio-hero">
+          <h1>
+            Our <span>Portfolio</span>
+          </h1>
+          <p>
+            A curated selection of digital products we’ve crafted — blending
+            technology, design, and performance.
+          </p>
+        </div>
+
+        <div className="portfolio-grid">
+          <div className="portfolio-card">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>AI SaaS Dashboard</h3>
+            <p>Analytics, automation, and real-time insights.</p>
+            <span className="tag">AI / SaaS</span>
+          </div>
+
+          <div className="portfolio-card glow">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>E-Commerce Platform</h3>
+            <p>High-conversion storefront with secure payments.</p>
+            <span className="tag">E-Commerce</span>
+          </div>
+
+          <div className="portfolio-card">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>Mobile App UI/UX</h3>
+            <p>Human-centered design with futuristic visuals.</p>
+            <span className="tag">UI / UX</span>
+          </div>
+
+          <div className="portfolio-card glow">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>Business Automation Tool</h3>
+            <p>Internal dashboards, workflows, and reporting.</p>
+            <span className="tag">Automation</span>
+          </div>
+
+          <div className="portfolio-card">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>Brand Website</h3>
+            <p>Fast, immersive, and conversion-driven web presence.</p>
+            <span className="tag">Branding</span>
+          </div>
+
+          <div className="portfolio-card glow">
+            <div className="portfolio-media">
+              <span className="scan-line"></span>
+            </div>
+            <h3>Experimental MVP</h3>
+            <p>Rapid prototyping for next-gen product ideas.</p>
+            <span className="tag">MVP</span>
+          </div>
+        </div>
+
+        <div className="portfolio-cta">
+          <h2>Want to see more?</h2>
+          <p>Let’s build something remarkable together.</p>
+          <a href="/contact">View Full Portfolio</a>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="testimonials-section">
+        <div className="testimonials-hero">
+          <h1>
+            What Our <span>Clients Say</span>
+          </h1>
+          <p>
+            Trusted by startups, founders, and enterprises worldwide — here’s
+            what they say about working with us.
+          </p>
+        </div>
+
+        <div className="testimonials-marquee">
+          <div className="testimonials-track">
+            {[
+              {
+                name: "Rohit Sharma",
+                role: "Startup Founder",
+                text: "Exceptional quality and futuristic execution.",
+                img: "./public/tech/aws.png",
+              },
+              {
+                name: "Ananya Verma",
+                role: "Product Manager",
+                text: "Their UI/UX thinking is next-level.",
+                img: "./public/tech/bootstrap.png",
+              },
+              {
+                name: "Daniel Cruz",
+                role: "SaaS CEO",
+                text: "Fast delivery without compromising stability.",
+                img: "./public/tech/css.png",
+              },
+              {
+                name: "Priya Singh",
+                role: "Marketing Lead",
+                text: "Our conversions increased dramatically.",
+                img: "./public/tech/expressjs.png",
+              },
+              {
+                name: "Alex Morgan",
+                role: "Tech Entrepreneur",
+                text: "Clean architecture and great communication.",
+                img: "./public/tech/git.png",
+              },
+              {
+                name: "Neha Kapoor",
+                role: "Business Owner",
+                text: "They truly understand business goals.",
+                img: "./public/tech/github.png",
+              },
+              {
+                name: "Michael Lee",
+                role: "CTO",
+                text: "Security-first and performance-focused team.",
+                img: "./public/tech/html.webp",
+              },
+              {
+                name: "Saurabh Jain",
+                role: "Startup Mentor",
+                text: "Highly recommended for scaling products.",
+                img: "./public/tech/javascript.png",
+              },
+              {
+                name: "Emily Watson",
+                role: "Design Head",
+                text: "Design systems were beautifully executed.",
+                img: "./public/tech/mongodb.png",
+              },
+              {
+                name: "Amit Patel",
+                role: "Founder",
+                text: "From idea to launch — flawless journey.",
+                img: "./public/tech/nodejs.png",
+              },
+            ]
+              /* 🔁 duplicate array for infinite marquee */
+              .concat([
+                {
+                  name: "Rohit Sharma",
+                  role: "Startup Founder",
+                  text: "Exceptional quality and futuristic execution.",
+                  img: "./public/tech/aws.png",
+                },
+                {
+                  name: "Ananya Verma",
+                  role: "Product Manager",
+                  text: "Their UI/UX thinking is next-level.",
+                  img: "./public/tech/bootstrap.png",
+                },
+                {
+                  name: "Daniel Cruz",
+                  role: "SaaS CEO",
+                  text: "Fast delivery without compromising stability.",
+                  img: "./public/tech/css.png",
+                },
+                {
+                  name: "Priya Singh",
+                  role: "Marketing Lead",
+                  text: "Our conversions increased dramatically.",
+                  img: "./public/tech/expressjs.png",
+                },
+                {
+                  name: "Alex Morgan",
+                  role: "Tech Entrepreneur",
+                  text: "Clean architecture and great communication.",
+                  img: "./public/tech/git.png",
+                },
+                {
+                  name: "Neha Kapoor",
+                  role: "Business Owner",
+                  text: "They truly understand business goals.",
+                  img: "./public/tech/github.png",
+                },
+                {
+                  name: "Michael Lee",
+                  role: "CTO",
+                  text: "Security-first and performance-focused team.",
+                  img: "./public/tech/html.webp",
+                },
+                {
+                  name: "Saurabh Jain",
+                  role: "Startup Mentor",
+                  text: "Highly recommended for scaling products.",
+                  img: "./public/tech/javascript.png",
+                },
+                {
+                  name: "Emily Watson",
+                  role: "Design Head",
+                  text: "Design systems were beautifully executed.",
+                  img: "./public/tech/mongodb.png",
+                },
+                {
+                  name: "Amit Patel",
+                  role: "Founder",
+                  text: "From idea to launch — flawless journey.",
+                  img: "./public/tech/nodejs.png",
+                },
+              ])
+              .map((t, i) => (
+                <div
+                  className={`testimonial-card ${i % 2 === 0 ? "glow" : ""}`}
+                  key={i}
+                >
+                  <div className="testimonial-glow"></div>
+
+                  {/* avatar */}
+                  <div className="testimonial-avatar">
+                    <img src={t.img} alt={t.name} />
+                  </div>
+
+                  {/* stars */}
+                  <div className="testimonial-stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span className="half">★</span>
+                  </div>
+
+                  <p className="testimonial-text">“{t.text}”</p>
+                  <h3>{t.name}</h3>
+                  <span>{t.role}</span>
+                </div>
+              ))}
+          </div>
         </div>
       </section>
 
