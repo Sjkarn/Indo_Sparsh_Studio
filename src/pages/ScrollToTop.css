@@ -1,4 +1,4 @@
-/* ===== SCROLL TO TOP ARROW : CYAN BALANCED ===== */
+/* ===== SCROLL TO TOP ARROW : CYAN BALANCED (FIXED) ===== */
 
 .scroll-arrow {
   position: fixed;
@@ -8,9 +8,7 @@
   height: 54px;
   border-radius: 50%;
   border: none;
-  cursor: pointer;
 
-  /* softer cyan glass */
   background: radial-gradient(circle at 30% 20%, #4fd1e5, #22d3ee 45%, #0e7490);
 
   color: #ffffff;
@@ -33,8 +31,8 @@
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s ease;
 
-  /* z-index: 999; */
-  z-index: 999999; /* still high, but lower than cursor */
+  z-index: 999999;
+  cursor: pointer;
 }
 
 /* appear */
@@ -44,32 +42,31 @@
   pointer-events: auto;
 }
 
-/* ===== ARROW ICON (CLEAR & STRONG) ===== */
+/* ===== ARROW ICON ===== */
 
 .scroll-arrow svg {
   font-size: 28px;
   color: #ffffff;
-  cursor: pointer;
 
-  /* reduced glow – sharp focus */
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9))
     drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
 
   animation: arrowFloat 2.6s ease-in-out infinite;
-  z-index: 2;
+
+  pointer-events: none; /* 🔑 critical */
 }
 
-/* subtle inner plate for contrast */
+/* inner plate */
 .scroll-arrow .arrow-core {
   position: absolute;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
-  z-index: 1;
+  pointer-events: none;
 }
 
-/* ===== HALO (SOFT, NOT DOMINANT) ===== */
+/* ===== HALO ===== */
 
 .scroll-arrow::before {
   content: "";
@@ -85,9 +82,10 @@
   opacity: 0.25;
   animation: haloSpin 6s linear infinite;
   z-index: -1;
+  pointer-events: none;
 }
 
-/* ===== RIPPLE (VERY SUBTLE) ===== */
+/* ===== RIPPLE ===== */
 
 .scroll-arrow::after {
   content: "";
@@ -99,7 +97,7 @@
   pointer-events: none;
 }
 
-/* ===== HOVER (CONTROLLED BOOST) ===== */
+/* ===== HOVER ===== */
 
 .scroll-arrow:hover {
   box-shadow:

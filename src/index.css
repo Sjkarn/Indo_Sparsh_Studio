@@ -17,3 +17,29 @@ body {
 #root {
   padding: 30px;
 }
+
+/* ================= CURSOR SAFETY FIX ================= */
+
+/* Custom cursor must NEVER block interaction */
+.ai-cursor,
+.ai-glow,
+.ai-ring,
+.ai-core,
+.ai-cursor *,
+.ai-glow * {
+  pointer-events: none !important;
+}
+
+/* Force pointer for interactive elements */
+.scroll-arrow,
+.scroll-arrow *,
+a,
+button,
+.call-float,
+.call-icon,
+.whatsapp-float,
+.wa-icon,
+.cyber-nav a,
+.cyber-hamburger {
+  cursor: pointer !important;
+}

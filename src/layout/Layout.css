@@ -69,7 +69,6 @@ body {
   letter-spacing: 1px;
   position: relative;
   transition: 0.3s;
-  cursor: pointer;
 }
 
 /* Neon underline */
@@ -99,7 +98,6 @@ body {
   display: none;
   flex-direction: column;
   gap: 6px;
-  cursor: pointer;
 }
 
 .cyber-hamburger span {

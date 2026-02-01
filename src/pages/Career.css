@@ -114,6 +114,7 @@
   animation: fadeUp 1.4s ease forwards;
 }
 
+/* 🔥 FIX: overlay must not block interaction */
 .job-card::before {
   content: "";
   position: absolute;
@@ -126,6 +127,7 @@
   );
   opacity: 0;
   transition: 0.4s;
+  pointer-events: none; /* ✅ CRITICAL */
 }
 
 .job-card:hover::before {
@@ -169,7 +171,11 @@
   background: linear-gradient(135deg, #22d3ee, #a855f7);
   color: black;
   font-weight: 600;
+
   cursor: pointer;
+  position: relative;
+  z-index: 2; /* ✅ ABOVE OVERLAY */
+
   transition: 0.3s ease;
 }
 

@@ -1,34 +1,39 @@
+/* ================= CALL FLOAT BUTTON ================= */
+
 .call-float {
   position: fixed;
   left: 26px;
-  bottom: 150px; /* above WhatsApp icon */
+  bottom: 150px;
   width: 64px;
   height: 64px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  cursor: pointer;
-  /* z-index: 999; */
-  z-index: 999999; /* still high, but lower than cursor */
 
-  /* 🎯 ONE COLOR THEME */
-  background: radial-gradient(circle at top, #38bdf8, #0ea5e9, #020617);
+  cursor: pointer;
+  z-index: 999999;
+
+  /* 🎯 CYAN CALL THEME */
+  background: radial-gradient(circle at top, #38bdf8, #0ea5e9 45%, #020617);
 
   box-shadow:
-    0 0 12px rgba(56, 189, 248, 0.9),
-    0 0 30px rgba(56, 189, 248, 0.7),
-    0 0 60px rgba(56, 189, 248, 0.45);
+    0 0 12px rgba(56, 189, 248, 0.85),
+    0 0 30px rgba(56, 189, 248, 0.6),
+    0 0 60px rgba(56, 189, 248, 0.4);
 
-  animation: callPulse 2.2s ease-in-out infinite;
+  animation: callPulse 2.4s ease-in-out infinite;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* ICON */
 .call-icon {
   font-size: 26px;
-  color: white;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+  color: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85));
   animation: phoneFloat 2s ease-in-out infinite;
-  cursor: pointer;
+  pointer-events: none; /* icon should not block parent */
 }
 
 /* glowing ring */
@@ -39,11 +44,18 @@
   border-radius: 50%;
   border: 1.5px solid rgba(56, 189, 248, 0.8);
   filter: blur(2px);
-  opacity: 0;
-  animation: callRing 2.2s ease-out infinite;
+  animation: callRing 2.4s ease-out infinite;
 }
 
-/* ===== ANIMATIONS ===== */
+/* hover */
+.call-float:hover {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 1),
+    0 0 70px rgba(56, 189, 248, 0.9);
+}
+
+/* ================= ANIMATIONS ================= */
 
 @keyframes callPulse {
   0%,
@@ -51,7 +63,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.12);
+    transform: scale(1.08);
   }
 }
 
@@ -61,10 +73,10 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(10deg);
+    transform: rotate(12deg);
   }
   75% {
-    transform: rotate(-10deg);
+    transform: rotate(-12deg);
   }
 }
 
@@ -74,12 +86,12 @@
     opacity: 0.9;
   }
   100% {
-    transform: scale(1.6);
+    transform: scale(1.7);
     opacity: 0;
   }
 }
 
-/* 📱 mobile */
+/* 📱 MOBILE */
 @media (max-width: 600px) {
   .call-float {
     width: 56px;
