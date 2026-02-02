@@ -1,7 +1,55 @@
+import { useEffect, useState } from "react";
 import "./Home.css";
 import ScrollBeam from "./ScrollBeam";
 
 export default function Home() {
+  const services = [
+    "Business Profile Creation",
+    "Web Development",
+    "App Development",
+    "Digital Marketing Services",
+    "Social Media Management",
+    "UI/UX Design",
+    "Graphics Design Services",
+    "Branding & Marketing",
+    "Row Calling Data",
+    "Content Creation & Video Editing Services",
+    "Business Consultancy",
+  ];
+
+  const [typedText, setTypedText] = useState("");
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = services[serviceIndex];
+    let typingSpeed = isDeleting ? 40 : 90;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // typing
+        setTypedText(current.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+
+        if (charIndex === current.length) {
+          setTimeout(() => setIsDeleting(true), 1200);
+        }
+      } else {
+        // deleting
+        setTypedText(current.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+
+        if (charIndex === 0) {
+          setIsDeleting(false);
+          setServiceIndex((prev) => (prev + 1) % services.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, serviceIndex]);
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -27,10 +75,17 @@ export default function Home() {
 
         <div className="home-container">
           <h1>
-            Crafting <span>Digital Experiences</span>
+            Empowering <span>Businesses with Digital Solutions</span>
             <br />
-            Innovative Solutions
+            like
           </h1>
+
+          <div className="hero-typing-wrapper">
+            <h2 className="hero-service">
+              <span className="typing-text">{typedText}</span>
+              <span className="typing-cursor">|</span>
+            </h2>
+          </div>
 
           <p>
             Você sabia que o mercado de pets cresceu 75% somente neste ano? A
@@ -59,6 +114,102 @@ export default function Home() {
             >
               View Portfolio
             </button>
+          </div>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      <section className="we-serve-section">
+        <h2 className="we-serve-title">WE SERVE FOR</h2>
+
+        {/* CONNECTING ZIG-ZAG */}
+        <svg
+          className="zigzag-lines"
+          viewBox="0 0 1200 320"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <marker
+              id="arrow-down"
+              markerWidth="8"
+              markerHeight="8"
+              refX="4"
+              refY="4"
+              orient="auto"
+            >
+              <path d="M0 0 L8 4 L0 8" fill="#2dd4bf" />
+            </marker>
+          </defs>
+
+          {/* Development → Marketing */}
+          <path
+            d="M200 160 L200 240"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+          />
+
+          <path
+            d="M200 240 L600 100"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+          />
+
+          <path
+            d="M600 100 L600 160"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+            markerEnd="url(#arrow-down)"
+          />
+
+          {/* Marketing → Consultancy */}
+          <path
+            d="M600 160 L600 240"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+          />
+
+          <path
+            d="M600 240 L1000 140"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+          />
+
+          <path
+            d="M1000 140 L1000 160"
+            stroke="#2dd4bf"
+            strokeWidth="2.5"
+            strokeDasharray="7 7"
+            fill="none"
+            markerEnd="url(#arrow-down)"
+          />
+        </svg>
+
+        {/* SERVICES */}
+        <div className="we-serve-3">
+          <div className="service">
+            <div className="icon">🌐</div>
+            <p>Development</p>
+          </div>
+
+          <div className="service center">
+            <div className="icon">💼</div>
+            <p>Marketing</p>
+          </div>
+
+          <div className="service">
+            <div className="icon">🤝</div>
+            <p>Consultancy</p>
           </div>
         </div>
       </section>

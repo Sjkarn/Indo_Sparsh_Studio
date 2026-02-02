@@ -1313,3 +1313,137 @@
     font-size: 15px;
   }
 }
+
+/* wrapper to center perfectly */
+.hero-typing-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* typing text */
+.hero-service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+/* text */
+.typing-text {
+  color: #22d3ee;
+  text-shadow:
+    0 0 10px rgba(34, 211, 238, 0.9),
+    0 0 26px rgba(34, 211, 238, 0.45);
+}
+
+/* cursor */
+.typing-cursor {
+  margin-left: 4px;
+  color: #22d3ee;
+  animation: blink 1s infinite;
+}
+
+/* blink */
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.we-serve-grid {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 320px; /* LOCK HEIGHT */
+  z-index: 2;
+}
+
+.we-serve-section {
+  background: linear-gradient(180deg, #03243d, #02192e);
+  padding: 120px 0 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.we-serve-title {
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 6px;
+  color: #ffffff;
+  margin-bottom: 90px;
+}
+
+/* SERVICES ROW */
+.we-serve-3 {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.service p {
+  color: #e5faff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ICON STYLE */
+.icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  background: rgba(2, 6, 23, 0.85);
+  border: 2px solid #2dd4bf;
+
+  box-shadow:
+    0 0 18px rgba(45, 212, 191, 0.7),
+    inset 0 0 12px rgba(45, 212, 191, 0.4);
+
+  font-size: 38px;
+  color: #2dd4bf;
+}
+
+/* SVG CONNECTORS */
+.zigzag-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.zigzag-lines path {
+  fill: none;
+  stroke: #2dd4bf;
+  stroke-width: 2.5;
+  stroke-dasharray: 7 7;
+  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.7));
+}
