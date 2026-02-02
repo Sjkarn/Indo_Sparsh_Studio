@@ -1373,7 +1373,7 @@
 }
 
 .we-serve-section {
-  background: linear-gradient(180deg, #03243d, #02192e);
+  background: radial-gradient(circle at top, #020617, #000);
   padding: 120px 0 140px;
   position: relative;
   overflow: hidden;
