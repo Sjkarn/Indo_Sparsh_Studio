@@ -245,6 +245,10 @@
 }
 
 @media (max-width: 635px) {
+  .contact-form {
+    gap: 14px; /* was 22px */
+  }
+
   .contact-section {
     padding: 80px 6%;
   }
@@ -255,6 +259,16 @@
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 12px; /* reduce space between First & Last name */
+  }
+
+  .form-group {
+    gap: 6px;
+  }
+
+  /* REMOVE artificial spacing on mobile */
+  .form-row .form-group:not(:has(label)) input {
+    margin-top: 0;
   }
 
   .contact-btn {

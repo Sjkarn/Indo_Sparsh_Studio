@@ -120,96 +120,39 @@ export default function Home() {
 
       <ScrollBeam />
 
-      <section className="we-serve-section">
-        <h2 className="we-serve-title">WE SERVE FOR</h2>
+      <section className="orbit-section">
+        <div className="orbit-hero">
+          <h1>
+            We <span>Serve</span> For
+          </h1>
+          <p>
+            Three core pillars that power everything we build — aligned,
+            connected, and constantly in motion.
+          </p>
+        </div>
 
-        {/* CONNECTING ZIG-ZAG */}
-        <svg
-          className="zigzag-lines"
-          viewBox="0 0 1200 320"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <marker
-              id="arrow-down"
-              markerWidth="8"
-              markerHeight="8"
-              refX="4"
-              refY="4"
-              orient="auto"
-            >
-              <path d="M0 0 L8 4 L0 8" fill="#2dd4bf" />
-            </marker>
-          </defs>
-
-          {/* Development → Marketing */}
-          <path
-            d="M200 160 L200 240"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-          />
-
-          <path
-            d="M200 240 L600 100"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-          />
-
-          <path
-            d="M600 100 L600 160"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-            markerEnd="url(#arrow-down)"
-          />
-
-          {/* Marketing → Consultancy */}
-          <path
-            d="M600 160 L600 240"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-          />
-
-          <path
-            d="M600 240 L1000 140"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-          />
-
-          <path
-            d="M1000 140 L1000 160"
-            stroke="#2dd4bf"
-            strokeWidth="2.5"
-            strokeDasharray="7 7"
-            fill="none"
-            markerEnd="url(#arrow-down)"
-          />
-        </svg>
-
-        {/* SERVICES */}
-        <div className="we-serve-3">
-          <div className="service">
-            <div className="icon">🌐</div>
-            <p>Development</p>
+        <div className="orbit-container">
+          {/* core */}
+          <div className="orbit-core">
+            <span>CORE</span>
           </div>
 
-          <div className="service center">
-            <div className="icon">💼</div>
-            <p>Marketing</p>
-          </div>
+          {/* orbit ring */}
+          <div className="orbit-ring">
+            <div className="orbit-node dev">
+              <div className="icon">🌐</div>
+              <p>Development</p>
+            </div>
 
-          <div className="service">
-            <div className="icon">🤝</div>
-            <p>Consultancy</p>
+            <div className="orbit-node market">
+              <div className="icon">💼</div>
+              <p>Marketing</p>
+            </div>
+
+            <div className="orbit-node consult">
+              <div className="icon">🤝</div>
+              <p>Consultancy</p>
+            </div>
           </div>
         </div>
       </section>
