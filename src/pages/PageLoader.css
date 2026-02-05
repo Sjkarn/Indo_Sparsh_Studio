@@ -12,7 +12,7 @@
 
 /* default (desktop) */
 .page-loader img {
-  width: 420px;
+  width: 450px;
   max-width: 90%;
   height: auto;
   opacity: 0.85;
@@ -21,13 +21,13 @@
 /* tablets */
 @media (max-width: 1024px) {
   .page-loader img {
-    width: 340px;
+    width: 370px;
   }
 }
 
 /* mobile */
 @media (max-width: 600px) {
   .page-loader img {
-    width: 240px;
+    width: 270px;
   }
 }

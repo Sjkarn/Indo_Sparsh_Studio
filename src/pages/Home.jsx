@@ -17,10 +17,13 @@ export default function Home() {
     "Business Consultancy",
   ];
 
+  const heroImages = ["/tech/tech-bg.jpg", "/tech/cyber-bg.png"];
+
   const [typedText, setTypedText] = useState("");
   const [serviceIndex, setServiceIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [bgImage, setBgImage] = useState(heroImages[0]);
 
   useEffect(() => {
     const current = services[serviceIndex];
@@ -50,12 +53,28 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, serviceIndex]);
 
+  useEffect(() => {
+    const changeImage = () => {
+      const random = heroImages[Math.floor(Math.random() * heroImages.length)];
+
+      setBgImage(random);
+    };
+
+    // change every 5 seconds
+    const interval = setInterval(changeImage, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* ================= HERO ================= */}
       <section className="home-hero">
         {/* 🌌 BACKGROUND IMAGE LAYER */}
-        <div className="hero-bg"></div>
+        <div
+          className="hero-bg"
+          style={{ backgroundImage: `url(${bgImage})` }}
+        ></div>
 
         {/* 🌈 GRADIENT + GLOW OVERLAY */}
         <div className="hero-overlay"></div>
@@ -114,45 +133,6 @@ export default function Home() {
             >
               View Portfolio
             </button>
-          </div>
-        </div>
-      </section>
-
-      <ScrollBeam />
-
-      <section className="orbit-section">
-        <div className="orbit-hero">
-          <h1>
-            We <span>Serve</span> For
-          </h1>
-          <p>
-            Three core pillars that power everything we build — aligned,
-            connected, and constantly in motion.
-          </p>
-        </div>
-
-        <div className="orbit-container">
-          {/* core */}
-          <div className="orbit-core">
-            <span>CORE</span>
-          </div>
-
-          {/* orbit ring */}
-          <div className="orbit-ring">
-            <div className="orbit-node dev">
-              <div className="icon">🌐</div>
-              <p>Development</p>
-            </div>
-
-            <div className="orbit-node market">
-              <div className="icon">💼</div>
-              <p>Marketing</p>
-            </div>
-
-            <div className="orbit-node consult">
-              <div className="icon">🤝</div>
-              <p>Consultancy</p>
-            </div>
           </div>
         </div>
       </section>
@@ -221,6 +201,41 @@ export default function Home() {
           <h2>Have a project in mind?</h2>
           <p>Let’s discuss it and transform your idea into reality.</p>
           <a href="https://wa.me/918005351770">Start a Discussion</a>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      <section className="orbit-section">
+        <div className="orbit-hero">
+          <h1>
+            We <span>Serve</span> For
+          </h1>
+
+          <p>
+            Three core pillars that power everything we build — aligned,
+            connected, and constantly in motion.
+          </p>
+        </div>
+
+        <div className="jump-container">
+          {/* Consultancy */}
+          <div className="jump-icon consult">
+            <div className="icon">🤝</div>
+            <p>Consultancy</p>
+          </div>
+
+          {/* Development */}
+          <div className="jump-icon dev">
+            <div className="icon">🌐</div>
+            <p>Development</p>
+          </div>
+
+          {/* Management */}
+          <div className="jump-icon manage">
+            <div className="icon">💼</div>
+            <p>Management</p>
+          </div>
         </div>
       </section>
 

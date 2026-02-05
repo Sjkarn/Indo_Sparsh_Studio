@@ -1,3 +1,5 @@
+/* ================= HERO SECTION ================= */
+
 .home-hero {
   min-height: 100vh;
   display: flex;
@@ -10,20 +12,35 @@
   overflow: hidden;
 }
 
-/* 🌌 background image */
+/* ================= BACKGROUND IMAGE ================= */
+
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* background: url("/tech/cyber-bg.png") center/cover no-repeat; */
-  background: url("/tech/tech-bg.jpg") center/cover no-repeat;
-  opacity: 0.95; /* ✅ MUCH clearer */
+
+  /* background image will come from React inline style */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0.95;
   filter: saturate(1.25) contrast(1.15) brightness(1.05);
+
   transform: scale(1.08);
+
+  /* cinematic smooth transition when image changes */
+  transition: background-image 1.2s ease-in-out;
+
   animation: slowZoom 24s ease-in-out infinite alternate;
+
+  /* Optional parallax feel */
+  background-attachment: fixed;
+
   z-index: 1;
 }
 
-/* 🌈 glow + dark overlay */
+/* ================= GLOW + DARK OVERLAY ================= */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -38,32 +55,18 @@
       rgba(168, 85, 247, 0.18),
       transparent 60%
     ),
-    linear-gradient(to bottom, rgba(2, 6, 23, 0.55), rgba(0, 0, 0, 0.75)); /* ✅ reduced darkness */
+    linear-gradient(to bottom, rgba(2, 6, 23, 0.55), rgba(0, 0, 0, 0.75));
+
   z-index: 2;
 }
+
+/* ================= PARTICLES ================= */
 
 .cyber-particles {
   position: absolute;
   inset: 0;
   z-index: 3;
   pointer-events: none;
-}
-
-.home-container {
-  max-width: 900px;
-  position: relative;
-  z-index: 4;
-}
-
-/* ===== background animation ===== */
-
-@keyframes slowZoom {
-  from {
-    transform: scale(1.05);
-  }
-  to {
-    transform: scale(1.15);
-  }
 }
 
 .cyber-particles span {
@@ -77,7 +80,7 @@
   animation: floatParticle 18s linear infinite;
 }
 
-/* different sizes + speeds */
+/* individual positions */
 .cyber-particles span:nth-child(1) {
   left: 10%;
   top: 90%;
@@ -139,7 +142,7 @@
   transform: scale(1.2);
 }
 
-/* movement */
+/* particle animation */
 @keyframes floatParticle {
   0% {
     transform: translateY(0) translateX(0) scale(1);
@@ -157,6 +160,27 @@
   }
 }
 
+/* ================= CONTAINER ================= */
+
+.home-container {
+  max-width: 900px;
+  position: relative;
+  z-index: 4;
+}
+
+/* ================= BACKGROUND ZOOM ================= */
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+/* ================= TEXT ================= */
+
 .home-container h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
@@ -172,13 +196,13 @@
 
 .home-container p {
   font-size: clamp(1rem, 2vw, 1.15rem);
-  /* color: #94a3b8; */
   line-height: 1.8;
   margin-bottom: 45px;
   text-shadow: 0 0 25px #22d3ee;
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
+
 .home-buttons {
   display: flex;
   justify-content: center;
@@ -223,7 +247,14 @@
   box-shadow: 0 0 35px #22d3ee;
 }
 
-/* Mobile tuning */
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero-bg {
+    background-attachment: scroll; /* fix mobile parallax issues */
+  }
+}
+
 @media (max-width: 600px) {
   .home-hero {
     padding: 50px 6%;
@@ -231,6 +262,11 @@
 
   .home-container h1 {
     letter-spacing: 1px;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 14px;
   }
 }
 
@@ -1361,156 +1397,201 @@
   }
 }
 
-/* ================= ORBIT SECTION ================= */
+/* =====================================================
+   SECTION
+===================================================== */
 
 .orbit-section {
-  padding: 120px 8% 120px;
+  padding: 120px 20px;
   background: radial-gradient(circle at top, #020617, #000);
+  text-align: center;
   overflow: hidden;
+  position: relative;
 }
 
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
 .orbit-hero {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 120px;
+  margin-bottom: 60px;
 }
 
 .orbit-hero h1 {
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  color: white;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
-.orbit-hero h1 span {
-  color: #2dd4bf;
+.orbit-hero span {
+  color: #22d3ee;
 }
 
 .orbit-hero p {
-  margin-top: 18px;
-  color: #c7eaff;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-/* ================= ORBIT ================= */
-
-.orbit-container {
-  position: relative;
-  width: 420px;
-  height: 420px;
+  color: #94a3b8;
+  max-width: 600px;
   margin: auto;
+  line-height: 1.6;
 }
 
-/* glowing core */
-.orbit-core {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+/* =====================================================
+   ICON CONTAINER (Same Line Layout)
+===================================================== */
 
-  background: radial-gradient(circle, #2dd4bf, #0f766e);
-  box-shadow:
-    0 0 40px rgba(45, 212, 191, 0.8),
-    0 0 90px rgba(45, 212, 191, 0.5);
-
-  font-weight: 700;
-  color: #021b2f;
-  z-index: 2;
+.jump-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  margin-top: 100px;
+  flex-wrap: wrap;
 }
 
-/* orbit ring */
-.orbit-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  animation: orbitSpin 16s linear infinite;
-}
+/* =====================================================
+   ICON WRAPPER
+===================================================== */
 
-/* nodes */
-.orbit-node {
-  position: absolute;
-  width: 120px;
+.jump-icon {
   text-align: center;
 }
 
-.orbit-node .icon {
-  width: 84px;
-  height: 84px;
+/* =====================================================
+   ICON DESIGN
+===================================================== */
+
+.icon {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin: auto;
+
   display: grid;
   place-items: center;
 
   background: rgba(2, 6, 23, 0.9);
-  border: 2px solid #2dd4bf;
+  border: 2px solid #22d3ee;
+
+  font-size: 38px;
+  color: #22d3ee;
+
+  position: relative;
 
   box-shadow:
-    0 0 18px rgba(45, 212, 191, 0.7),
-    inset 0 0 10px rgba(45, 212, 191, 0.4);
+    0 0 20px rgba(34, 211, 238, 0.6),
+    inset 0 0 12px rgba(34, 211, 238, 0.3);
 
-  font-size: 34px;
-  color: #2dd4bf;
+  animation: waveBounce 1.4s ease-in-out infinite;
 }
 
-.orbit-node p {
+/* =====================================================
+   LIQUID GLOW EFFECT (Premium look)
+===================================================== */
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  z-index: -1;
+
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.9),
+    rgba(168, 85, 247, 0.6)
+  );
+
+  filter: blur(20px);
+  opacity: 0.6;
+}
+
+.icon::after {
+  inset: -28px;
+  filter: blur(28px);
+  opacity: 0.4;
+}
+
+/* =====================================================
+   TEXT UNDER ICON
+===================================================== */
+
+.jump-icon p {
   margin-top: 12px;
-  color: #e5faff;
+  color: white;
   font-size: 0.95rem;
 }
 
-/* positions */
-.orbit-node.dev {
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
+/* =====================================================
+   WAVE SEQUENCE (Loader style animation)
+===================================================== */
+
+.consult .icon {
+  animation-delay: 0s;
 }
 
-.orbit-node.market {
-  bottom: 40px;
-  left: -10px;
+.dev .icon {
+  animation-delay: 0.2s;
 }
 
-.orbit-node.consult {
-  bottom: 40px;
-  right: -10px;
+.manage .icon {
+  animation-delay: 0.4s;
 }
 
-/* animation */
-@keyframes orbitSpin {
-  from {
-    transform: rotate(0deg);
+/* =====================================================
+   BOUNCE ANIMATION (Same Line Jump)
+===================================================== */
+
+@keyframes waveBounce {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-/* counter-rotate content so text stays straight */
-.orbit-node {
-  animation: counterSpin 16s linear infinite;
-}
-
-@keyframes counterSpin {
-  from {
-    transform: rotate(0deg);
+  25% {
+    transform: translateY(-35px);
   }
-  to {
-    transform: rotate(-360deg);
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-15px);
   }
 }
 
-/* mobile */
-@media (max-width: 600px) {
-  .orbit-container {
-    width: 320px;
-    height: 320px;
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1024px) {
+  .jump-container {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .orbit-section {
+    padding: 80px 15px;
   }
 
-  .orbit-core {
-    width: 90px;
-    height: 90px;
+  .jump-container {
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jump-container {
+    gap: 25px;
+  }
+
+  .orbit-hero h1 {
+    letter-spacing: 1px;
   }
 }
