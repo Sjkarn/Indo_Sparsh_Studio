@@ -1,4 +1,4 @@
-﻿import { Outlet, Link, useLocation } from "react-router-dom";
+﻿import { Outlet, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Layout.css";
 import AIChatWidget from "../pages/AIChatWidget";
@@ -27,24 +27,29 @@ export default function Layout() {
         <div className="cyber-logo">INDO SPARSH STUDIO</div>
 
         <nav className={`cyber-nav ${open ? "active" : ""}`}>
-          <Link to="/" onClick={() => setOpen(false)}>
+          <NavLink to="/" onClick={() => setOpen(false)}>
             Home
-          </Link>
-          <Link to="/about" onClick={() => setOpen(false)}>
+          </NavLink>
+
+          <NavLink to="/about" onClick={() => setOpen(false)}>
             About
-          </Link>
-          <Link to="/services" onClick={() => setOpen(false)}>
+          </NavLink>
+
+          <NavLink to="/services" onClick={() => setOpen(false)}>
             Services
-          </Link>
-          <Link to="/blog" onClick={() => setOpen(false)}>
+          </NavLink>
+
+          <NavLink to="/blog" onClick={() => setOpen(false)}>
             Blog
-          </Link>
-          <Link to="/career" onClick={() => setOpen(false)}>
+          </NavLink>
+
+          <NavLink to="/career" onClick={() => setOpen(false)}>
             Career
-          </Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>
+          </NavLink>
+
+          <NavLink to="/contact" onClick={() => setOpen(false)}>
             Contact
-          </Link>
+          </NavLink>
         </nav>
 
         <div

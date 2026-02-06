@@ -13,7 +13,8 @@ body {
 /* HEADER */
 .cyber-header {
   height: 75px;
-  padding: 0 35px;
+  padding-left: 35px;
+  padding-right: 60px; /* 👈 increase right spacing */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,6 +61,7 @@ body {
 .cyber-nav {
   display: flex;
   gap: 30px;
+  margin-right: 40px; /* 👈 add space from right side */
 }
 
 .cyber-nav a {
@@ -90,6 +92,17 @@ body {
 }
 
 .cyber-nav a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE NAV LINK */
+
+.cyber-nav a.active {
+  color: #22d3ee;
+  text-shadow: 0 0 10px #22d3ee;
+}
+
+.cyber-nav a.active::after {
   width: 100%;
 }
 

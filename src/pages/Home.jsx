@@ -17,13 +17,48 @@ export default function Home() {
     "Business Consultancy",
   ];
 
-  const heroImages = ["/tech/tech-bg.jpg", "/tech/cyber-bg.png"];
+  const posts = [
+    {
+      title: "Digital Marketing Tips",
+      desc: "Blog post description.",
+      date: "10/22/2025",
+      time: "1 min read",
+    },
+    {
+      title: "IT Trends",
+      desc: "Blog post description.",
+      date: "10/22/2025",
+      time: "1 min read",
+    },
+    {
+      title: "Business Growth Strategies",
+      desc: "Blog post description.",
+      date: "10/22/2025",
+      time: "1 min read",
+    },
+    {
+      title: "Case Studies",
+      desc: "Blog post description.",
+      date: "10/22/2025",
+      time: "1 min read",
+    },
+  ];
+
+  // const heroImages = [
+  //   "/tech/web-app-development.jpg",
+  //   "/tech/software-development.jpg",
+  //   "/tech/digital-marketing.jpg",
+  // ];
+
+  const heroImages = ["/tech/cyber-bg.png", "/tech/tech-bg.jpg"];
 
   const [typedText, setTypedText] = useState("");
   const [serviceIndex, setServiceIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [bgImage, setBgImage] = useState(heroImages[0]);
+  const [nextImage, setNextImage] = useState(heroImages[1]);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const current = services[serviceIndex];
@@ -54,14 +89,18 @@ export default function Home() {
   }, [charIndex, isDeleting, serviceIndex]);
 
   useEffect(() => {
-    const changeImage = () => {
+    const interval = setInterval(() => {
       const random = heroImages[Math.floor(Math.random() * heroImages.length)];
 
-      setBgImage(random);
-    };
+      setNextImage(random);
 
-    // change every 5 seconds
-    const interval = setInterval(changeImage, 5000);
+      // trigger fade
+      setToggle((prev) => !prev);
+
+      setTimeout(() => {
+        setBgImage(random);
+      }, 1000); // match CSS fade duration
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -71,10 +110,17 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section className="home-hero">
         {/* 🌌 BACKGROUND IMAGE LAYER */}
-        <div
-          className="hero-bg"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        ></div>
+        <div className="hero-bg-wrapper">
+          <div
+            className="hero-bg bg1"
+            style={{ backgroundImage: `url(${bgImage})` }}
+          ></div>
+
+          <div
+            className="hero-bg bg2"
+            style={{ backgroundImage: `url(${nextImage})` }}
+          ></div>
+        </div>
 
         {/* 🌈 GRADIENT + GLOW OVERLAY */}
         <div className="hero-overlay"></div>
@@ -140,7 +186,7 @@ export default function Home() {
       <ScrollBeam />
 
       {/* ================= PROJECTS WE DISCUSS ================= */}
-      <section className="projects-discuss" id="project">
+      {/* <section className="projects-discuss" id="project">
         <div className="pd-hero">
           <h1>
             Projects <span>We Discuss</span>
@@ -204,7 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ScrollBeam />
+      <ScrollBeam /> */}
 
       <section className="orbit-section">
         <div className="orbit-hero">
@@ -241,8 +287,333 @@ export default function Home() {
 
       <ScrollBeam />
 
+      {/* ================= OUR SERVICES ================= */}
+      <section className="services-section">
+        {/* Header */}
+        <div className="services-header">
+          <h1>
+            Our <span>Services</span>
+          </h1>
+          <p>
+            We craft powerful digital solutions that combine design, technology,
+            and strategy to help brands grow and dominate the future.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="services-grid">
+          <div className="service-card">
+            <div className="service-icon holo ai">
+              <span className="holo-core"></span>
+
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Business Profile Creation</h3>
+            <p>
+              Google Business Profile, Social Media Pages, WhatsApp Business
+              Account, Professional Business Mail, Other Digital Solutions with
+              Integration & Automation
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo dev">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              Static Website, Dynamic Website, Landing Page, Portfolio etc...
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo dev">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>App Development</h3>
+            <p>Android Apps, iOS Apps, Cross-Platform Solutions</p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo cyber">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Digital Marketing Services</h3>
+            <p>
+              WhatsApp Marketing, SMS Marketing, Google Ads, Meta Ads, Telegram
+              Ads, SEO
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo design">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Social Media Management</h3>
+            <p>Content Planning, Post Design, Scheduling, Engagement Growth</p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo cloud">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              User-Centric Design, Wireframes & Prototypes, Conversion-Optimized
+              Interfaces
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo brand">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Graphics Design Services</h3>
+            <p>
+              Logo Design, Posters & Banners, Social Media Creatives, Business
+              Branding Materials
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo ai">
+              <span className="holo-core"></span>
+
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Branding & Marketing</h3>
+            <p>Brand Strategy, Brand Identity, Online & Offline Marketing</p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo dev">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Row Calling Data</h3>
+            <p>Verified Business Leads, Industry-Specific Data</p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo cyber">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Content Creation & Video Editing Services</h3>
+            <p>Promotional Videos, Reels & Shorts, Corporate Videos</p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon holo design">
+              <span className="holo-core"></span>
+              <div className="energy-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <h3>Business Consultancy</h3>
+            <p>Business Growth Planning, Digital Transformation Strategy</p>
+          </div>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      {/* ================= OUR RECENT PROJECTS MARQUEE ================= */}
+
+      <section className="recent-projects-section">
+        <div className="recent-hero">
+          <h1>
+            Our <span>Recent Projects</span>
+          </h1>
+          <p>Latest work moving forward with innovation and performance.</p>
+        </div>
+
+        <div className="projects-marquee">
+          <div className="projects-track">
+            {[
+              {
+                title: "GD Goenka Chhibramau",
+                date: "Feb 2025",
+                tag: "Website",
+              },
+              {
+                title: "Advoque Creative",
+                date: "Feb 2025",
+                tag: "Website",
+              },
+              {
+                title: "Mera Order",
+                date: "Jul 2023",
+                tag: "Mobile App",
+              },
+              {
+                title: "Business CRM Tool",
+                date: "Jan 2024",
+                tag: "Dashboard",
+              },
+            ]
+              .concat([
+                {
+                  title: "GD Goenka Chhibramau",
+                  date: "Feb 2025",
+                  tag: "Website",
+                },
+                {
+                  title: "Advoque Creative",
+                  date: "Feb 2025",
+                  tag: "Website",
+                },
+                {
+                  title: "Mera Order",
+                  date: "Jul 2023",
+                  tag: "Mobile App",
+                },
+                {
+                  title: "Business CRM Tool",
+                  date: "Jan 2024",
+                  tag: "Dashboard",
+                },
+              ])
+              .map((p, i) => (
+                <div className="project-card" key={i}>
+                  <div className="project-img"></div>
+                  <h3>{p.title}</h3>
+                  <span className="project-date">{p.date}</span>
+                  <button>{p.tag}</button>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      <section className="blog-section">
+        {/* Header */}
+        <div className="blog-header">
+          <h1>
+            Our <span>Recent Blog</span>
+          </h1>
+          <p>Insights, ideas, and innovations from Indo Sparsh Studio.</p>
+        </div>
+
+        {/* Blog Grid */}
+        <div className="blog-grid">
+          {posts.map((post, i) => (
+            <article className="blog-card" key={i}>
+              <div className="blog-image"></div>
+
+              <div className="blog-content">
+                <h2>{post.title}</h2>
+                <p className="blog-desc">{post.desc}</p>
+
+                <div className="blog-meta">
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.time}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <ScrollBeam />
+
+      {/* ================= PROJECTS WE DISCUSS ================= */}
+      <section className="projects-discuss">
+        <div className="pd-cta">
+          <h2>Have a project in mind?</h2>
+          <p>Let’s discuss it and transform your idea into reality.</p>
+          <a href="https://wa.me/918005351770">Start a Discussion</a>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
       {/* ================= PORTFOLIO SHOWCASE ================= */}
-      <section className="portfolio-section" id="portfolio">
+      {/* <section className="portfolio-section" id="portfolio">
         <div className="portfolio-hero">
           <h1>
             Our <span>Portfolio</span>
@@ -316,7 +687,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ScrollBeam />
+      <ScrollBeam /> */}
 
       {/* ================= TESTIMONIALS ================= */}
       <section className="testimonials-section">
@@ -490,7 +861,7 @@ export default function Home() {
       <ScrollBeam />
 
       {/* ================= OUR CLIENTS ================= */}
-      <section className="clients-section">
+      {/* <section className="clients-section">
         <div className="clients-hero">
           <h1>
             Our <span>Clients</span>
@@ -499,10 +870,10 @@ export default function Home() {
             We collaborate with startups, brands, and businesses to build
             powerful digital experiences.
           </p>
-        </div>
+        </div> */}
 
-        {/* ===== CLIENT CARDS GRID ===== */}
-        <div className="clients-grid">
+      {/* ===== CLIENT CARDS GRID ===== */}
+      {/* <div className="clients-grid">
           <div className="client-card">
             <div className="client-logo">LOGO</div>
             <h3>Tech Startup</h3>
@@ -541,10 +912,10 @@ export default function Home() {
         </div>
       </section>
 
-      <ScrollBeam />
+      <ScrollBeam /> */}
 
       {/* ================= INDUSTRIES WE SERVE ================= */}
-      <section className="industries-section">
+      {/* <section className="industries-section">
         <div className="industries-hero">
           <h1>
             Industries <span>We Serve</span>
@@ -598,7 +969,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ScrollBeam />
+      <ScrollBeam /> */}
 
       {/* ================= TECHNOLOGY WE USED ================= */}
       <section className="tech-section">

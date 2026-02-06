@@ -15,7 +15,7 @@
 /* ===== LASER LINE ===== */
 .beam-core {
   position: absolute;
-  width: 92%; /* 🔥 not hard edge */
+  width: 100%; /* 🔥 not hard edge */
   height: 2px;
   border-radius: 10px;
   backdrop-filter: blur(2px);
@@ -69,6 +69,6 @@
   }
   .beam-core {
     height: 1.4px;
-    width: 80%;
+    width: 100%;
   }
 }

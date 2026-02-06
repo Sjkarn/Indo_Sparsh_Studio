@@ -4,168 +4,30 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* LEFT ALIGN */
   padding: 60px 8%;
   background: #000;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
 
 /* ================= BACKGROUND IMAGE ================= */
 
-.hero-bg {
+.hero-bg-wrapper {
   position: absolute;
   inset: 0;
-
-  /* background image will come from React inline style */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  opacity: 0.95;
-  filter: saturate(1.25) contrast(1.15) brightness(1.05);
-
-  transform: scale(1.08);
-
-  /* cinematic smooth transition when image changes */
-  transition: background-image 1.2s ease-in-out;
-
-  animation: slowZoom 24s ease-in-out infinite alternate;
-
-  /* Optional parallax feel */
-  background-attachment: fixed;
-
   z-index: 1;
 }
 
-/* ================= GLOW + DARK OVERLAY ================= */
-
-.hero-overlay {
+.hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at 25% 20%,
-      rgba(34, 211, 238, 0.18),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 75% 75%,
-      rgba(168, 85, 247, 0.18),
-      transparent 60%
-    ),
-    linear-gradient(to bottom, rgba(2, 6, 23, 0.55), rgba(0, 0, 0, 0.75));
-
-  z-index: 2;
-}
-
-/* ================= PARTICLES ================= */
-
-.cyber-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.cyber-particles span {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #22d3ee, transparent 70%);
-  border-radius: 50%;
-  filter: blur(1px);
-  opacity: 0.6;
-  animation: floatParticle 18s linear infinite;
-}
-
-/* individual positions */
-.cyber-particles span:nth-child(1) {
-  left: 10%;
-  top: 90%;
-  animation-duration: 20s;
-  transform: scale(0.8);
-}
-.cyber-particles span:nth-child(2) {
-  left: 20%;
-  top: 30%;
-  animation-duration: 16s;
-  transform: scale(1.2);
-}
-.cyber-particles span:nth-child(3) {
-  left: 35%;
-  top: 80%;
-  animation-duration: 22s;
-  transform: scale(0.6);
-}
-.cyber-particles span:nth-child(4) {
-  left: 50%;
-  top: 40%;
-  animation-duration: 18s;
-  transform: scale(1.4);
-}
-.cyber-particles span:nth-child(5) {
-  left: 65%;
-  top: 95%;
-  animation-duration: 24s;
-  transform: scale(0.9);
-}
-.cyber-particles span:nth-child(6) {
-  left: 75%;
-  top: 20%;
-  animation-duration: 17s;
-  transform: scale(1.1);
-}
-.cyber-particles span:nth-child(7) {
-  left: 85%;
-  top: 60%;
-  animation-duration: 26s;
-  transform: scale(0.7);
-}
-.cyber-particles span:nth-child(8) {
-  left: 30%;
-  top: 10%;
-  animation-duration: 19s;
-  transform: scale(1.3);
-}
-.cyber-particles span:nth-child(9) {
-  left: 55%;
-  top: 85%;
-  animation-duration: 23s;
-  transform: scale(0.6);
-}
-.cyber-particles span:nth-child(10) {
-  left: 90%;
-  top: 30%;
-  animation-duration: 21s;
-  transform: scale(1.2);
-}
-
-/* particle animation */
-@keyframes floatParticle {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(-300px) translateX(40px) scale(1.4);
-  }
-  100% {
-    transform: translateY(-700px) translateX(-40px) scale(0.8);
-    opacity: 0;
-  }
-}
-
-/* ================= CONTAINER ================= */
-
-.home-container {
-  max-width: 900px;
-  position: relative;
-  z-index: 4;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1.2s ease-in-out;
+  animation: slowZoom 24s ease-in-out infinite alternate;
 }
 
 /* ================= BACKGROUND ZOOM ================= */
@@ -179,33 +41,58 @@
   }
 }
 
-/* ================= TEXT ================= */
+/* base layer */
+.bg1 {
+  opacity: 1;
+}
+
+/* next image fade layer */
+.bg2 {
+  opacity: 0;
+}
+
+/* when toggled fade */
+.hero-bg-wrapper.active .bg2 {
+  opacity: 1;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+
+.home-container {
+  max-width: 650px;
+  margin-left: 6%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= TITLE ================= */
 
 .home-container h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
   letter-spacing: 2px;
   margin-bottom: 25px;
-  text-shadow: 0 0 25px #22d3ee;
+  color: white;
 }
 
 .home-container h1 span {
   color: #22d3ee;
-  text-shadow: 0 0 35px #22d3ee;
 }
+
+/* ================= DESCRIPTION ================= */
 
 .home-container p {
   font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.8;
   margin-bottom: 45px;
-  text-shadow: 0 0 25px #22d3ee;
+  color: #ffffff;
 }
 
 /* ================= BUTTONS ================= */
 
 .home-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -245,6 +132,26 @@
   background: #22d3ee;
   color: black;
   box-shadow: 0 0 35px #22d3ee;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .home-container {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    padding: 50px 6%;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -385,7 +292,8 @@
   max-width: 800px;
   margin: auto;
   text-align: center;
-  background: rgba(2, 6, 23, 0.9);
+  /* background: rgba(2, 6, 23, 0.9); */
+  background: linear-gradient(145deg, rgb(19, 19, 233), rgb(238, 74, 102));
   border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 28px;
   padding: 60px 40px;
@@ -1350,41 +1258,43 @@
   }
 }
 
-/* wrapper to center perfectly */
+/* ================= TYPING WRAPPER ================= */
+
 .hero-typing-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* LEFT ALIGN */
   width: 100%;
-  margin-top: 18px;
+  margin-top: -18px;
 }
 
-/* typing text */
+/* ================= TYPING TEXT ================= */
+
 .hero-service {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start; /* LEFT ALIGN */
+  text-align: left;
 
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 600;
 }
 
-/* text */
+/* ================= TEXT STYLE ================= */
+
 .typing-text {
   color: #22d3ee;
-  text-shadow:
-    0 0 10px rgba(34, 211, 238, 0.9),
-    0 0 26px rgba(34, 211, 238, 0.45);
 }
 
-/* cursor */
+/* ================= CURSOR ================= */
+
 .typing-cursor {
   margin-left: 4px;
   color: #22d3ee;
   animation: blink 1s infinite;
 }
 
-/* blink */
+/* ================= BLINK ANIMATION ================= */
+
 @keyframes blink {
   0%,
   50%,
@@ -1593,5 +1503,111 @@
 
   .orbit-hero h1 {
     letter-spacing: 1px;
+  }
+}
+
+/* ================= RECENT PROJECTS ================= */
+
+.recent-projects-section {
+  padding: 120px 0;
+  background: #020617;
+  overflow: hidden;
+}
+
+.recent-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.recent-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.recent-hero span {
+  color: #22d3ee;
+}
+
+.recent-hero p {
+  color: #94a3b8;
+}
+
+/* MARQUEE CONTAINER */
+
+.projects-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+/* TRACK */
+
+.projects-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: marqueeMove 22s linear infinite;
+}
+
+/* PAUSE on hover (premium feel) */
+
+.projects-marquee:hover .projects-track {
+  animation-play-state: paused;
+}
+
+/* CARD */
+
+.project-card {
+  width: 300px;
+  flex-shrink: 0;
+  background: #020617;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+}
+
+.project-img {
+  height: 160px;
+  background: #1e293b;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-date {
+  display: block;
+  margin: 10px 0;
+  color: #94a3b8;
+}
+
+.project-card button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  color: black;
+  font-weight: 600;
+}
+
+/* LEFT MOVING ANIMATION */
+
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(-50%);
+  }
+  85% {
+    transform: translateX(-50%); /* small pause */
+  }
+  100% {
+    transform: translateX(0);
   }
 }
