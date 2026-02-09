@@ -44,21 +44,23 @@ export default function Home() {
     },
   ];
 
-  // const heroImages = [
-  //   "/tech/web-app-development.jpg",
-  //   "/tech/software-development.jpg",
-  //   "/tech/digital-marketing.jpg",
-  // ];
+  const heroImages = [
+    "/tech/web-app-development.png",
+    "/tech/software-development.png",
+    "/tech/digital-marketing.png",
+  ];
 
-  const heroImages = ["/tech/cyber-bg.png", "/tech/tech-bg.jpg"];
+  // const heroImages = ["/tech/cyber-bg.png", "/tech/tech-bg.jpg"];
 
   const [typedText, setTypedText] = useState("");
   const [serviceIndex, setServiceIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [bgImage, setBgImage] = useState(heroImages[0]);
-  const [nextImage, setNextImage] = useState(heroImages[1]);
-  const [toggle, setToggle] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const [bg1, setBg1] = useState(heroImages[0]);
+  const [bg2, setBg2] = useState(heroImages[1]);
+  const [bg3, setBg3] = useState(heroImages[2]);
 
   useEffect(() => {
     const current = services[serviceIndex];
@@ -92,50 +94,44 @@ export default function Home() {
     const interval = setInterval(() => {
       const random = heroImages[Math.floor(Math.random() * heroImages.length)];
 
-      setNextImage(random);
+      const nextIndex = (activeIndex + 1) % 3;
 
-      // trigger fade
-      setToggle((prev) => !prev);
+      if (nextIndex === 0) setBg1(random);
+      if (nextIndex === 1) setBg2(random);
+      if (nextIndex === 2) setBg3(random);
 
-      setTimeout(() => {
-        setBgImage(random);
-      }, 1000); // match CSS fade duration
+      setActiveIndex(nextIndex);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]);
 
   return (
     <>
       {/* ================= HERO ================= */}
       <section className="home-hero">
         {/* 🌌 BACKGROUND IMAGE LAYER */}
-        <div className="hero-bg-wrapper">
+        {/* <div className="hero-bg-wrapper">
           <div
-            className="hero-bg bg1"
-            style={{ backgroundImage: `url(${bgImage})` }}
+            className={`hero-bg ${activeIndex === 0 ? "active" : ""}`}
+            style={{ backgroundImage: `url(${bg1})` }}
           ></div>
 
           <div
-            className="hero-bg bg2"
-            style={{ backgroundImage: `url(${nextImage})` }}
+            className={`hero-bg ${activeIndex === 1 ? "active" : ""}`}
+            style={{ backgroundImage: `url(${bg2})` }}
           ></div>
-        </div>
 
-        {/* 🌈 GRADIENT + GLOW OVERLAY */}
-        <div className="hero-overlay"></div>
-        {/* 🔥 PARTICLES */}
-        <div className="cyber-particles">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <div
+            className={`hero-bg ${activeIndex === 2 ? "active" : ""}`}
+            style={{ backgroundImage: `url(${bg3})` }}
+          ></div>
+        </div> */}
+
+        <div className="hero-scroll">
+          <img src={bg1} />
+          <img src={bg2} />
+          <img src={bg3} />
         </div>
 
         <div className="home-container">
@@ -708,61 +704,61 @@ export default function Home() {
                 name: "Rohit Sharma",
                 role: "Startup Founder",
                 text: "Exceptional quality and futuristic execution.",
-                img: "/tech/aws.png",
+                img: "/tech/rohit-sharma.jpg",
               },
               {
                 name: "Ananya Verma",
                 role: "Product Manager",
                 text: "Their UI/UX thinking is next-level.",
-                img: "/tech/bootstrap.png",
+                img: "/tech/ananya-verma.jpg",
               },
               {
-                name: "Daniel Cruz",
+                name: "Danial Cruz",
                 role: "SaaS CEO",
                 text: "Fast delivery without compromising stability.",
-                img: "/tech/css.png",
+                img: "/tech/danial-cruz.jpg",
               },
               {
                 name: "Priya Singh",
                 role: "Marketing Lead",
                 text: "Our conversions increased dramatically.",
-                img: "/tech/expressjs.png",
+                img: "/tech/priya-singh.jpg",
               },
               {
                 name: "Alex Morgan",
                 role: "Tech Entrepreneur",
                 text: "Clean architecture and great communication.",
-                img: "/tech/git.png",
+                img: "/tech/alex-morgan.jpg",
               },
               {
                 name: "Neha Kapoor",
                 role: "Business Owner",
                 text: "They truly understand business goals.",
-                img: "/tech/github.png",
+                img: "/tech/neha-kapoor.jpg",
               },
               {
                 name: "Michael Lee",
                 role: "CTO",
                 text: "Security-first and performance-focused team.",
-                img: "/tech/html.webp",
+                img: "/tech/michael-lee.jpg",
               },
               {
                 name: "Saurabh Jain",
                 role: "Startup Mentor",
                 text: "Highly recommended for scaling products.",
-                img: "/tech/javascript.png",
+                img: "/tech/saurabh-jain.jpg",
               },
               {
                 name: "Emily Watson",
                 role: "Design Head",
                 text: "Design systems were beautifully executed.",
-                img: "/tech/mongodb.png",
+                img: "/tech/emily-watson.jpg",
               },
               {
                 name: "Amit Patel",
                 role: "Founder",
                 text: "From idea to launch — flawless journey.",
-                img: "/tech/nodejs.png",
+                img: "/tech/amit-patel.jpg",
               },
             ]
               /* 🔁 duplicate array for infinite marquee */
@@ -771,61 +767,61 @@ export default function Home() {
                   name: "Rohit Sharma",
                   role: "Startup Founder",
                   text: "Exceptional quality and futuristic execution.",
-                  img: "/tech/aws.png",
+                  img: "/tech/rohit-sharma.jpg",
                 },
                 {
                   name: "Ananya Verma",
                   role: "Product Manager",
                   text: "Their UI/UX thinking is next-level.",
-                  img: "/tech/bootstrap.png",
+                  img: "/tech/ananya-verma.jpg",
                 },
                 {
-                  name: "Daniel Cruz",
+                  name: "Danial Cruz",
                   role: "SaaS CEO",
                   text: "Fast delivery without compromising stability.",
-                  img: "/tech/css.png",
+                  img: "/tech/danial-cruz.jpg",
                 },
                 {
                   name: "Priya Singh",
                   role: "Marketing Lead",
                   text: "Our conversions increased dramatically.",
-                  img: "/tech/expressjs.png",
+                  img: "/tech/priya-singh.jpg",
                 },
                 {
                   name: "Alex Morgan",
                   role: "Tech Entrepreneur",
                   text: "Clean architecture and great communication.",
-                  img: "/tech/git.png",
+                  img: "/tech/alex-morgan.jpg",
                 },
                 {
                   name: "Neha Kapoor",
                   role: "Business Owner",
                   text: "They truly understand business goals.",
-                  img: "/tech/github.png",
+                  img: "/tech/neha-kapoor.jpg",
                 },
                 {
                   name: "Michael Lee",
                   role: "CTO",
                   text: "Security-first and performance-focused team.",
-                  img: "/tech/html.webp",
+                  img: "/tech/michael-lee.jpg",
                 },
                 {
                   name: "Saurabh Jain",
                   role: "Startup Mentor",
                   text: "Highly recommended for scaling products.",
-                  img: "/tech/javascript.png",
+                  img: "/tech/saurabh-jain.jpg",
                 },
                 {
                   name: "Emily Watson",
                   role: "Design Head",
                   text: "Design systems were beautifully executed.",
-                  img: "/tech/mongodb.png",
+                  img: "/tech/emily-watson.jpg",
                 },
                 {
                   name: "Amit Patel",
                   role: "Founder",
                   text: "From idea to launch — flawless journey.",
-                  img: "/tech/nodejs.png",
+                  img: "/tech/amit-patel.jpg",
                 },
               ])
               .map((t, i) => (

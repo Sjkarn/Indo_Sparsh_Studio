@@ -12,49 +12,122 @@
   overflow: hidden;
 }
 
+/* ================= BACKGROUND WRAPPER ================= */
+
+/* .hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+} */
+
 /* ================= BACKGROUND IMAGE ================= */
 
-.hero-bg-wrapper {
+/* .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
+  width: 100%;
+  height: 100%;
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: opacity 1.2s ease-in-out;
-  animation: slowZoom 24s ease-in-out infinite alternate;
-}
 
-/* ================= BACKGROUND ZOOM ================= */
-
-@keyframes slowZoom {
-  from {
-    transform: scale(1.05);
-  }
-  to {
-    transform: scale(1.15);
-  }
-}
-
-/* base layer */
-.bg1 {
-  opacity: 1;
-}
-
-/* next image fade layer */
-.bg2 {
   opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  will-change: opacity;
+  transform: translateZ(0);
+} */
+
+/* Active layer visible */
+
+/* .hero-bg.active {
+  opacity: 1;
+} */
+
+.hero-scroll {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* when toggled fade */
-.hero-bg-wrapper.active .bg2 {
-  opacity: 1;
+.hero-scroll img {
+  min-width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
+
+/* ================= BEAUTIFUL SCROLLBAR ================= */
+
+.hero-scroll::-webkit-scrollbar {
+  height: 8px; /* scrollbar thickness */
+}
+
+.hero-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.hero-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+  transition: 0.3s;
+}
+
+.hero-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #06b6d4, #9333ea);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+}
+
+/* ================= RESPONSIVE IMPROVEMENTS ================= */
+
+/* Large screens (ultra-wide monitors) */
+
+/* @media (min-width: 1600px) {
+  .hero-bg {
+    background-position: center top;
+  }
+} */
+
+/* Tablets */
+
+/* @media (max-width: 1024px) {
+  .hero-bg {
+    background-position: center center;
+  }
+} */
+
+/* Mobile */
+
+/* @media (max-width: 768px) {
+  .hero-bg-wrapper {
+    position: absolute;
+  }
+
+  .hero-bg {
+    background-position: center center;
+    background-size: cover;
+  }
+} */
+
+/* Small phones */
+
+/* @media (max-width: 480px) {
+  .hero-bg {
+    background-position: center center;
+  }
+} */
 
 /* ================= CONTENT CONTAINER ================= */
 
@@ -156,11 +229,11 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .hero-bg {
-    background-attachment: scroll; /* fix mobile parallax issues */
+    background-attachment: scroll; 
   }
-}
+} */
 
 @media (max-width: 600px) {
   .home-hero {
@@ -293,7 +366,7 @@
   margin: auto;
   text-align: center;
   /* background: rgba(2, 6, 23, 0.9); */
-  background: linear-gradient(145deg, rgb(19, 19, 233), rgb(238, 74, 102));
+  background: linear-gradient(145deg, rgb(2, 2, 78), rgb(98, 220, 241));
   border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 28px;
   padding: 60px 40px;
