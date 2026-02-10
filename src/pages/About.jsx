@@ -1,5 +1,13 @@
 ﻿import "./About.css";
 import ScrollBeam from "./ScrollBeam";
+import {
+  FaBrain,
+  FaCogs,
+  FaBolt,
+  FaShieldAlt,
+  FaChartLine,
+  FaRocket,
+} from "react-icons/fa";
 
 export default function About() {
   return (
@@ -46,7 +54,10 @@ export default function About() {
         {/* GLASS CARDS */}
         <div className="about2-cards">
           <div className="a2-card">
-            <h3>🚀 Mission</h3>
+            <div className="a2-icon">
+              <FaRocket />
+            </div>
+            <h3>Mission</h3>
             <p>
               Empower brands with intelligent digital solutions that scale,
               perform, and inspire.
@@ -54,7 +65,10 @@ export default function About() {
           </div>
 
           <div className="a2-card glow">
-            <h3>🧠 Vision</h3>
+            <div className="a2-icon">
+              <FaBrain />
+            </div>
+            <h3>Vision</h3>
             <p>
               To shape the future of human-centered technology through immersive
               experiences.
@@ -62,7 +76,10 @@ export default function About() {
           </div>
 
           <div className="a2-card">
-            <h3>⚡ What We Do</h3>
+            <div className="a2-icon">
+              <FaBolt />
+            </div>
+            <h3>What We Do</h3>
             <p>
               Web & app development, AI integrations, UI/UX systems, and digital
               growth platforms.
@@ -88,7 +105,9 @@ export default function About() {
 
         <div className="leader-grid">
           <div className="leader-card glow">
-            <div className="leader-icon">🧠</div>
+            <div className="leader-icon">
+              <FaBrain />
+            </div>
             <h3>Expert-Driven Strategy</h3>
             <p>
               Every project is crafted by experienced IT, design, and growth
@@ -97,7 +116,9 @@ export default function About() {
           </div>
 
           <div className="leader-card">
-            <div className="leader-icon">⚙️</div>
+            <div className="leader-icon">
+              <FaCogs />
+            </div>
             <h3>End-to-End Execution</h3>
             <p>
               From ideation to deployment, security to scalability — everything
@@ -106,7 +127,9 @@ export default function About() {
           </div>
 
           <div className="leader-card glow">
-            <div className="leader-icon">⚡</div>
+            <div className="leader-icon">
+              <FaBolt />
+            </div>
             <h3>Speed with Stability</h3>
             <p>
               Fast delivery without compromising performance, security, or
@@ -115,7 +138,9 @@ export default function About() {
           </div>
 
           <div className="leader-card">
-            <div className="leader-icon">🔐</div>
+            <div className="leader-icon">
+              <FaShieldAlt />
+            </div>
             <h3>Security-First Architecture</h3>
             <p>
               Cyber-aware systems, secure APIs, and payment-ready
@@ -124,7 +149,9 @@ export default function About() {
           </div>
 
           <div className="leader-card glow">
-            <div className="leader-icon">📊</div>
+            <div className="leader-icon">
+              <FaChartLine />
+            </div>
             <h3>Result-Oriented Mindset</h3>
             <p>
               We focus on conversions, growth, automation, and ROI — not just
@@ -133,7 +160,9 @@ export default function About() {
           </div>
 
           <div className="leader-card">
-            <div className="leader-icon">🚀</div>
+            <div className="leader-icon">
+              <FaRocket />
+            </div>
             <h3>Future-Ready Technology</h3>
             <p>
               Modern stacks, AI integrations, and scalable systems that grow

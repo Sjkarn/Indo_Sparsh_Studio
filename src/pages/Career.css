@@ -82,6 +82,24 @@
   font-size: 0.9rem;
 }
 
+/* ================= REACT ICON STYLE ================= */
+
+.career-icon {
+  margin-right: 10px;
+  color: #22d3ee;
+  font-size: 1.2em;
+  vertical-align: middle;
+
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.8));
+  transition: 0.3s ease;
+}
+
+.highlight-card:hover .career-icon,
+.pipeline-card:hover .career-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 1));
+}
+
 /* ================= JOBS ================= */
 
 .career-title {

@@ -1,6 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Home.css";
 import ScrollBeam from "./ScrollBeam";
+import {
+  FaHandshake,
+  FaGlobe,
+  FaBriefcase,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
 export default function Home() {
   const services = [
@@ -23,24 +30,28 @@ export default function Home() {
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog1.png",
     },
     {
       title: "IT Trends",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog2.png",
     },
     {
       title: "Business Growth Strategies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog3.png",
     },
     {
       title: "Case Studies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog4.png",
     },
   ];
 
@@ -106,6 +117,22 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [activeIndex]);
 
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+      left: -window.innerWidth,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: window.innerWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -128,11 +155,22 @@ export default function Home() {
           ></div>
         </div> */}
 
-        <div className="hero-scroll">
+        {/* LEFT BUTTON */}
+        <button className="scroll-btn left" onClick={scrollLeft}>
+          <FaChevronLeft />
+        </button>
+
+        {/* SCROLL AREA */}
+        <div className="hero-scroll" ref={scrollRef}>
           <img src={bg1} />
           <img src={bg2} />
           <img src={bg3} />
         </div>
+
+        {/* RIGHT BUTTON */}
+        <button className="scroll-btn right" onClick={scrollRight}>
+          <FaChevronRight />
+        </button>
 
         <div className="home-container">
           <h1>
@@ -248,6 +286,7 @@ export default function Home() {
 
       <ScrollBeam /> */}
 
+      {/* ================= WE SERVE FOR ================= */}
       <section className="orbit-section">
         <div className="orbit-hero">
           <h1>
@@ -262,20 +301,26 @@ export default function Home() {
 
         <div className="jump-container">
           {/* Consultancy */}
-          <div className="jump-icon consult">
-            <div className="icon">🤝</div>
+          <div className="jump-icon">
+            <div className="icon">
+              <FaHandshake />
+            </div>
             <p>Consultancy</p>
           </div>
 
           {/* Development */}
-          <div className="jump-icon dev">
-            <div className="icon">🌐</div>
+          <div className="jump-icon">
+            <div className="icon">
+              <FaGlobe />
+            </div>
             <p>Development</p>
           </div>
 
           {/* Management */}
-          <div className="jump-icon manage">
-            <div className="icon">💼</div>
+          <div className="jump-icon">
+            <div className="icon">
+              <FaBriefcase />
+            </div>
             <p>Management</p>
           </div>
         </div>
@@ -565,6 +610,7 @@ export default function Home() {
 
       <ScrollBeam />
 
+      {/* ================= OUR RECENT BLOGS ================= */}
       <section className="blog-section">
         {/* Header */}
         <div className="blog-header">
@@ -578,7 +624,10 @@ export default function Home() {
         <div className="blog-grid">
           {posts.map((post, i) => (
             <article className="blog-card" key={i}>
-              <div className="blog-image"></div>
+              <div
+                className="blog-image"
+                style={{ backgroundImage: `url(${post.image})` }}
+              ></div>
 
               <div className="blog-content">
                 <h2>{post.title}</h2>

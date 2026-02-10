@@ -33,6 +33,7 @@ body {
 /* Force pointer for interactive elements */
 .scroll-arrow,
 .scroll-arrow *,
+.scroll-btn *,
 a,
 button,
 .call-float,

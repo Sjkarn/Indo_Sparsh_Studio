@@ -1,4 +1,13 @@
 ﻿import "./Career.css";
+import {
+  FaRocket,
+  FaBrain,
+  FaGlobe,
+  FaPaperPlane,
+  FaComments,
+} from "react-icons/fa";
+
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 
 export default function Career() {
   return (
@@ -17,15 +26,26 @@ export default function Career() {
       {/* WHY WORK WITH US */}
       <div className="career-highlights">
         <div className="highlight-card">
-          <h3>🚀 Growth Culture</h3>
+          <h3>
+            <FaRocket className="career-icon" />
+            Growth Culture
+          </h3>
           <p>Learn, build, and evolve with a team that pushes boundaries.</p>
         </div>
+
         <div className="highlight-card glow">
-          <h3>🧠 Innovative Projects</h3>
+          <h3>
+            <FaBrain className="career-icon" />
+            Innovative Projects
+          </h3>
           <p>Work on AI, immersive UI, and next-gen digital platforms.</p>
         </div>
+
         <div className="highlight-card">
-          <h3>🌍 Remote Friendly</h3>
+          <h3>
+            <FaGlobe className="career-icon" />
+            Remote Friendly
+          </h3>
           <p>Flexible work culture focused on results and creativity.</p>
         </div>
       </div>
@@ -39,7 +59,10 @@ export default function Career() {
         <div className="pipeline-step s1">
           <div className="pipeline-core"></div>
           <div className="pipeline-card">
-            <h3>📩 Apply</h3>
+            <h3>
+              <FaPaperPlane className="career-icon" />
+              Apply
+            </h3>
             <p>Submit your profile and portfolio.</p>
           </div>
         </div>
@@ -47,7 +70,10 @@ export default function Career() {
         <div className="pipeline-step s2">
           <div className="pipeline-core"></div>
           <div className="pipeline-card glow">
-            <h3>🧠 Screening</h3>
+            <h3>
+              <FaBrain className="career-icon" />
+              Screening
+            </h3>
             <p>We analyze skills and potential.</p>
           </div>
         </div>
@@ -55,7 +81,10 @@ export default function Career() {
         <div className="pipeline-step s3">
           <div className="pipeline-core"></div>
           <div className="pipeline-card">
-            <h3>💬 Interview</h3>
+            <h3>
+              <FaComments className="career-icon" />
+              Interview
+            </h3>
             <p>Meet the Indo Sparsh team.</p>
           </div>
         </div>
@@ -63,7 +92,10 @@ export default function Career() {
         <div className="pipeline-step s4">
           <div className="pipeline-core"></div>
           <div className="pipeline-card glow">
-            <h3>⚡ Task</h3>
+            <h3>
+              <HiOutlineClipboardDocumentList className="career-icon" />
+              Task
+            </h3>
             <p>Show how you think and build.</p>
           </div>
         </div>
@@ -71,7 +103,10 @@ export default function Career() {
         <div className="pipeline-step s5">
           <div className="pipeline-core"></div>
           <div className="pipeline-card">
-            <h3>🚀 Welcome</h3>
+            <h3>
+              <FaRocket className="career-icon" />
+              Welcome
+            </h3>
             <p>You become part of Indo Sparsh.</p>
           </div>
         </div>

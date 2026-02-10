@@ -7,24 +7,28 @@ export default function Blog() {
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog1.png",
     },
     {
       title: "IT Trends",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog2.png",
     },
     {
       title: "Business Growth Strategies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog3.png",
     },
     {
       title: "Case Studies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
+      image: "/tech/blog4.png",
     },
   ];
 
@@ -65,7 +69,10 @@ export default function Blog() {
       <div className="blog-grid">
         {posts.map((post, i) => (
           <article className="blog-card" key={i}>
-            <div className="blog-image"></div>
+            <div
+              className="blog-image"
+              style={{ backgroundImage: `url(${post.image})` }}
+            ></div>
 
             <div className="blog-content">
               <h2>{post.title}</h2>
