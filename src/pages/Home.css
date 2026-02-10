@@ -102,7 +102,7 @@
 }
 
 /* =====================================================
-   SCROLL BUTTONS (PREMIUM GLASS STYLE)
+   ULTRA PREMIUM SCROLL BUTTONS
 ===================================================== */
 
 .scroll-btn {
@@ -110,50 +110,112 @@
   top: 50%;
   transform: translateY(-50%);
 
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
 
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 20px;
+  font-size: 22px;
   color: white;
 
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 15, 0.35);
+  backdrop-filter: blur(18px);
 
-  transition: all 0.3s ease;
+  box-shadow:
+    inset 0 0 12px rgba(255, 255, 255, 0.05),
+    0 0 25px rgba(34, 211, 238, 0.15);
+
+  transition: all 0.4s ease;
 
   z-index: 10;
+  overflow: hidden;
 }
 
-/* LEFT BUTTON */
+/* GLOW RING ANIMATION */
+
+.scroll-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #22d3ee, #a855f7, #ec4899, #22d3ee);
+
+  background-size: 300% 300%;
+
+  opacity: 0;
+  z-index: -1;
+
+  animation: borderFlow 5s linear infinite;
+  transition: opacity 0.4s ease;
+}
+
+/* FLOATING MICRO ANIMATION */
+
+.scroll-btn {
+  animation: floatBtn 4s ease-in-out infinite;
+}
+
+/* LEFT / RIGHT */
 
 .scroll-btn.left {
-  left: 20px;
+  left: 25px;
 }
 
-/* RIGHT BUTTON */
-
 .scroll-btn.right {
-  right: 20px;
+  right: 25px;
 }
 
 /* HOVER EFFECT */
 
 .scroll-btn:hover {
-  background: linear-gradient(135deg, #22d3ee, #a855f7);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.7);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow:
+    0 0 35px rgba(34, 211, 238, 0.6),
+    0 0 80px rgba(168, 85, 247, 0.35);
+}
+
+.scroll-btn:hover::before {
+  opacity: 1;
+}
+
+/* CLICK EFFECT */
+
+.scroll-btn:active {
+  transform: translateY(-50%) scale(0.92);
 }
 
 /* =====================================================
-   RESPONSIVE DESIGN
+   ANIMATIONS
+===================================================== */
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes floatBtn {
+  0%,
+  100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(calc(-50% - 6px));
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
 ===================================================== */
 
 @media (max-width: 1024px) {
@@ -174,8 +236,8 @@
 
 @media (max-width: 480px) {
   .scroll-btn {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     font-size: 14px;
   }
 }
