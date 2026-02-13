@@ -271,6 +271,13 @@ export default function DigitalMarketing() {
 
         <h2>9. Analytics: Don't Drown in Data</h2>
 
+        <p>
+          Google Analytics, Meta Insights, Search Console—there's endless data.
+          But data without action is just noise.
+        </p>
+
+        <p>Focus on 3-5 metrics that actually matter for your goal:</p>
+
         <table className="blog-table">
           <thead>
             <tr>
@@ -301,6 +308,16 @@ export default function DigitalMarketing() {
             </tr>
           </tbody>
         </table>
+
+        <p>
+          Check dashboards weekly. Tweak campaigns monthly. Review strategy
+          quarterly.
+        </p>
+
+        <p className="tip">
+          Tip: Create a one-page dashboard. If it doesn't fit one page, you're
+          tracking too much.
+        </p>
 
         <h2>10. Partner with People, Not Just Agencies</h2>
 
