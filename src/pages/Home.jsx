@@ -32,7 +32,8 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
-      link: "/digital-marketing", // 👈 redirect page
+      link: "https://indo-sparsh-studio.vercel.app/digital-marketing", // 👈 redirect page
+      // link: "/digital-marketing", 
     },
     {
       title: "IT Trends",
