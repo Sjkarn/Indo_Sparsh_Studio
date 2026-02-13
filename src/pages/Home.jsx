@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import ScrollBeam from "./ScrollBeam";
 import {
@@ -32,8 +33,7 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
-      link: "https://indo-sparsh-studio.vercel.app/digital-marketing", // 👈 redirect page
-      // link: "/digital-marketing", 
+      link: "/digital-marketing", // 👈 redirect page
     },
     {
       title: "IT Trends",
@@ -732,9 +732,9 @@ export default function Home() {
                   <span>{post.time}</span>
 
                   {/* clickable icon */}
-                  <a href={post.link} className="blog-link">
+                  <Link to={post.link} className="blog-link">
                     <FaLink />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>
