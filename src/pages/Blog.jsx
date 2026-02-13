@@ -1,4 +1,5 @@
 ﻿import "./Blog.css";
+import { Link } from "react-router-dom";
 import { FaLink } from "react-icons/fa";
 
 export default function Blog() {
@@ -86,9 +87,9 @@ export default function Blog() {
                 <span>{post.time}</span>
 
                 {/* clickable icon */}
-                <a href={post.link} className="blog-link">
+                <Link to={post.link} className="blog-link">
                   <FaLink />
-                </a>
+                </Link>
               </div>
             </div>
           </article>
