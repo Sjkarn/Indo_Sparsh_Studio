@@ -1,4 +1,5 @@
 ﻿import "./Blog.css";
+import { FaLink } from "react-icons/fa";
 
 export default function Blog() {
   const posts = [
@@ -7,28 +8,32 @@ export default function Blog() {
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog1.png",
+      image: "/tech/blog1.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "IT Trends",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog2.png",
+      image: "/tech/blog2.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog3.png",
+      image: "/tech/blog3.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Case Studies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog4.png",
+      image: "/tech/blog4.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
   ];
 
@@ -82,6 +87,11 @@ export default function Blog() {
                 <span>{post.date}</span>
                 <span>•</span>
                 <span>{post.time}</span>
+
+                {/* clickable icon */}
+                <a href={post.link} className="blog-link">
+                  <FaLink />
+                </a>
               </div>
             </div>
           </article>

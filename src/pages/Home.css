@@ -989,6 +989,22 @@
   }
 }
 
+/* ===== REACT ICON STYLE ===== */
+
+.industry-icon {
+  font-size: 42px;
+  color: #22d3ee;
+  margin-bottom: 14px;
+
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+  transition: 0.4s ease;
+}
+
+.industry-card:hover .industry-icon {
+  transform: scale(1.15) rotate(5deg);
+  color: #a855f7;
+}
+
 /* responsive */
 @media (max-width: 600px) {
   .industries-section {
@@ -1244,6 +1260,12 @@
   padding: 30px 26px;
   border-radius: 26px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  max-width: 340px; /* prevent infinite stretch */
+
   background: linear-gradient(
     180deg,
     rgba(2, 6, 23, 0.92),
@@ -1307,6 +1329,10 @@
 
 .testimonial-card.glow {
   border-color: rgba(168, 85, 247, 0.35);
+}
+
+.testimonial-card p {
+  flex-grow: 1; /* keeps layout balanced */
 }
 
 /* ===== FLOATING AURA ===== */
@@ -1420,6 +1446,12 @@
   color: #e5e7eb;
   margin-bottom: 16px;
   line-height: 1.65;
+
+  /* ⭐ IMPORTANT FIXES */
+
+  white-space: normal; /* allow wrapping */
+  word-break: break-word; /* break long words */
+  overflow-wrap: anywhere; /* strong wrapping */
 }
 
 .testimonial-card h3 {
@@ -1726,11 +1758,22 @@
   box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
 }
 
-.project-img {
+/* .project-img {
   height: 160px;
   background: #1e293b;
   border-radius: 10px;
   margin-bottom: 15px;
+} */
+
+.project-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-date {

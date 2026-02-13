@@ -7,6 +7,14 @@ import {
   FaBriefcase,
   FaChevronLeft,
   FaChevronRight,
+  FaHeartbeat,
+  FaShoppingCart,
+  FaGraduationCap,
+  FaUniversity,
+  FaGamepad,
+  FaTruck,
+  FaRobot,
+  FaLink,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -30,28 +38,32 @@ export default function Home() {
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog1.png",
+      image: "/tech/blog1.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "IT Trends",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog2.png",
+      image: "/tech/blog2.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog3.png",
+      image: "/tech/blog3.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Case Studies",
       desc: "Blog post description.",
       date: "10/22/2025",
       time: "1 min read",
-      image: "/tech/blog4.png",
+      image: "/tech/blog4.jpeg",
+      link: "/blog-content", // 👈 redirect page
     },
   ];
 
@@ -540,6 +552,71 @@ export default function Home() {
 
       <ScrollBeam />
 
+      {/* ================= INDUSTRIES WE SERVE ================= */}
+      <section className="industries-section">
+        <div className="industries-hero">
+          <h1>
+            Industries <span>We Serve</span>
+          </h1>
+          <p>
+            We design and develop powerful digital products across multiple
+            industries, combining technology, creativity, and innovation.
+          </p>
+        </div>
+
+        <div className="industries-grid">
+          <div className="industry-card">
+            <FaHeartbeat className="industry-icon" />
+            <h3>Healthcare</h3>
+            <p>Hospital systems, health apps, dashboards.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <FaShoppingCart className="industry-icon" />
+            <h3>E-Commerce</h3>
+            <p>Online stores, marketplaces, booking platforms.</p>
+          </div>
+
+          <div className="industry-card">
+            <FaGraduationCap className="industry-icon" />
+            <h3>Education</h3>
+            <p>E-learning platforms, LMS systems, portals.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <FaBriefcase className="industry-icon" />
+            <h3>Business & Startups</h3>
+            <p>CRMs, automation tools, admin panels.</p>
+          </div>
+
+          <div className="industry-card">
+            <FaUniversity className="industry-icon" />
+            <h3>Finance & FinTech</h3>
+            <p>Secure apps, analytics platforms, fintech tools.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <FaGamepad className="industry-icon" />
+            <h3>Media & Gaming</h3>
+            <p>Interactive apps, communities, creative tech.</p>
+          </div>
+
+          <div className="industry-card">
+            <FaTruck className="industry-icon" />
+            <h3>Logistics</h3>
+            <p>Tracking systems, fleet dashboards.</p>
+          </div>
+
+          <div className="industry-card glow">
+            <FaRobot className="industry-icon" />
+            <h3>AI & Automation</h3>
+            <p>Chatbots, smart tools, intelligent systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <ScrollBeam />
+
       {/* ================= OUR RECENT PROJECTS MARQUEE ================= */}
 
       <section className="recent-projects-section">
@@ -557,21 +634,25 @@ export default function Home() {
                 title: "GD Goenka Chhibramau",
                 date: "Feb 2025",
                 tag: "Website",
+                image: "/tech/project1.png",
               },
               {
                 title: "Advoque Creative",
                 date: "Feb 2025",
                 tag: "Website",
+                image: "/tech/project2.png",
               },
               {
                 title: "Mera Order",
                 date: "Jul 2023",
                 tag: "Mobile App",
+                image: "/tech/project3.png",
               },
               {
                 title: "Business CRM Tool",
                 date: "Jan 2024",
                 tag: "Dashboard",
+                image: "/tech/project4.png",
               },
             ]
               .concat([
@@ -579,26 +660,33 @@ export default function Home() {
                   title: "GD Goenka Chhibramau",
                   date: "Feb 2025",
                   tag: "Website",
+                  image: "/tech/project1.png",
                 },
                 {
                   title: "Advoque Creative",
                   date: "Feb 2025",
                   tag: "Website",
+                  image: "/tech/project2.png",
                 },
                 {
                   title: "Mera Order",
                   date: "Jul 2023",
                   tag: "Mobile App",
+                  image: "/tech/project3.png",
                 },
                 {
                   title: "Business CRM Tool",
                   date: "Jan 2024",
                   tag: "Dashboard",
+                  image: "/tech/project4.png",
                 },
               ])
               .map((p, i) => (
                 <div className="project-card" key={i}>
-                  <div className="project-img"></div>
+                  <div
+                    className="project-img"
+                    style={{ backgroundImage: `url(${p.image})` }}
+                  ></div>
                   <h3>{p.title}</h3>
                   <span className="project-date">{p.date}</span>
                   <button>{p.tag}</button>
@@ -637,6 +725,11 @@ export default function Home() {
                   <span>{post.date}</span>
                   <span>•</span>
                   <span>{post.time}</span>
+
+                  {/* clickable icon */}
+                  <a href={post.link} className="blog-link">
+                    <FaLink />
+                  </a>
                 </div>
               </div>
             </article>
@@ -752,13 +845,13 @@ export default function Home() {
               {
                 name: "Rohit Sharma",
                 role: "Startup Founder",
-                text: "Exceptional quality and futuristic execution.",
+                text: "They didn't just design—they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
                 img: "/tech/rohit-sharma.jpg",
               },
               {
                 name: "Ananya Verma",
                 role: "Product Manager",
-                text: "Their UI/UX thinking is next-level.",
+                text: "Finding genuine leads was our biggest headache - until Indo Sparsh stepped in. They now supply bulk data to our telecaller team regularly. Fresh numbers, minimal junk, and good conversion. Our callers are actually hitting targets now.",
                 img: "/tech/ananya-verma.jpg",
               },
               {
@@ -770,19 +863,19 @@ export default function Home() {
               {
                 name: "Priya Singh",
                 role: "Marketing Lead",
-                text: "Our conversions increased dramatically.",
+                text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix—it's a perfect fit! Saved us time, money, and daily headaches.",
                 img: "/tech/priya-singh.jpg",
               },
               {
                 name: "Alex Morgan",
                 role: "Tech Entrepreneur",
-                text: "Clean architecture and great communication.",
+                text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff—practical, result-driven, and honest with limited budgets. They deliver what they promise.",
                 img: "/tech/alex-morgan.jpg",
               },
               {
                 name: "Neha Kapoor",
                 role: "Business Owner",
-                text: "They truly understand business goals.",
+                text: "I recently needed a website and came across Indo Sparsh. They built a really solid website—responsive, fast, and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
                 img: "/tech/neha-kapoor.jpg",
               },
               {
@@ -794,7 +887,7 @@ export default function Home() {
               {
                 name: "Saurabh Jain",
                 role: "Startup Mentor",
-                text: "Highly recommended for scaling products.",
+                text: "Three months back, zero leads. Now? Regular inquiries coming in. Their marketing team is down-to-earth, result-focused, and budget-conscious. No empty promises just like others - just results.  Highly recommended for startups looking for real ROI.",
                 img: "/tech/saurabh-jain.jpg",
               },
               {
@@ -806,7 +899,7 @@ export default function Home() {
               {
                 name: "Amit Patel",
                 role: "Founder",
-                text: "From idea to launch — flawless journey.",
+                text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports—they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
                 img: "/tech/amit-patel.jpg",
               },
             ]
@@ -815,13 +908,13 @@ export default function Home() {
                 {
                   name: "Rohit Sharma",
                   role: "Startup Founder",
-                  text: "Exceptional quality and futuristic execution.",
+                  text: "They didn't just design—they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
                   img: "/tech/rohit-sharma.jpg",
                 },
                 {
                   name: "Ananya Verma",
                   role: "Product Manager",
-                  text: "Their UI/UX thinking is next-level.",
+                  text: "Finding genuine leads was our biggest headache - until Indo Sparsh stepped in. They now supply bulk data to our telecaller team regularly. Fresh numbers, minimal junk, and good conversion. Our callers are actually hitting targets now.",
                   img: "/tech/ananya-verma.jpg",
                 },
                 {
@@ -833,19 +926,19 @@ export default function Home() {
                 {
                   name: "Priya Singh",
                   role: "Marketing Lead",
-                  text: "Our conversions increased dramatically.",
+                  text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix—it's a perfect fit! Saved us time, money, and daily headaches.",
                   img: "/tech/priya-singh.jpg",
                 },
                 {
                   name: "Alex Morgan",
                   role: "Tech Entrepreneur",
-                  text: "Clean architecture and great communication.",
+                  text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff—practical, result-driven, and honest with limited budgets. They deliver what they promise.",
                   img: "/tech/alex-morgan.jpg",
                 },
                 {
                   name: "Neha Kapoor",
                   role: "Business Owner",
-                  text: "They truly understand business goals.",
+                  text: "I recently needed a website and came across Indo Sparsh. They built a really solid website—responsive, fast, and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
                   img: "/tech/neha-kapoor.jpg",
                 },
                 {
@@ -857,7 +950,7 @@ export default function Home() {
                 {
                   name: "Saurabh Jain",
                   role: "Startup Mentor",
-                  text: "Highly recommended for scaling products.",
+                  text: "Three months back, zero leads. Now? Regular inquiries coming in. Their marketing team is down-to-earth, result-focused, and budget-conscious. No empty promises just like others - just results.  Highly recommended for startups looking for real ROI.",
                   img: "/tech/saurabh-jain.jpg",
                 },
                 {
@@ -869,7 +962,7 @@ export default function Home() {
                 {
                   name: "Amit Patel",
                   role: "Founder",
-                  text: "From idea to launch — flawless journey.",
+                  text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports—they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
                   img: "/tech/amit-patel.jpg",
                 },
               ])
@@ -953,63 +1046,6 @@ export default function Home() {
             <div className="client-logo">LOGO</div>
             <h3>Creative Studio</h3>
             <span>UI/UX System</span>
-          </div>
-        </div>
-      </section>
-
-      <ScrollBeam /> */}
-
-      {/* ================= INDUSTRIES WE SERVE ================= */}
-      {/* <section className="industries-section">
-        <div className="industries-hero">
-          <h1>
-            Industries <span>We Serve</span>
-          </h1>
-          <p>
-            We design and develop powerful digital products across multiple
-            industries, combining technology, creativity, and innovation.
-          </p>
-        </div>
-
-        <div className="industries-grid">
-          <div className="industry-card">
-            <h3>🏥 Healthcare</h3>
-            <p>Hospital systems, health apps, dashboards.</p>
-          </div>
-
-          <div className="industry-card glow">
-            <h3>🛒 E-Commerce</h3>
-            <p>Online stores, marketplaces, booking platforms.</p>
-          </div>
-
-          <div className="industry-card">
-            <h3>📚 Education</h3>
-            <p>E-learning platforms, LMS systems, portals.</p>
-          </div>
-
-          <div className="industry-card glow">
-            <h3>💼 Business & Startups</h3>
-            <p>CRMs, automation tools, admin panels.</p>
-          </div>
-
-          <div className="industry-card">
-            <h3>🏦 Finance & FinTech</h3>
-            <p>Secure apps, analytics platforms, fintech tools.</p>
-          </div>
-
-          <div className="industry-card glow">
-            <h3>🎮 Media & Gaming</h3>
-            <p>Interactive apps, communities, creative tech.</p>
-          </div>
-
-          <div className="industry-card">
-            <h3>🚚 Logistics</h3>
-            <p>Tracking systems, fleet dashboards.</p>
-          </div>
-
-          <div className="industry-card glow">
-            <h3>🤖 AI & Automation</h3>
-            <p>Chatbots, smart tools, intelligent systems.</p>
           </div>
         </div>
       </section>

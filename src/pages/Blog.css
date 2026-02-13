@@ -159,6 +159,19 @@
   opacity: 0.85;
 }
 
+.blog-link {
+  margin-left: auto;
+  font-size: 18px;
+  color: #22d3ee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blog-link:hover {
+  transform: scale(1.2);
+  color: #a855f7;
+}
+
 /* ================= ANIMATIONS ================= */
 
 @keyframes fadeDown {
