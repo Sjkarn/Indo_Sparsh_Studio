@@ -7,13 +7,6 @@ import {
   FaBriefcase,
   FaChevronLeft,
   FaChevronRight,
-  FaHeartbeat,
-  FaShoppingCart,
-  FaGraduationCap,
-  FaUniversity,
-  FaGamepad,
-  FaTruck,
-  FaRobot,
   FaLink,
 } from "react-icons/fa";
 
@@ -39,7 +32,7 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
-      link: "/blog-content", // 👈 redirect page
+      link: "/digital-marketing", // 👈 redirect page
     },
     {
       title: "IT Trends",
@@ -47,7 +40,6 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog2.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
@@ -55,7 +47,6 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog3.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Case Studies",
@@ -63,7 +54,6 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog4.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
   ];
 
@@ -553,11 +543,13 @@ export default function Home() {
       <ScrollBeam />
 
       {/* ================= INDUSTRIES WE SERVE ================= */}
+
       <section className="industries-section">
         <div className="industries-hero">
           <h1>
             Industries <span>We Serve</span>
           </h1>
+
           <p>
             We design and develop powerful digital products across multiple
             industries, combining technology, creativity, and innovation.
@@ -565,52 +557,64 @@ export default function Home() {
         </div>
 
         <div className="industries-grid">
-          <div className="industry-card">
-            <FaHeartbeat className="industry-icon" />
-            <h3>Healthcare</h3>
-            <p>Hospital systems, health apps, dashboards.</p>
+          <div className="industry-item">
+            <img src="/tech/real-estate.jpeg" />
+            <p>Real Estate</p>
           </div>
 
-          <div className="industry-card glow">
-            <FaShoppingCart className="industry-icon" />
-            <h3>E-Commerce</h3>
-            <p>Online stores, marketplaces, booking platforms.</p>
+          <div className="industry-item">
+            <img src="/tech/education.jpeg" />
+            <p>Education</p>
           </div>
 
-          <div className="industry-card">
-            <FaGraduationCap className="industry-icon" />
-            <h3>Education</h3>
-            <p>E-learning platforms, LMS systems, portals.</p>
+          <div className="industry-item">
+            <img src="/tech/ecommerce.jpeg" />
+            <p>Ecommerce</p>
           </div>
 
-          <div className="industry-card glow">
-            <FaBriefcase className="industry-icon" />
-            <h3>Business & Startups</h3>
-            <p>CRMs, automation tools, admin panels.</p>
+          <div className="industry-item">
+            <img src="/tech/automotive.jpeg" />
+            <p>Automotive</p>
           </div>
 
-          <div className="industry-card">
-            <FaUniversity className="industry-icon" />
-            <h3>Finance & FinTech</h3>
-            <p>Secure apps, analytics platforms, fintech tools.</p>
+          <div className="industry-item">
+            <img src="/tech/finance.jpeg" />
+            <p>Banking & Finance</p>
           </div>
 
-          <div className="industry-card glow">
-            <FaGamepad className="industry-icon" />
-            <h3>Media & Gaming</h3>
-            <p>Interactive apps, communities, creative tech.</p>
+          <div className="industry-item">
+            <img src="/tech/healthcare.jpeg" />
+            <p>Healthcare</p>
           </div>
 
-          <div className="industry-card">
-            <FaTruck className="industry-icon" />
-            <h3>Logistics</h3>
-            <p>Tracking systems, fleet dashboards.</p>
+          <div className="industry-item">
+            <img src="/tech/tourism.jpeg" />
+            <p>Hospitality & Tourism</p>
           </div>
 
-          <div className="industry-card glow">
-            <FaRobot className="industry-icon" />
-            <h3>AI & Automation</h3>
-            <p>Chatbots, smart tools, intelligent systems.</p>
+          <div className="industry-item">
+            <img src="/tech/media.jpeg" />
+            <p>Entertainment</p>
+          </div>
+
+          <div className="industry-item">
+            <img src="/tech/organization.jpeg" />
+            <p>Non-Profit Organization</p>
+          </div>
+
+          <div className="industry-item">
+            <img src="/tech/sports.jpeg" />
+            <p>Sports & Fitness</p>
+          </div>
+
+          <div className="industry-item">
+            <img src="/tech/solar.jpeg" />
+            <p>Solar Energy</p>
+          </div>
+
+          <div className="industry-item">
+            <img src="/tech/technology.jpeg" />
+            <p>Technology & Software</p>
           </div>
         </div>
       </section>

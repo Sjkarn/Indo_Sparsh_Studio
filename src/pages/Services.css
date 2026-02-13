@@ -16,7 +16,7 @@
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   margin-bottom: 20px;
   letter-spacing: 3px;
-  text-shadow: 0 0 25px #22d3ee;
+  /* text-shadow: 0 0 25px #22d3ee; */
 }
 
 .services-header h1 span {

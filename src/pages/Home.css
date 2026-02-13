@@ -857,8 +857,8 @@
 .tech-hero h1 {
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   letter-spacing: 3px;
-  margin-bottom: 14px;
-  text-shadow: 0 0 25px #22d3ee;
+  margin-bottom: 20px;
+  /* text-shadow: 0 0 25px #22d3ee; */
 }
 
 .tech-hero span {
@@ -877,26 +877,20 @@
   }
 }
 
-/* ================= INDUSTRIES WE SERVE ================= */
+/* ================= INDUSTRIES SECTION ================= */
 
 .industries-section {
-  padding: 110px 8%;
+  padding: 100px 8%;
   background: radial-gradient(circle at top, #020617, #000);
-  color: white;
-  position: relative;
+  text-align: center;
 }
 
-.industries-hero {
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto 70px;
-}
+/* HERO */
 
 .industries-hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-  text-shadow: 0 0 30px #22d3ee;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .industries-hero span {
@@ -905,111 +899,50 @@
 
 .industries-hero p {
   color: #94a3b8;
-  line-height: 1.8;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 60px;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
-/* ===== CARD ===== */
+/* ITEM */
 
-.industry-card {
-  background: rgba(2, 6, 23, 0.9);
-  border-radius: 22px;
-  padding: 40px 26px;
-  border: 1px solid rgba(34, 211, 238, 0.35);
-  box-shadow:
-    0 0 25px rgba(34, 211, 238, 0.15),
-    inset 0 0 20px rgba(34, 211, 238, 0.05);
-
-  backdrop-filter: blur(12px);
-  position: relative;
-  overflow: hidden;
-  transition: 0.45s ease;
+.industry-item {
+  text-align: center;
+  cursor: pointer;
 }
 
-/* hologram shine */
-.industry-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(34, 211, 238, 0.2),
-    transparent
-  );
-  opacity: 0;
-  transition: 0.4s;
+/* IMAGE STYLE */
+
+.industry-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+
+  transition: 0.3s ease;
 }
 
-.industry-card:hover::before {
-  opacity: 1;
+/* HOVER LIKE REAL SITE */
+
+.industry-item:hover img {
+  transform: translateY(-6px) scale(1.05);
 }
 
-.industry-card:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow:
-    0 0 45px rgba(34, 211, 238, 0.45),
-    0 0 90px rgba(168, 85, 247, 0.25);
-}
+/* TEXT */
 
-/* text */
-.industry-card h3 {
-  color: #22d3ee;
-  margin-bottom: 12px;
-  letter-spacing: 1.5px;
-}
-
-.industry-card p {
-  color: #cbd5f5;
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-
-/* glowing cards */
-.industry-card.glow {
-  animation: industryGlow 6s ease-in-out infinite;
-}
-
-@keyframes industryGlow {
-  0% {
-    box-shadow: 0 0 20px #22d3ee;
-  }
-  50% {
-    box-shadow: 0 0 40px #a855f7;
-  }
-  100% {
-    box-shadow: 0 0 20px #22d3ee;
-  }
-}
-
-/* ===== REACT ICON STYLE ===== */
-
-.industry-icon {
-  font-size: 42px;
-  color: #22d3ee;
-  margin-bottom: 14px;
-
-  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
-  transition: 0.4s ease;
-}
-
-.industry-card:hover .industry-icon {
-  transform: scale(1.15) rotate(5deg);
-  color: #a855f7;
-}
-
-/* responsive */
-@media (max-width: 600px) {
-  .industries-section {
-    padding: 80px 6%;
-  }
+.industry-item p {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
 
 /* ================= PORTFOLIO SECTION ================= */
@@ -1217,11 +1150,12 @@
 .testimonials-hero h1 {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
 
 .testimonials-hero span {
   color: #22d3ee;
-  text-shadow: 0 0 18px rgba(34, 211, 238, 0.5);
+  /* text-shadow: 0 0 18px rgba(34, 211, 238, 0.5); */
 }
 
 .testimonials-hero p {
@@ -1706,6 +1640,7 @@
 
 .recent-hero h1 {
   font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
 }
 
 .recent-hero span {

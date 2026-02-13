@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
-import BlogContent from "./pages/BlogContent";
+import DigitalMarketing from "./pages/DigitalMarketing";
 
 export default function App() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog-content" element={<BlogContent />} />
+        <Route path="/digital-marketing" element={<DigitalMarketing />} />
       </Routes>
     </Layout>
   );

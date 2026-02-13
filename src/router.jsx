@@ -6,7 +6,7 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
-import BlogContent from "./pages/BlogContent";
+import DigitalMarketing from "./pages/DigitalMarketing";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "career", element: <Career /> },
       { path: "contact", element: <Contact /> },
-      { path: "blog-content", element: <BlogContent /> },
+      { path: "digital-marketing", element: <DigitalMarketing /> },
     ],
   },
 ]);

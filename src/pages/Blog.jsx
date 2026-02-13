@@ -9,7 +9,7 @@ export default function Blog() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
-      link: "/blog-content", // 👈 redirect page
+      link: "/digital-marketing", // 👈 redirect page
     },
     {
       title: "IT Trends",
@@ -17,7 +17,6 @@ export default function Blog() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog2.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
@@ -25,7 +24,6 @@ export default function Blog() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog3.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
     {
       title: "Case Studies",
@@ -33,7 +31,6 @@ export default function Blog() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog4.jpeg",
-      link: "/blog-content", // 👈 redirect page
     },
   ];
 
