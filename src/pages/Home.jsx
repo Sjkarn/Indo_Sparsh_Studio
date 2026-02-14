@@ -41,6 +41,7 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog2.jpeg",
+      link: "/it-trends", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
@@ -48,6 +49,7 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog3.jpeg",
+      link: "/business-growth", // 👈 redirect page
     },
     {
       title: "Case Studies",
@@ -55,6 +57,7 @@ export default function Home() {
       date: "10/22/2025",
       time: "1 min read",
       image: "/tech/blog4.jpeg",
+      link: "/case-studies", // 👈 redirect page
     },
   ];
 

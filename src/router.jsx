@@ -7,6 +7,9 @@ import Blog from "./pages/Blog";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import DigitalMarketing from "./pages/DigitalMarketing";
+import ITTrends from "./pages/ITTrends";
+import BusinessGrowth from "./pages/BusinessGrowth";
+import CaseStudies from "./pages/CaseStudies";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,9 @@ const router = createBrowserRouter([
       { path: "career", element: <Career /> },
       { path: "contact", element: <Contact /> },
       { path: "digital-marketing", element: <DigitalMarketing /> },
+      { path: "it-trends", element: <ITTrends /> },
+      { path: "business-growth", element: <BusinessGrowth /> },
+      { path: "case-studies", element: <CaseStudies /> },
     ],
   },
 ]);

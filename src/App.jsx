@@ -8,6 +8,9 @@ import Blog from "./pages/Blog";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import DigitalMarketing from "./pages/DigitalMarketing";
+import ITTrends from "./pages/ITTrends";
+import BusinessGrowth from "./pages/BusinessGrowth";
+import CaseStudies from "./pages/CaseStudies";
 
 export default function App() {
   return (
@@ -26,6 +29,9 @@ export default function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
+        <Route path="/it-trends" element={<ITTrends />} />
+        <Route path="/business-growth" element={<BusinessGrowth />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
       </Routes>
     </Layout>
   );
