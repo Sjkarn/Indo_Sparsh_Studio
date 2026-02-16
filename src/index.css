@@ -34,10 +34,11 @@ body {
 .scroll-arrow,
 .scroll-arrow *,
 .scroll-btn *,
+.s-icon *,
 .blog-link *,
 .project-link-icon *,
 a,
-button,
+/* button, */
 .call-float,
 .call-icon,
 .whatsapp-float,
