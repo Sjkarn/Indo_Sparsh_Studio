@@ -60,9 +60,7 @@ export default function Services() {
               </div>
             </div>
             <h3>Web Development</h3>
-            <p>
-              Static Website, Dynamic Website, Landing Page, Portfolio etc...
-            </p>
+            <p>Static Website, Dynamic Website, Landing Page, Portfolio etc.</p>
           </div>
 
           <div className="service-card">
@@ -78,7 +76,7 @@ export default function Services() {
               </div>
             </div>
             <h3>App Development</h3>
-            <p>Android Apps, iOS Apps, Cross-Platform Solutions</p>
+            <p>Android Apps, iOS Apps, Cross-Platform Solutions etc.</p>
           </div>
 
           <div className="service-card">
@@ -96,7 +94,7 @@ export default function Services() {
             <h3>Digital Marketing Services</h3>
             <p>
               WhatsApp Marketing, SMS Marketing, Google Ads, Meta Ads, Telegram
-              Ads, SEO
+              Ads, SEO etc.
             </p>
           </div>
 
@@ -113,7 +111,9 @@ export default function Services() {
               </div>
             </div>
             <h3>Social Media Management</h3>
-            <p>Content Planning, Post Design, Scheduling, Engagement Growth</p>
+            <p>
+              Content Planning, Post Design, Scheduling, Engagement Growth etc.
+            </p>
           </div>
 
           <div className="service-card">
@@ -131,7 +131,7 @@ export default function Services() {
             <h3>UI/UX Design</h3>
             <p>
               User-Centric Design, Wireframes & Prototypes, Conversion-Optimized
-              Interfaces
+              Interfaces etc.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export default function Services() {
             <h3>Graphics Design Services</h3>
             <p>
               Logo Design, Posters & Banners, Social Media Creatives, Business
-              Branding Materials
+              Branding Materials etc.
             </p>
           </div>
 
@@ -168,7 +168,9 @@ export default function Services() {
               </div>
             </div>
             <h3>Branding & Marketing</h3>
-            <p>Brand Strategy, Brand Identity, Online & Offline Marketing</p>
+            <p>
+              Brand Strategy, Brand Identity, Online & Offline Marketing etc.
+            </p>
           </div>
 
           <div className="service-card">
@@ -184,7 +186,7 @@ export default function Services() {
               </div>
             </div>
             <h3>Row Calling Data</h3>
-            <p>Verified Business Leads, Industry-Specific Data</p>
+            <p>Verified Business Leads, Industry-Specific Data etc.</p>
           </div>
 
           <div className="service-card">
@@ -200,7 +202,7 @@ export default function Services() {
               </div>
             </div>
             <h3>Content Creation & Video Editing Services</h3>
-            <p>Promotional Videos, Reels & Shorts, Corporate Videos</p>
+            <p>Promotional Videos, Reels & Shorts, Corporate Videos etc.</p>
           </div>
 
           <div className="service-card">
@@ -216,7 +218,9 @@ export default function Services() {
               </div>
             </div>
             <h3>Business Consultancy</h3>
-            <p>Business Growth Planning, Digital Transformation Strategy</p>
+            <p>
+              Business Growth Planning, Digital Transformation Strategy etc.
+            </p>
           </div>
         </div>
       </section>

@@ -383,9 +383,7 @@ export default function Home() {
               </div>
             </div>
             <h3>Web Development</h3>
-            <p>
-              Static Website, Dynamic Website, Landing Page, Portfolio etc...
-            </p>
+            <p>Static Website, Dynamic Website, Landing Page, Portfolio etc.</p>
           </div>
 
           <div className="service-card">
@@ -401,7 +399,7 @@ export default function Home() {
               </div>
             </div>
             <h3>App Development</h3>
-            <p>Android Apps, iOS Apps, Cross-Platform Solutions</p>
+            <p>Android Apps, iOS Apps, Cross-Platform Solutions etc.</p>
           </div>
 
           <div className="service-card">
@@ -419,7 +417,7 @@ export default function Home() {
             <h3>Digital Marketing Services</h3>
             <p>
               WhatsApp Marketing, SMS Marketing, Google Ads, Meta Ads, Telegram
-              Ads, SEO
+              Ads, SEO etc.
             </p>
           </div>
 
@@ -436,7 +434,9 @@ export default function Home() {
               </div>
             </div>
             <h3>Social Media Management</h3>
-            <p>Content Planning, Post Design, Scheduling, Engagement Growth</p>
+            <p>
+              Content Planning, Post Design, Scheduling, Engagement Growth etc.
+            </p>
           </div>
 
           <div className="service-card">
@@ -454,7 +454,7 @@ export default function Home() {
             <h3>UI/UX Design</h3>
             <p>
               User-Centric Design, Wireframes & Prototypes, Conversion-Optimized
-              Interfaces
+              Interfaces etc.
             </p>
           </div>
 
@@ -473,7 +473,7 @@ export default function Home() {
             <h3>Graphics Design Services</h3>
             <p>
               Logo Design, Posters & Banners, Social Media Creatives, Business
-              Branding Materials
+              Branding Materials etc.
             </p>
           </div>
 
@@ -491,7 +491,9 @@ export default function Home() {
               </div>
             </div>
             <h3>Branding & Marketing</h3>
-            <p>Brand Strategy, Brand Identity, Online & Offline Marketing</p>
+            <p>
+              Brand Strategy, Brand Identity, Online & Offline Marketing etc.
+            </p>
           </div>
 
           <div className="service-card">
@@ -507,7 +509,7 @@ export default function Home() {
               </div>
             </div>
             <h3>Row Calling Data</h3>
-            <p>Verified Business Leads, Industry-Specific Data</p>
+            <p>Verified Business Leads, Industry-Specific Data etc.</p>
           </div>
 
           <div className="service-card">
@@ -523,7 +525,7 @@ export default function Home() {
               </div>
             </div>
             <h3>Content Creation & Video Editing Services</h3>
-            <p>Promotional Videos, Reels & Shorts, Corporate Videos</p>
+            <p>Promotional Videos, Reels & Shorts, Corporate Videos etc.</p>
           </div>
 
           <div className="service-card">
@@ -539,7 +541,9 @@ export default function Home() {
               </div>
             </div>
             <h3>Business Consultancy</h3>
-            <p>Business Growth Planning, Digital Transformation Strategy</p>
+            <p>
+              Business Growth Planning, Digital Transformation Strategy etc.
+            </p>
           </div>
         </div>
       </section>
@@ -562,62 +566,86 @@ export default function Home() {
 
         <div className="industries-grid">
           <div className="industry-item">
-            <img src="/tech/real-estate.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/real-estate.jpeg" />
+            </div>
             <p>Real Estate</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/education.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/education.jpeg" />
+            </div>
             <p>Education</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/ecommerce.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/ecommerce.jpeg" />
+            </div>
             <p>Ecommerce</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/automotive.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/automotive.jpeg" />
+            </div>
             <p>Automotive</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/finance.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/finance.jpeg" />
+            </div>
             <p>Banking & Finance</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/healthcare.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/healthcare.jpeg" />
+            </div>
             <p>Healthcare</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/tourism.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/tourism.jpeg" />
+            </div>
             <p>Hospitality & Tourism</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/media.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/media.jpeg" />
+            </div>
             <p>Entertainment</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/organization.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/organization.jpeg" />
+            </div>
             <p>Non-Profit Organization</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/sports.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/sports.jpeg" />
+            </div>
             <p>Sports & Fitness</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/solar.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/solar.jpeg" />
+            </div>
             <p>Solar Energy</p>
           </div>
 
           <div className="industry-item">
-            <img src="/tech/technology.jpeg" />
+            <div className="industry-img-wrap">
+              <img src="/tech/technology.jpeg" />
+            </div>
             <p>Technology & Software</p>
           </div>
         </div>
@@ -639,54 +667,62 @@ export default function Home() {
           <div className="projects-track">
             {[
               {
-                title: "GD Goenka Chhibramau",
+                title: "Hola 9",
                 date: "Feb 2025",
                 tag: "Website",
                 image: "/tech/project1.png",
+                link: "https://hola9.com",
               },
               {
-                title: "Advoque Creative",
+                title: "Procareers",
                 date: "Feb 2025",
                 tag: "Website",
                 image: "/tech/project2.png",
+                link: "https://procareers.in/",
               },
               {
-                title: "Mera Order",
+                title: "Laser Eye Institute",
                 date: "Jul 2023",
                 tag: "Mobile App",
                 image: "/tech/project3.png",
+                link: "https://www.lasereyeinstitute.com/",
               },
               {
-                title: "Business CRM Tool",
+                title: "Jamtech",
                 date: "Jan 2024",
                 tag: "Dashboard",
                 image: "/tech/project4.png",
+                link: "https://jamtechtechnologies.com/",
               },
             ]
               .concat([
                 {
-                  title: "GD Goenka Chhibramau",
+                  title: "Hola 9",
                   date: "Feb 2025",
                   tag: "Website",
                   image: "/tech/project1.png",
+                  link: "https://hola9.com",
                 },
                 {
-                  title: "Advoque Creative",
+                  title: "Procareers",
                   date: "Feb 2025",
                   tag: "Website",
                   image: "/tech/project2.png",
+                  link: "https://procareers.in/",
                 },
                 {
-                  title: "Mera Order",
+                  title: "Laser Eye Institute",
                   date: "Jul 2023",
                   tag: "Mobile App",
                   image: "/tech/project3.png",
+                  link: "https://www.lasereyeinstitute.com/",
                 },
                 {
-                  title: "Business CRM Tool",
+                  title: "Jamtech",
                   date: "Jan 2024",
                   tag: "Dashboard",
                   image: "/tech/project4.png",
+                  link: "https://jamtechtechnologies.com/",
                 },
               ])
               .map((p, i) => (
@@ -694,7 +730,17 @@ export default function Home() {
                   <div
                     className="project-img"
                     style={{ backgroundImage: `url(${p.image})` }}
-                  ></div>
+                  >
+                    {/* CLICKABLE LINK ICON */}
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link-icon"
+                    >
+                      <FaLink />
+                    </a>
+                  </div>
                   <h3>{p.title}</h3>
                   <span className="project-date">{p.date}</span>
                   <button>{p.tag}</button>

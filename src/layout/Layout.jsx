@@ -50,6 +50,11 @@ export default function Layout() {
           <NavLink to="/contact" onClick={() => setOpen(false)}>
             Contact
           </NavLink>
+
+          {/* 🔥 PREMIUM BUTTON */}
+          <NavLink to="/contact" className="quote-btn">
+            Request A Quote
+          </NavLink>
         </nav>
 
         <div
