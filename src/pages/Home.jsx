@@ -9,6 +9,14 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaLink,
+  FaCode,
+  FaMobileAlt,
+  FaBullhorn,
+  FaPaintBrush,
+  FaPalette,
+  FaChartLine,
+  FaVideo,
+  FaDatabase,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -193,9 +201,9 @@ export default function Home() {
           </div>
 
           <p>
-            Você sabia que o mercado de pets cresceu 75% somente neste ano? A
-            procura por diferentes formas de prolongar ainda mais a vida dos
-            bichinhos virou uma febre.
+            Empowering businesses with innovative digital solutions designed for
+            growth and performance. We combine creativity, technology, and
+            strategy to build powerful online experiences.
           </p>
 
           <div className="home-buttons">
@@ -203,7 +211,7 @@ export default function Home() {
               className="btn-primary"
               onClick={() => {
                 document
-                  .getElementById("project")
+                  .getElementById("we-serve-for")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
@@ -213,7 +221,7 @@ export default function Home() {
               className="btn-secondary"
               onClick={() => {
                 document
-                  .getElementById("portfolio")
+                  .getElementById("recent-project")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
@@ -293,7 +301,7 @@ export default function Home() {
       <ScrollBeam /> */}
 
       {/* ================= WE SERVE FOR ================= */}
-      <section className="orbit-section">
+      <section className="orbit-section" id="we-serve-for">
         <div className="orbit-hero">
           <h1>
             We <span>Serve</span> For
@@ -353,6 +361,8 @@ export default function Home() {
             <div className="service-icon holo ai">
               <span className="holo-core"></span>
 
+              <FaBriefcase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -373,6 +383,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaCode className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -389,6 +402,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaMobileAlt className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -405,6 +421,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo cyber">
               <span className="holo-core"></span>
+
+              <FaBullhorn className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -424,6 +443,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo design">
               <span className="holo-core"></span>
+
+              <FaChartLine className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -442,6 +464,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo cloud">
               <span className="holo-core"></span>
+
+              <FaPaintBrush className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -461,6 +486,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo brand">
               <span className="holo-core"></span>
+
+              <FaPalette className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -481,6 +509,8 @@ export default function Home() {
             <div className="service-icon holo ai">
               <span className="holo-core"></span>
 
+              <FaHandshake className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -499,6 +529,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaDatabase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -515,6 +548,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo cyber">
               <span className="holo-core"></span>
+
+              <FaVideo className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -531,6 +567,9 @@ export default function Home() {
           <div className="service-card">
             <div className="service-icon holo design">
               <span className="holo-core"></span>
+
+              <FaBriefcase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -655,7 +694,7 @@ export default function Home() {
 
       {/* ================= OUR RECENT PROJECTS MARQUEE ================= */}
 
-      <section className="recent-projects-section">
+      <section className="recent-projects-section" id="recent-project">
         <div className="recent-hero">
           <h1>
             Our <span>Recent Projects</span>
@@ -688,11 +727,11 @@ export default function Home() {
                 link: "https://www.lasereyeinstitute.com/",
               },
               {
-                title: "Jamtech",
+                title: "I Smart Business Solutions",
                 date: "Jan 2024",
                 tag: "Dashboard",
                 image: "/tech/project4.png",
-                link: "https://jamtechtechnologies.com/",
+                link: "https://ibspl.com/",
               },
             ]
               .concat([
@@ -718,11 +757,11 @@ export default function Home() {
                   link: "https://www.lasereyeinstitute.com/",
                 },
                 {
-                  title: "Jamtech",
+                  title: "I Smart Business Solutions",
                   date: "Jan 2024",
                   tag: "Dashboard",
                   image: "/tech/project4.png",
-                  link: "https://jamtechtechnologies.com/",
+                  link: "https://ibspl.com/",
                 },
               ])
               .map((p, i) => (
@@ -730,20 +769,12 @@ export default function Home() {
                   <div
                     className="project-img"
                     style={{ backgroundImage: `url(${p.image})` }}
-                  >
-                    {/* CLICKABLE LINK ICON */}
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link-icon"
-                    >
-                      <FaLink />
-                    </a>
-                  </div>
+                  ></div>
                   <h3>{p.title}</h3>
                   <span className="project-date">{p.date}</span>
-                  <button>{p.tag}</button>
+                  <button onClick={() => window.open(p.link, "_blank")}>
+                    {p.tag}
+                  </button>
                 </div>
               ))}
           </div>

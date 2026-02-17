@@ -37,8 +37,9 @@ body {
 .s-icon *,
 .blog-link *,
 .project-link-icon *,
+.quote-btn *,
 a,
-/* button, */
+button,
 .call-float,
 .call-icon,
 .whatsapp-float,

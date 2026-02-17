@@ -137,92 +137,170 @@ body {
 }
 
 /* =========================================
-   REQUEST QUOTE BUTTON
+   ULTRA PREMIUM WHITE GLASS BUTTON 😈🔥
 ========================================= */
 
 .quote-btn {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  height: 38px;
-  padding: 0 22px;
+  height: 42px;
+  padding: 0 26px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 1px;
   text-decoration: none;
 
-  color: white;
+  /* PREMIUM WHITE GLASS */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
 
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  color: black !important;
 
   overflow: hidden;
-  position: relative;
+  isolation: isolate;
 
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 
-  transition: 0.4s ease;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  /* ⭐ ADD THIS */
+  cursor: pointer;
 }
 
-/* Animated border */
+/* =========================================
+   TEXT
+========================================= */
+
+.quote-text {
+  position: relative;
+  z-index: 5;
+
+  font-weight: 600;
+  color: black !important;
+
+  transition: 0.3s ease;
+}
+
+/* =========================================
+   RGB MOVING BORDER
+========================================= */
 
 .quote-btn::before {
   content: "";
   position: absolute;
   inset: 0;
-
   border-radius: inherit;
+
   padding: 1px;
 
   background: linear-gradient(120deg, #22d3ee, #a855f7, #ec4899, #22d3ee);
+
   background-size: 300% 300%;
 
-  animation: borderFlow 6s linear infinite;
+  animation: borderFlow 5s linear infinite;
 
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
+
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+
+  z-index: 1;
 }
 
-/* Shine animation */
+/* =========================================
+   GLASS SHINE SWEEP
+========================================= */
 
 .quote-btn::after {
   content: "";
   position: absolute;
+
   top: 0;
   left: -120%;
+
   width: 60%;
   height: 100%;
 
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.9),
     transparent
   );
 
   transform: skewX(-20deg);
-  transition: 0.6s;
+
+  transition: 0.7s;
+
+  z-index: 2;
 }
 
 .quote-btn:hover::after {
   left: 130%;
 }
 
+/* =========================================
+   PREMIUM HOVER ANIMATION
+========================================= */
+
 .quote-btn:hover {
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-4px) scale(1.06);
 
   box-shadow:
-    0 0 20px rgba(34, 211, 238, 0.6),
-    0 0 40px rgba(168, 85, 247, 0.3);
+    0 0 18px rgba(34, 211, 238, 0.5),
+    0 0 35px rgba(168, 85, 247, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+/* =========================================
+   TEXT HOVER (CYAN GLOW)
+========================================= */
+
+.quote-btn:hover .quote-text {
+  color: #22d3ee !important;
+
+  text-shadow:
+    0 0 6px rgba(34, 211, 238, 0.6),
+    0 0 12px rgba(34, 211, 238, 0.4);
+}
+
+/* =========================================
+   FLOATING LIGHT AURA (ULTRA PREMIUM)
+========================================= */
+
+.quote-btn:hover {
+  animation: auraPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 18px rgba(34, 211, 238, 0.5),
+      0 0 35px rgba(168, 85, 247, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(236, 72, 153, 0.6),
+      0 0 50px rgba(34, 211, 238, 0.5);
+  }
+}
+
+/* =========================================
+   BORDER FLOW
+========================================= */
 
 @keyframes borderFlow {
   0% {

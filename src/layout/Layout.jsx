@@ -53,7 +53,7 @@ export default function Layout() {
 
           {/* 🔥 PREMIUM BUTTON */}
           <NavLink to="/contact" className="quote-btn">
-            Request A Quote
+            <span className="quote-text">Request A Quote</span>
           </NavLink>
         </nav>
 

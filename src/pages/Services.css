@@ -173,7 +173,8 @@
   margin: 0 auto 28px;
   border-radius: 50%;
   position: relative;
-  filter: drop-shadow(0 0 15px currentColor);
+  /* filter: drop-shadow(0 0 15px currentColor); */
+  box-shadow: 0 0 15px currentColor;
   animation:
     holoFloat 4s ease-in-out infinite,
     rgbGlow 6s ease-in-out infinite;
@@ -363,6 +364,33 @@
 
 .service-card:hover .energy-particles span {
   box-shadow: 0 0 18px currentColor;
+}
+
+.center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 28px;
+
+  color: currentColor;
+
+  z-index: 10;
+
+  /* ⭐ REMOVE blur-causing filter */
+  /* filter: drop-shadow(0 0 10px currentColor); */
+
+  /* ✅ Use text-shadow instead (keeps icon sharp) */
+  text-shadow:
+    0 0 6px currentColor,
+    0 0 12px currentColor;
+
+  pointer-events: none;
+
+  /* ⭐ force crisp rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ================= WHY CHOOSE US ================= */

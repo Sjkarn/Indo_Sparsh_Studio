@@ -7,6 +7,14 @@ import {
   FaRocket,
   FaChartLine,
   FaMicrochip,
+  FaBriefcase,
+  FaCode,
+  FaMobileAlt,
+  FaBullhorn,
+  FaPaintBrush,
+  FaPalette,
+  FaVideo,
+  FaDatabase,
 } from "react-icons/fa";
 
 export default function Services() {
@@ -30,6 +38,8 @@ export default function Services() {
             <div className="service-icon holo ai">
               <span className="holo-core"></span>
 
+              <FaBriefcase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -50,6 +60,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaCode className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -66,6 +79,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaMobileAlt className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -82,6 +98,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo cyber">
               <span className="holo-core"></span>
+
+              <FaBullhorn className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -101,6 +120,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo design">
               <span className="holo-core"></span>
+
+              <FaChartLine className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -119,6 +141,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo cloud">
               <span className="holo-core"></span>
+
+              <FaPaintBrush className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -138,6 +163,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo brand">
               <span className="holo-core"></span>
+
+              <FaPalette className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -158,6 +186,8 @@ export default function Services() {
             <div className="service-icon holo ai">
               <span className="holo-core"></span>
 
+              <FaHandshake className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -176,6 +206,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo dev">
               <span className="holo-core"></span>
+
+              <FaDatabase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -192,6 +225,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo cyber">
               <span className="holo-core"></span>
+
+              <FaVideo className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
@@ -208,6 +244,9 @@ export default function Services() {
           <div className="service-card">
             <div className="service-icon holo design">
               <span className="holo-core"></span>
+
+              <FaBriefcase className="center-icon" />
+
               <div className="energy-particles">
                 <span></span>
                 <span></span>
