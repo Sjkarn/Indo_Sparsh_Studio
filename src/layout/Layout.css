@@ -370,3 +370,97 @@ body {
     transform: translateY(0);
   }
 }
+
+/* =========================================
+   😈 RESPONSIVE CYBER SCROLLBAR — FINAL
+========================================= */
+
+.cyber-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 10px;
+  height: 100vh;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+
+  border-radius: 50px;
+
+  z-index: 9999;
+
+  /* smooth GPU rendering */
+  transform: translateZ(0);
+}
+
+/* ===== THUMB ===== */
+
+.cyber-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  border-radius: 50px;
+
+  background: linear-gradient(180deg, #22d3ee, #a855f7, #ec4899, #22d3ee);
+
+  background-size: 200% 200%;
+  animation: cyberFlow 4s linear infinite;
+
+  box-shadow:
+    0 0 12px #22d3ee,
+    0 0 25px #a855f7,
+    0 0 40px #ec4899;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  cursor: grab;
+}
+
+.cyber-thumb:active {
+  cursor: grabbing;
+}
+
+.cyber-thumb:hover {
+  transform: scaleX(1.3);
+
+  box-shadow:
+    0 0 20px #22d3ee,
+    0 0 40px #a855f7,
+    0 0 70px #ec4899;
+}
+
+/* ===== RGB FLOW ===== */
+
+@keyframes cyberFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 200%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE RULES
+========================================= */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .cyber-scrollbar {
+    width: 8px;
+  }
+}
+
+/* Mobile — Hide custom scrollbar */
+
+@media (max-width: 768px) {
+  .cyber-scrollbar {
+    display: none;
+  }
+}

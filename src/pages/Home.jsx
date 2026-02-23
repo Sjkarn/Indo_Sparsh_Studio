@@ -722,14 +722,14 @@ export default function Home() {
               {
                 title: "Laser Eye Institute",
                 date: "Jul 2023",
-                tag: "Mobile App",
+                tag: "Website",
                 image: "/tech/project3.png",
                 link: "https://www.lasereyeinstitute.com/",
               },
               {
                 title: "I Smart Business Solutions",
                 date: "Jan 2024",
-                tag: "Dashboard",
+                tag: "Website",
                 image: "/tech/project4.png",
                 link: "https://ibspl.com/",
               },
@@ -752,14 +752,14 @@ export default function Home() {
                 {
                   title: "Laser Eye Institute",
                   date: "Jul 2023",
-                  tag: "Mobile App",
+                  tag: "Website",
                   image: "/tech/project3.png",
                   link: "https://www.lasereyeinstitute.com/",
                 },
                 {
                   title: "I Smart Business Solutions",
                   date: "Jan 2024",
-                  tag: "Dashboard",
+                  tag: "Website",
                   image: "/tech/project4.png",
                   link: "https://ibspl.com/",
                 },
