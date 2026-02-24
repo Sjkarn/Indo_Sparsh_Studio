@@ -18,6 +18,7 @@ import {
   FaVideo,
   FaDatabase,
 } from "react-icons/fa";
+import { MdCampaign } from "react-icons/md";
 
 export default function Home() {
   const services = [
@@ -333,9 +334,9 @@ export default function Home() {
           {/* Management */}
           <div className="jump-icon">
             <div className="icon">
-              <FaBriefcase />
+              <MdCampaign />
             </div>
-            <p>Management</p>
+            <p>Marketing</p>
           </div>
         </div>
       </section>
@@ -709,28 +710,28 @@ export default function Home() {
                 title: "Hola 9",
                 date: "Feb 2025",
                 tag: "Website",
-                image: "/tech/project1.png",
+                image: "/tech/project1.jpeg",
                 link: "https://hola9.com",
               },
               {
                 title: "Procareers",
                 date: "Feb 2025",
                 tag: "Website",
-                image: "/tech/project2.png",
+                image: "/tech/project2.jpeg",
                 link: "https://procareers.in/",
               },
               {
                 title: "Laser Eye Institute",
                 date: "Jul 2023",
                 tag: "Website",
-                image: "/tech/project3.png",
+                image: "/tech/project3.jpeg",
                 link: "https://www.lasereyeinstitute.com/",
               },
               {
                 title: "I Smart Business Solutions",
                 date: "Jan 2024",
                 tag: "Website",
-                image: "/tech/project4.png",
+                image: "/tech/project4.jpeg",
                 link: "https://ibspl.com/",
               },
             ]
@@ -739,28 +740,28 @@ export default function Home() {
                   title: "Hola 9",
                   date: "Feb 2025",
                   tag: "Website",
-                  image: "/tech/project1.png",
+                  image: "/tech/project1.jpeg",
                   link: "https://hola9.com",
                 },
                 {
                   title: "Procareers",
                   date: "Feb 2025",
                   tag: "Website",
-                  image: "/tech/project2.png",
+                  image: "/tech/project2.jpeg",
                   link: "https://procareers.in/",
                 },
                 {
                   title: "Laser Eye Institute",
                   date: "Jul 2023",
                   tag: "Website",
-                  image: "/tech/project3.png",
+                  image: "/tech/project3.jpeg",
                   link: "https://www.lasereyeinstitute.com/",
                 },
                 {
                   title: "I Smart Business Solutions",
                   date: "Jan 2024",
                   tag: "Website",
-                  image: "/tech/project4.png",
+                  image: "/tech/project4.jpeg",
                   link: "https://ibspl.com/",
                 },
               ])
@@ -811,9 +812,9 @@ export default function Home() {
                   <span>•</span>
                   <span>{post.time}</span>
 
-                  {/* clickable icon */}
-                  <Link to={post.link} className="blog-link">
-                    <FaLink />
+                  {/* clickable button */}
+                  <Link to={post.link} className="read-more-btn">
+                    Read More →
                   </Link>
                 </div>
               </div>

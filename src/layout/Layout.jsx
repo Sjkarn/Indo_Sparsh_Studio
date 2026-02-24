@@ -1,5 +1,6 @@
 ﻿import { Outlet, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FiMoon, FiSun } from "react-icons/fi";
 import "./Layout.css";
 import AIChatWidget from "../pages/AIChatWidget";
 import Footer from "../pages/Footer";
@@ -13,6 +14,7 @@ export default function Layout() {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -104,6 +106,20 @@ export default function Layout() {
     };
   }, []);
 
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
+
   return (
     <>
       <PageLoader show={loading} />
@@ -142,6 +158,10 @@ export default function Layout() {
           <NavLink to="/contact" className="quote-btn">
             <span className="quote-text">Request A Quote</span>
           </NavLink>
+
+          <div className="theme-toggle" onClick={toggleTheme}>
+            {darkMode ? <FiSun /> : <FiMoon />}
+          </div>
         </nav>
 
         <div

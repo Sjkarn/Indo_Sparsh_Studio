@@ -65,10 +65,15 @@ export default function Blog() {
             <span>3 min read</span>
           </div>
 
-          <button className="featured-btn">Read Article</button>
+          <Link to="/future-ai" className="featured-btn">
+            Read Article
+          </Link>
         </div>
 
-        <div className="featured-image"></div>
+        <div
+          className="featured-image"
+          style={{ backgroundImage: "url('/tech/future-ai.jpeg')" }}
+        ></div>
       </div>
 
       {/* Blog Grid */}
@@ -89,9 +94,9 @@ export default function Blog() {
                 <span>•</span>
                 <span>{post.time}</span>
 
-                {/* clickable icon */}
-                <Link to={post.link} className="blog-link">
-                  <FaLink />
+                {/* clickable button */}
+                <Link to={post.link} className="read-more-btn">
+                  Read More →
                 </Link>
               </div>
             </div>

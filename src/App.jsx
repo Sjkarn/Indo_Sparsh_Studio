@@ -11,6 +11,7 @@ import DigitalMarketing from "./pages/DigitalMarketing";
 import ITTrends from "./pages/ITTrends";
 import BusinessGrowth from "./pages/BusinessGrowth";
 import CaseStudies from "./pages/CaseStudies";
+import FutureAI from "./pages/FutureAI";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/it-trends" element={<ITTrends />} />
         <Route path="/business-growth" element={<BusinessGrowth />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/future-ai" element={<FutureAI />} />
       </Routes>
     </Layout>
   );
