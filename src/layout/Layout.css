@@ -471,28 +471,964 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 42px;
   height: 42px;
-
   border-radius: 50%;
   cursor: pointer;
-
   font-size: 20px;
-
   color: #22d3ee;
-
   border: 1px solid rgba(34, 211, 238, 0.4);
-
-  transition: 0.4s ease;
-
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
 }
 
 .theme-toggle:hover {
   transform: rotate(180deg) scale(1.1);
-
   box-shadow:
     0 0 20px #22d3ee,
     0 0 35px #a855f7;
+}
+
+/* smooth theme transition */
+body {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* LIGHT MODE */
+
+body.light-mode {
+  background-color: #ffffff;
+}
+
+body.light-mode .cyber-header {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .cyber-logo {
+  color: #111;
+  text-shadow: none;
+  animation: none;
+}
+
+body.light-mode .cyber-nav a {
+  color: #333;
+}
+
+body.light-mode .cyber-nav a:hover {
+  color: #0ea5e9;
+  text-shadow: none;
+}
+
+body.light-mode .cyber-nav a.active {
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+body.light-mode .theme-toggle {
+  color: #0ea5e9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode {
+  background: #020617;
+}
+
+/* ================= LIGHT MODE FOR HERO SECTION ================= */
+
+body.light-mode .home-hero {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+}
+
+body.light-mode .scroll-btn {
+  color: #0f172a;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background: rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.05),
+    0 0 15px rgba(14, 165, 233, 0.15);
+}
+
+body.light-mode .hero-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .btn-secondary {
+  color: #0ea5e9;
+
+  border-color: #0ea5e9;
+
+  box-shadow: none;
+}
+
+/* ================= LIGHT MODE FOR SCROLLBEAM ================= */
+
+body.light-mode .beam-core {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0ea5e9,
+    #38bdf8,
+    #9333ea,
+    #38bdf8,
+    #0ea5e9,
+    transparent
+  );
+
+  box-shadow:
+    0 0 6px rgba(14, 165, 233, 0.5),
+    0 0 14px rgba(147, 51, 234, 0.4);
+
+  animation: laserPulse 1.6s ease-in-out infinite;
+
+  backdrop-filter: none;
+}
+
+body.light-mode .scroll-beam {
+  background: transparent;
+}
+
+/* Force white main wrapper in light mode */
+body.light-mode .cyber-main,
+body.light-mode main,
+body.light-mode .main-cyber-main {
+  background: #ffffff;
+}
+
+/* ================= LIGHT MODE FOR WE SERVE FOR ================= */
+
+body.light-mode .orbit-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+}
+
+body.light-mode .orbit-hero h1 {
+  color: #111827;
+}
+
+body.light-mode .orbit-hero p {
+  color: #64748b;
+}
+
+body.light-mode .icon {
+  color: #0ea5e9;
+}
+
+body.light-mode .jump-icon:hover .icon {
+  color: #9333ea;
+}
+
+body.light-mode .jump-icon p {
+  color: #1e293b;
+}
+
+/* ================= LIGHT MODE FOR SERVICES ================= */
+
+body.light-mode .services-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+
+  color: #0f172a;
+}
+
+body.light-mode .services-header p {
+  color: #64748b;
+}
+
+body.light-mode .service-card {
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .service-card {
+  animation: none;
+}
+
+body.light-mode .service-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .service-card p {
+  color: #475569;
+}
+
+body.light-mode .service-icon.holo {
+  box-shadow: 0 0 10px currentColor;
+}
+
+body.light-mode .why-card {
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .why-header h1 {
+  color: #0f172a;
+}
+
+body.light-mode .why-header p {
+  color: #64748b;
+}
+
+body.light-mode .why-card p {
+  color: #111827;
+}
+
+body.light-mode .why-icon {
+  filter: drop-shadow(0 0 4px #0ea5e9);
+}
+
+/* ================= LIGHT MODE FOR INDUSTRIES ================= */
+
+body.light-mode .industries-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+}
+
+body.light-mode .industries-hero h1 {
+  color: #111827;
+}
+
+body.light-mode .industries-hero p {
+  color: #64748b;
+}
+
+body.light-mode .industry-item p {
+  color: #475569;
+}
+
+body.light-mode .industry-img-wrap::before {
+  opacity: 0.25; /* reduce glow */
+
+  filter: blur(12px);
+}
+
+body.light-mode .industry-item:hover .industry-img-wrap {
+  box-shadow:
+    0 0 15px rgba(14, 165, 233, 0.4),
+    0 0 30px rgba(147, 51, 234, 0.25);
+}
+
+/* ================= LIGHT MODE FOR RECENT PROJECTS ================= */
+
+body.light-mode .recent-projects-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+}
+
+body.light-mode .recent-hero h1 {
+  color: #111827;
+}
+
+body.light-mode .recent-hero p {
+  color: #64748b;
+}
+
+body.light-mode .project-card {
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25);
+}
+
+body.light-mode .project-card h3 {
+  color: #0f172a;
+}
+
+body.light-mode .project-date {
+  color: #64748b;
+}
+
+/* ================= LIGHT MODE FOR BLOGS ================= */
+
+body.light-mode .blog-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+
+  color: #0f172a;
+}
+
+body.light-mode .blog-header h1 {
+  color: #111827;
+}
+
+body.light-mode .blog-header p {
+  color: #64748b;
+}
+
+body.light-mode .blog-card {
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .blog-card::before {
+  opacity: 0.3;
+}
+
+body.light-mode .blog-content h2 {
+  color: #0f172a;
+}
+
+body.light-mode .blog-desc {
+  color: #475569;
+}
+
+body.light-mode .read-more-btn {
+  color: #0ea5e9;
+
+  border-color: #0ea5e9;
+}
+
+body.light-mode .read-more-btn:hover {
+  color: #ffffff;
+}
+
+body.light-mode .featured-blog {
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .featured-content p {
+  color: #475569;
+}
+
+body.light-mode .featured-tag {
+  box-shadow: none;
+}
+
+/* ================= LIGHT MODE — PROJECTS WE DISCUSS ================= */
+
+body.light-mode .projects-discuss {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+  color: #0f172a;
+}
+
+/* HERO TEXT */
+
+body.light-mode .pd-hero h1 {
+  text-shadow: none;
+  color: #111827;
+}
+
+body.light-mode .pd-hero p {
+  color: #64748b;
+}
+
+/* CARDS */
+
+body.light-mode .pd-card {
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .pd-card.glow {
+  box-shadow:
+    0 10px 30px rgba(14, 165, 233, 0.15),
+    0 10px 60px rgba(147, 51, 234, 0.08);
+}
+
+body.light-mode .pd-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .pd-card p {
+  color: #475569;
+}
+
+/* CTA SECTION */
+
+body.light-mode .pd-cta {
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .pd-cta h2 {
+  color: #0ea5e9;
+}
+
+body.light-mode .pd-cta p {
+  color: #475569;
+}
+
+/* BUTTON */
+
+body.light-mode .pd-cta a {
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.2);
+}
+
+/* ================= LIGHT MODE — TESTIMONIALS ================= */
+
+body.light-mode .testimonials-section {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(14, 165, 233, 0.08),
+    transparent 60%
+  );
+}
+
+/* HERO */
+
+body.light-mode .testimonials-hero h1 {
+  color: #111827;
+}
+
+body.light-mode .testimonials-hero p {
+  color: #64748b;
+}
+
+/* CARDS */
+
+body.light-mode .testimonial-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(248, 250, 252, 0.9)
+  );
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(18px);
+}
+
+body.light-mode .testimonial-card:hover {
+  box-shadow: 0 14px 40px rgba(14, 165, 233, 0.18);
+}
+
+/* TEXT */
+
+body.light-mode .testimonial-text {
+  color: #374151;
+}
+
+body.light-mode .testimonial-card span {
+  color: #64748b;
+}
+
+body.light-mode .testimonial-card h3 {
+  color: #0ea5e9;
+}
+
+/* AVATAR GLOW softer for light */
+
+body.light-mode .testimonial-avatar {
+  box-shadow:
+    0 0 8px rgba(14, 165, 233, 0.3),
+    0 0 16px rgba(147, 51, 234, 0.2);
+}
+
+/* FLOATING AURA softer */
+
+body.light-mode .testimonial-glow {
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.12),
+    transparent 70%
+  );
+}
+
+/* ================= LIGHT MODE — TECHNOLOGY SECTION ================= */
+
+body.light-mode .tech-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+
+  color: #0f172a;
+}
+
+/* HERO TITLE */
+
+body.light-mode .tech-hero h1 {
+  color: #111827;
+}
+
+/* HERO PARAGRAPH */
+
+body.light-mode .tech-hero p {
+  color: #64748b;
+}
+
+/* Accent color stays but slightly refined */
+
+body.light-mode .tech-hero span {
+  color: #0ea5e9;
+}
+
+body.light-mode .tech-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(14, 165, 233, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ================= LIGHT MODE — CLIENT MARQUEE ================= */
+
+body.light-mode .clients-marquee::before {
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+body.light-mode .clients-marquee::after {
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* CARD STYLE */
+
+body.light-mode .marquee-item {
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  color: #0ea5e9;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(16px);
+}
+
+body.light-mode .marquee-item:hover {
+  box-shadow: 0 10px 35px rgba(14, 165, 233, 0.2);
+}
+
+/* LOGO GLOW softer for white background */
+
+body.light-mode .marquee-item img {
+  filter: drop-shadow(0 0 4px rgba(14, 165, 233, 0.35));
+}
+
+/* ================= LIGHT MODE — FOOTER ================= */
+
+body.light-mode .cyber-footer {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #ffffff);
+
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* glowing animated line (softer for white background) */
+
+body.light-mode .footer-glow-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0ea5e9,
+    #9333ea,
+    #0ea5e9,
+    transparent
+  );
+}
+
+/* content text */
+
+body.light-mode .footer-content {
+  color: #374151;
+}
+
+body.light-mode .footer-content span {
+  color: #0ea5e9;
+  text-shadow: none;
+}
+
+body.light-mode .footer-tagline {
+  color: #64748b;
+}
+
+/* ================= LIGHT MODE — ABOUT PAGE ================= */
+
+body.light-mode .about2 {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+  color: #0f172a;
+}
+
+/* HERO TEXT */
+
+body.light-mode .about2-left h1 {
+  text-shadow: none;
+  color: #111827;
+}
+
+body.light-mode .about2-left p {
+  color: #64748b;
+}
+
+/* STATS CARDS */
+
+body.light-mode .about2-stats div {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .about2-stats span {
+  color: #64748b;
+}
+
+/* MAIN CARDS */
+
+body.light-mode .a2-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .a2-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .a2-card p {
+  color: #475569;
+}
+
+/* ICON glow softer */
+
+body.light-mode .a2-icon {
+  filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
+}
+
+/* LEADER SECTION */
+
+body.light-mode .leader-header h1 {
+  color: #111827;
+}
+
+body.light-mode .leader-header p {
+  color: #64748b;
+}
+
+body.light-mode .leader-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .leader-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .leader-card p {
+  color: #475569;
+}
+
+body.light-mode .leader-icon {
+  filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.4));
+}
+
+/* CTA SECTION */
+
+body.light-mode .cta-glass {
+  background:
+    radial-gradient(circle at top, rgba(14, 165, 233, 0.12), transparent 60%),
+    rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .cta-glass h1 {
+  color: #111827;
+}
+
+body.light-mode .cta-glass p {
+  color: #475569;
+}
+
+body.light-mode .cta-glass h1 span {
+  text-shadow: none;
+  color: #0ea5e9;
+}
+
+/* ================= LIGHT MODE — CAREER PAGE ================= */
+
+body.light-mode .career-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+  color: #111827;
+}
+
+/* HERO */
+
+body.light-mode .career-hero h1 {
+  text-shadow: none;
+  color: #111827;
+}
+
+body.light-mode .career-hero p {
+  color: #64748b;
+}
+
+/* HIGHLIGHT CARDS */
+
+body.light-mode .highlight-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .highlight-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .highlight-card p {
+  color: #475569;
+}
+
+/* ICON glow softer */
+
+body.light-mode .career-icon {
+  filter: drop-shadow(0 0 5px rgba(14, 165, 233, 0.4));
+}
+
+/* JOB CARDS */
+
+body.light-mode .job-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .job-card h3 {
+  color: #111827;
+}
+
+body.light-mode .job-card p {
+  color: #475569;
+}
+
+body.light-mode .job-card span {
+  color: #0ea5e9;
+}
+
+/* TITLE */
+
+body.light-mode .career-title {
+  text-shadow: none;
+  color: #0ea5e9;
+}
+
+/* PIPELINE SECTION */
+
+body.light-mode .pipeline-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .pipeline-card h3 {
+  color: #0ea5e9;
+}
+
+body.light-mode .pipeline-card p {
+  color: #475569;
+}
+
+/* pipeline glowing core softer */
+
+body.light-mode .pipeline-core {
+  background: radial-gradient(circle, #0ea5e9, #ffffff);
+  box-shadow:
+    0 0 10px rgba(14, 165, 233, 0.5),
+    0 0 25px rgba(14, 165, 233, 0.3);
+}
+
+/* connector line softer */
+
+body.light-mode .pipeline-card::after {
+  box-shadow: 0 0 6px rgba(14, 165, 233, 0.4);
+}
+
+/* ================= LIGHT MODE — CONTACT PAGE ================= */
+
+body.light-mode .contact-section {
+  background: radial-gradient(circle at top, #f8fafc, #ffffff);
+  color: #111827;
+}
+
+/* HEADER */
+
+body.light-mode .contact-header h1 {
+  text-shadow: none;
+  color: #111827;
+}
+
+body.light-mode .contact-header p {
+  color: #64748b;
+}
+
+/* ================= FORM CARD ================= */
+
+body.light-mode .contact-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* INPUTS */
+
+body.light-mode .form-group label {
+  color: #475569;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .form-group input::placeholder,
+body.light-mode .form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* focus glow softer */
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
+}
+
+/* ================= INFO CARDS ================= */
+
+body.light-mode .info-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .info-card h2 {
+  color: #0ea5e9;
+}
+
+body.light-mode .info-card p {
+  color: #475569;
+}
+
+/* ================= SUCCESS OVERLAY ================= */
+
+body.light-mode .success-overlay {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .success-box {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .success-box p {
+  color: #475569;
+}
+
+/* ================= MAP CARD ================= */
+
+body.light-mode .map-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* map normal colors in light mode */
+
+body.light-mode .map-card iframe {
+  filter: none;
+}
+
+/* ================= LIGHT MODE — SOCIAL MINI ================= */
+
+body.light-mode .social-mini h3 {
+  color: #0ea5e9;
+  text-shadow: none;
+}
+
+/* icon button */
+
+body.light-mode .s-icon {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #374151; /* default icon color */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* hover softer glow */
+
+body.light-mode .s-icon:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 18px currentColor;
+}
+
+/* ================= LIGHT MODE — BLOG ARTICLE PAGE ================= */
+
+body.light-mode .blog-article-page {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+/* Title stays accent color */
+body.light-mode .blog-title {
+  color: #0ea5e9;
+}
+
+/* Author */
+body.light-mode .blog-author {
+  color: #64748b;
+}
+
+/* Headings */
+body.light-mode .blog-article h2 {
+  color: #0ea5e9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph text */
+body.light-mode .blog-article p,
+body.light-mode .blog-article li {
+  color: #374151;
+}
+
+/* Tip highlight */
+body.light-mode .tip {
+  color: #0ea5e9;
+}
+
+/* ===== TABLE ===== */
+
+body.light-mode .blog-table th,
+body.light-mode .blog-table td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .blog-table th {
+  background: rgba(14, 165, 233, 0.08);
 }

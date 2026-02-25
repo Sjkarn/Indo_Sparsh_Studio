@@ -8,7 +8,6 @@ import {
   FaBriefcase,
   FaChevronLeft,
   FaChevronRight,
-  FaLink,
   FaCode,
   FaMobileAlt,
   FaBullhorn,
@@ -814,7 +813,7 @@ export default function Home() {
 
                   {/* clickable button */}
                   <Link to={post.link} className="read-more-btn">
-                    Read More →
+                    Read More
                   </Link>
                 </div>
               </div>

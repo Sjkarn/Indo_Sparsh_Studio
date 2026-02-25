@@ -408,7 +408,7 @@
 
 .why-header span {
   color: #22d3ee;
-  text-shadow: 0 0 22px #22d3ee;
+  /* text-shadow: 0 0 22px #22d3ee; */
 }
 
 .why-header p {

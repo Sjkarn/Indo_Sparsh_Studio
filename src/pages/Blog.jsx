@@ -1,6 +1,5 @@
 ﻿import "./Blog.css";
 import { Link } from "react-router-dom";
-import { FaLink } from "react-icons/fa";
 
 export default function Blog() {
   const posts = [
@@ -96,7 +95,7 @@ export default function Blog() {
 
                 {/* clickable button */}
                 <Link to={post.link} className="read-more-btn">
-                  Read More →
+                  Read More
                 </Link>
               </div>
             </div>
