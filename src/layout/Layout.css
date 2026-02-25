@@ -543,6 +543,26 @@ body.dark-mode {
   background: #020617;
 }
 
+/* =========================================
+   LIGHT MODE — MOBILE NAV
+========================================= */
+
+@media (max-width: 768px) {
+  body.light-mode .cyber-nav {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  body.light-mode .cyber-nav a {
+    color: #1f2937;
+  }
+
+  body.light-mode .cyber-nav a:hover {
+    color: #0ea5e9;
+  }
+}
+
 /* ================= LIGHT MODE FOR HERO SECTION ================= */
 
 body.light-mode .home-hero {
