@@ -373,13 +373,17 @@ export default function DigitalMarketing() {
           fluff—just practical strategies that work within your budget.
         </p>
 
-        <p>[Contact Us] [Get a Free Audit]</p>
+        <div className="blog-cta">
+          <p>[Contact Us]</p>
+          <p>[Get a Free Audit]</p>
+        </div>
 
         <h2></h2>
 
-        <p>Written by Indo Sparsh Team</p>
-
-        <p>First published: February 2026</p>
+        <div className="blog-meta-footer">
+          <p>Written by Indo Sparsh Team</p>
+          <p>First published: February 2026</p>
+        </div>
       </article>
     </section>
   );

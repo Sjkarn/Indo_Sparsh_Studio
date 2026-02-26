@@ -64,3 +64,11 @@
 .blog-table th {
   background: rgba(34, 211, 238, 0.1);
 }
+
+.blog-cta p {
+  margin-bottom: 3px;
+}
+
+.blog-meta-footer p {
+  margin-bottom: 3px;
+}
