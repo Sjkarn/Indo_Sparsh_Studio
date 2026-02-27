@@ -5,7 +5,7 @@ export default function DigitalMarketing() {
     <section className="blog-article-page">
       <article className="blog-article">
         <h1 className="blog-title">
-          Digital Marketing Tips for 2024: Practical Strategies That Actually
+          Digital Marketing Tips for 2026: Practical Strategies That Actually
           Work
         </h1>
 
@@ -374,8 +374,8 @@ export default function DigitalMarketing() {
         </p>
 
         <div className="blog-cta">
-          <p>[Contact Us]</p>
-          <p>[Get a Free Audit]</p>
+          <p>📞 Contact Us: 8005351770</p>
+          <p>✉️ Get a Free Audit</p>
         </div>
 
         <h2></h2>

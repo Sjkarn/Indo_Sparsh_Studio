@@ -201,9 +201,10 @@ export default function Home() {
           </div>
 
           <p>
-            Empowering businesses with innovative digital solutions designed for
-            growth and performance. We combine creativity, technology, and
-            strategy to build powerful online experiences.
+            We help ambitious startups turn bold ideas into powerful digital
+            experiences. By combining strategy, creativity, and smart
+            technology, we build scalable solutions designed to grow fast and
+            perform even faster.
           </p>
 
           <div className="home-buttons">
