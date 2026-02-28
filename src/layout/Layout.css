@@ -463,6 +463,7 @@ body {
   }
 
   .cyber-header {
+    position: relative; /* important */
     padding: 12px 18px;
   }
 
@@ -476,7 +477,7 @@ body {
   /* Hide nav by default */
   .cyber-nav {
     position: fixed;
-    top: calc(var(--promo-height) + var(--header-height));
+    top: 100%; /* 🔥 directly below header */
     left: 0;
     width: 100%;
 
