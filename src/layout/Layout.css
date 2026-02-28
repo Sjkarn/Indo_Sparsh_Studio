@@ -470,6 +470,7 @@ body {
   .cyber-hamburger {
     display: flex;
     cursor: pointer;
+    z-index: 6000;
   }
 
   /* Hide nav by default */
@@ -490,14 +491,17 @@ body {
 
     transform: translateY(-120%);
     opacity: 0;
+    pointer-events: none;
+
     transition: all 0.35s ease;
 
-    z-index: 2000;
+    z-index: 5000;
   }
 
   .cyber-nav.active {
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
   }
 
   .cyber-nav a {
