@@ -427,7 +427,7 @@ body {
 
   .cyber-header {
     padding: 12px 20px;
-    /* min-height: auto;  */
+    min-height: auto; 
   }
 
   .cyber-logo {
