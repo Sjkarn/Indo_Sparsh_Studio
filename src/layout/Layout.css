@@ -427,7 +427,7 @@ body {
 
   .cyber-header {
     padding: 12px 20px;
-    min-height: auto; /* allow growth */
+    /* min-height: auto;  */
   }
 
   .cyber-logo {
@@ -444,7 +444,7 @@ body {
 
   .cyber-nav {
     position: absolute;
-    top: 100%; /* below header */
+    top: 100%;
     left: 0;
     width: 100%;
     flex-direction: column;
