@@ -419,7 +419,7 @@ body {
 }
 
 /* =========================================
-   LARGE MOBILE
+   LARGE MOBILE (FIXED VERSION)
 ========================================= */
 
 @media (max-width: 992px) {
@@ -429,7 +429,8 @@ body {
 
   .cyber-header {
     padding: 12px 20px;
-    min-height: auto; /* allow growth */
+    min-height: auto;
+    position: relative;
   }
 
   .cyber-logo {
@@ -444,9 +445,10 @@ body {
     cursor: pointer;
   }
 
+  /* 🔥 FIX HERE */
   .cyber-nav {
-    position: absolute;
-    top: 100%; /* below header */
+    position: fixed; /* changed from absolute */
+    top: calc(var(--promo-height) + var(--header-height));
     left: 0;
     width: 100%;
 
@@ -459,9 +461,11 @@ body {
     padding: 35px 0;
     gap: 25px;
 
-    transform: translateY(-110%);
+    transform: translateY(-120%);
     opacity: 0;
     transition: all 0.35s ease;
+
+    z-index: 999;
   }
 
   .cyber-nav.active {
