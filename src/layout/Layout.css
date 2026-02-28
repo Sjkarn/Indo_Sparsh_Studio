@@ -441,7 +441,7 @@ body {
     cursor: pointer;
   }
   .cyber-nav {
-    position: absolute;
+    position: fixed;
     top: 100%; /* below header */
     left: 0;
     width: 100%;
