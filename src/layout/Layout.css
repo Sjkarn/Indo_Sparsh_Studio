@@ -137,7 +137,7 @@ body {
   display: flex;
   align-items: center; /* ⭐ Perfect vertical alignment */
   gap: clamp(15px, 2vw, 28px);
-  margin-right: 40px; /* 👈 add space from right side */
+  margin-right: 20px; /* 👈 add space from right side */
 }
 
 /* NAV LINKS */

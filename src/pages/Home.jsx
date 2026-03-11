@@ -37,43 +37,43 @@ export default function Home() {
   const posts = [
     {
       title: "Digital Marketing Tips",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "Learn proven digital marketing strategies that deliver real results without wasting your budget.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
       link: "/digital-marketing", // 👈 redirect page
     },
     {
       title: "IT Trends",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "Essential IT trends every business leader needs to know—AI, security, and cloud strategies.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog2.jpeg",
       link: "/it-trends", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "From pricing to partnerships—actionable growth strategies for Indian businesses ready to scale.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog3.jpeg",
       link: "/business-growth", // 👈 redirect page
     },
     {
       title: "Case Studies",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "From loss to profit—inspiring case studies of Indian businesses that transformed with smart strategies.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog4.jpeg",
       link: "/case-studies", // 👈 redirect page
     },
   ];
 
-  const heroImages = [
-    "/tech/web-app-development.png",
-    "/tech/software-development.png",
-    "/tech/digital-marketing.png",
-  ];
+  // const heroImages = [
+  //   "/tech/web-app-development.png",
+  //   "/tech/software-development.png",
+  //   "/tech/digital-marketing.png",
+  // ];
 
   // const heroImages = ["/tech/cyber-bg.png", "/tech/tech-bg.jpg"];
 
@@ -81,11 +81,11 @@ export default function Home() {
   const [serviceIndex, setServiceIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
 
-  const [bg1, setBg1] = useState(heroImages[0]);
-  const [bg2, setBg2] = useState(heroImages[1]);
-  const [bg3, setBg3] = useState(heroImages[2]);
+  // const [bg1, setBg1] = useState(heroImages[0]);
+  // const [bg2, setBg2] = useState(heroImages[1]);
+  // const [bg3, setBg3] = useState(heroImages[2]);
 
   useEffect(() => {
     const current = services[serviceIndex];
@@ -115,34 +115,48 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, serviceIndex]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const random = heroImages[Math.floor(Math.random() * heroImages.length)];
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const random = heroImages[Math.floor(Math.random() * heroImages.length)];
 
-      const nextIndex = (activeIndex + 1) % 3;
+  //     const nextIndex = (activeIndex + 1) % 3;
 
-      if (nextIndex === 0) setBg1(random);
-      if (nextIndex === 1) setBg2(random);
-      if (nextIndex === 2) setBg3(random);
+  //     if (nextIndex === 0) setBg1(random);
+  //     if (nextIndex === 1) setBg2(random);
+  //     if (nextIndex === 2) setBg3(random);
 
-      setActiveIndex(nextIndex);
-    }, 5000);
+  //     setActiveIndex(nextIndex);
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [activeIndex]);
+  //   return () => clearInterval(interval);
+  // }, [activeIndex]);
 
-  const scrollRef = useRef(null);
+  // const scrollRef = useRef(null);
 
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({
-      left: -window.innerWidth,
-      behavior: "smooth",
-    });
-  };
+  // const scrollLeft = () => {
+  //   scrollRef.current.scrollBy({
+  //     left: -window.innerWidth,
+  //     behavior: "smooth",
+  //   });
+  // };
 
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({
-      left: window.innerWidth,
+  // const scrollRight = () => {
+  //   scrollRef.current.scrollBy({
+  //     left: window.innerWidth,
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const header = document.querySelector(".cyber-header"); // your header class
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
       behavior: "smooth",
     });
   };
@@ -170,27 +184,44 @@ export default function Home() {
         </div> */}
 
         {/* LEFT BUTTON */}
-        <button className="scroll-btn left" onClick={scrollLeft}>
+        {/* <button className="scroll-btn left" onClick={scrollLeft}>
           <FaChevronLeft />
-        </button>
+        </button> */}
 
         {/* SCROLL AREA */}
-        <div className="hero-scroll" ref={scrollRef}>
+        {/* <div className="hero-scroll" ref={scrollRef}>
           <img src={bg1} />
           <img src={bg2} />
           <img src={bg3} />
-        </div>
+        </div> */}
 
         {/* RIGHT BUTTON */}
-        <button className="scroll-btn right" onClick={scrollRight}>
+        {/* <button className="scroll-btn right" onClick={scrollRight}>
           <FaChevronRight />
-        </button>
+        </button> */}
+
+        {/* 🎥 VIDEO BACKGROUND */}
+        <video className="hero-video" autoPlay muted loop playsInline>
+          <source src="/video/hero-bg.mp4" type="video/mp4" />
+        </video>
 
         <div className="home-container">
-          <h1>
+          {/* <h1>
             Empowering <span>Businesses with Digital Solutions</span>
             <br />
             like
+          </h1> */}
+          <h1 className="hero-title">
+            <span className="empowering">Empowering</span>
+            <br />
+
+            <span className="business">Businesses with</span>
+            <br />
+
+            <span className="digital">Digital Solutions</span>
+            <br />
+
+            <span className="like">like</span>
           </h1>
 
           <div className="hero-typing-wrapper">
@@ -207,7 +238,7 @@ export default function Home() {
             perform even faster.
           </p>
 
-          <div className="home-buttons">
+          {/* <div className="home-buttons">
             <button
               className="btn-primary"
               onClick={() => {
@@ -225,6 +256,21 @@ export default function Home() {
                   .getElementById("recent-project")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
+            >
+              View Portfolio
+            </button>
+          </div> */}
+          <div className="home-buttons">
+            <button
+              className="btn-primary"
+              onClick={() => scrollToSection("we-serve-for")}
+            >
+              Get Started
+            </button>
+
+            <button
+              className="btn-secondary"
+              onClick={() => scrollToSection("recent-project")}
             >
               View Portfolio
             </button>
@@ -377,7 +423,7 @@ export default function Home() {
             <p>
               Google Business Profile, Social Media Pages, WhatsApp Business
               Account, Professional Business Mail, Other Digital Solutions with
-              Integration & Automation
+              Integration & Automation.
             </p>
           </div>
 
@@ -931,7 +977,7 @@ export default function Home() {
               {
                 name: "Rohit Sharma",
                 role: "Startup Founder",
-                text: "They didn't just design—they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
+                text: "They didn't just design-they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
                 img: "/tech/rohit-sharma.jpg",
               },
               {
@@ -941,51 +987,39 @@ export default function Home() {
                 img: "/tech/ananya-verma.jpg",
               },
               {
-                name: "Danial Cruz",
-                role: "SaaS CEO",
-                text: "Fast delivery without compromising stability.",
-                img: "/tech/danial-cruz.jpg",
-              },
-              {
                 name: "Priya Singh",
                 role: "Marketing Lead",
-                text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix—it's a perfect fit! Saved us time, money, and daily headaches.",
+                text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix-it's a perfect fit! Saved us time, money and daily headaches.",
                 img: "/tech/priya-singh.jpg",
               },
               {
                 name: "Alex Morgan",
                 role: "Tech Entrepreneur",
-                text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff—practical, result-driven, and honest with limited budgets. They deliver what they promise.",
+                text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff-practical, result-driven and honest with limited budgets. They deliver what they promise.",
                 img: "/tech/alex-morgan.jpg",
               },
               {
                 name: "Neha Kapoor",
                 role: "Business Owner",
-                text: "I recently needed a website and came across Indo Sparsh. They built a really solid website—responsive, fast, and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
+                text: "I recently needed a website and came across Indo Sparsh. They built a really solid website-responsive, fast and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
                 img: "/tech/neha-kapoor.jpg",
-              },
-              {
-                name: "Michael Lee",
-                role: "CTO",
-                text: "Security-first and performance-focused team.",
-                img: "/tech/michael-lee.jpg",
               },
               {
                 name: "Saurabh Jain",
                 role: "Startup Mentor",
-                text: "Three months back, zero leads. Now? Regular inquiries coming in. Their marketing team is down-to-earth, result-focused, and budget-conscious. No empty promises just like others - just results.  Highly recommended for startups looking for real ROI.",
+                text: "Three months back, zero leads. Now? Regular inquiries coming in. Their marketing team is down-to-earth, result-focused and budget-conscious. No empty promises just like others - just results.  Highly recommended for startups looking for real ROI.",
                 img: "/tech/saurabh-jain.jpg",
               },
               {
                 name: "Emily Watson",
                 role: "Design Head",
-                text: "Design systems were beautifully executed.",
+                text: "I needed a website for my India operations and was nervous about working remotely. It's made it seamless. They understood my requirements perfectly, communicated clearly across time zones and delivered a clean, fast and professional site ahead of schedule. No miscommunication, no delays-just solid work. Highly recommended for anyone looking for reliable development partners with lower budget in India.",
                 img: "/tech/emily-watson.jpg",
               },
               {
                 name: "Amit Patel",
                 role: "Founder",
-                text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports—they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
+                text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports-they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
                 img: "/tech/amit-patel.jpg",
               },
             ]
@@ -994,44 +1028,32 @@ export default function Home() {
                 {
                   name: "Rohit Sharma",
                   role: "Startup Founder",
-                  text: "They didn't just design—they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
+                  text: "They didn't just design-they gave us a whole new look. Logo to packaging, everything feels premium and polished. Our brand finally stands out. Perfect mix of art and strategy.",
                   img: "/tech/rohit-sharma.jpg",
                 },
                 {
                   name: "Ananya Verma",
                   role: "Product Manager",
-                  text: "Finding genuine leads was our biggest headache - until Indo Sparsh stepped in. They now supply bulk data to our telecaller team regularly. Fresh numbers, minimal junk, and good conversion. Our callers are actually hitting targets now.",
+                  text: "Finding genuine leads was our biggest headache - until Indo Sparsh stepped in. They now supply bulk data to our telecaller team regularly. Fresh numbers, minimal junk and good conversion. Our callers are actually hitting targets now.",
                   img: "/tech/ananya-verma.jpg",
-                },
-                {
-                  name: "Danial Cruz",
-                  role: "SaaS CEO",
-                  text: "Fast delivery without compromising stability.",
-                  img: "/tech/danial-cruz.jpg",
                 },
                 {
                   name: "Priya Singh",
                   role: "Marketing Lead",
-                  text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix—it's a perfect fit! Saved us time, money, and daily headaches.",
+                  text: "Our old logistics software was too rigid. They created a custom solution with basic automation that fits our workflow perfectly. Not just a quick fix-it's a perfect fit! Saved us time, money and daily headaches.",
                   img: "/tech/priya-singh.jpg",
                 },
                 {
                   name: "Alex Morgan",
                   role: "Tech Entrepreneur",
-                  text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff—practical, result-driven, and honest with limited budgets. They deliver what they promise.",
+                  text: "Honestly, Three months back, our leads were almost dead. Today, we can't keep up! Their marketing team knows their stuff-practical, result-driven and honest with limited budgets. They deliver what they promise.",
                   img: "/tech/alex-morgan.jpg",
                 },
                 {
                   name: "Neha Kapoor",
                   role: "Business Owner",
-                  text: "I recently needed a website and came across Indo Sparsh. They built a really solid website—responsive, fast, and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
+                  text: "I recently needed a website and came across Indo Sparsh. They built a really solid website-responsive, fast and exactly matched our vision. The team patiently handled every small change we asked for. I highly recommend their services!",
                   img: "/tech/neha-kapoor.jpg",
-                },
-                {
-                  name: "Michael Lee",
-                  role: "CTO",
-                  text: "Security-first and performance-focused team.",
-                  img: "/tech/michael-lee.jpg",
                 },
                 {
                   name: "Saurabh Jain",
@@ -1042,13 +1064,13 @@ export default function Home() {
                 {
                   name: "Emily Watson",
                   role: "Design Head",
-                  text: "Design systems were beautifully executed.",
+                  text: "I needed a website for my India operations and was nervous about working remotely. It's made it seamless. They understood my requirements perfectly, communicated clearly across time zones and delivered a clean, fast and professional site ahead of schedule. No miscommunication, no delays-just solid work. Highly recommended for anyone looking for reliable development partners with lower budget in India.",
                   img: "/tech/emily-watson.jpg",
                 },
                 {
                   name: "Amit Patel",
                   role: "Founder",
-                  text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports—they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
+                  text: "I came across their post in early 2024 and reached out about my struggling business. They didn’t just give reports-they gave a clear, actionable roadmap. Their strategies turned our loss into profit in 12 months. A true business dost in the digital world.",
                   img: "/tech/amit-patel.jpg",
                 },
               ])
@@ -1073,7 +1095,7 @@ export default function Home() {
                     <span className="half">★</span>
                   </div>
 
-                  <p className="testimonial-text">“{t.text}”</p>
+                  <p className="testimonial-text">{t.text}</p>
                   <h3>{t.name}</h3>
                   <span>{t.role}</span>
                 </div>

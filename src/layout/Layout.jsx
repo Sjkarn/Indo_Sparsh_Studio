@@ -24,7 +24,7 @@ export default function Layout() {
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 2000); // ⏱️ duration
+    const timer = setTimeout(() => setLoading(false), 1500); // ⏱️ duration
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
@@ -222,12 +222,12 @@ export default function Layout() {
         </header>
       </div>
 
-      <div className="cookie-float">
+      {/* <div className="cookie-float">
         <div className="cookie-pulse"></div>
         <div className="cookie-circle">
           <BiSolidCookie className="cookie-icon" />
         </div>
-      </div>
+      </div> */}
 
       {/* ================= MAIN CONTENT ================= */}
       <main className="cyber-main">

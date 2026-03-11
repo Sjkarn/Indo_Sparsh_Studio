@@ -5,32 +5,32 @@ export default function Blog() {
   const posts = [
     {
       title: "Digital Marketing Tips",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "Learn proven digital marketing strategies that deliver real results without wasting your budget.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog1.jpeg",
       link: "/digital-marketing", // 👈 redirect page
     },
     {
       title: "IT Trends",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "Essential IT trends every business leader needs to know—AI, security, and cloud strategies.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog2.jpeg",
       link: "/it-trends", // 👈 redirect page
     },
     {
       title: "Business Growth Strategies",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "From pricing to partnerships—actionable growth strategies for Indian businesses ready to scale.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog3.jpeg",
       link: "/business-growth", // 👈 redirect page
     },
     {
       title: "Case Studies",
-      desc: "Blog post description.",
-      date: "10/22/2025",
+      desc: "From loss to profit—inspiring case studies of Indian businesses that transformed with smart strategies.",
+      date: "28/02/2026",
       time: "1 min read",
       image: "/tech/blog4.jpeg",
       link: "/case-studies", // 👈 redirect page
@@ -59,7 +59,7 @@ export default function Blog() {
           </p>
 
           <div className="featured-meta">
-            <span>10/22/2025</span>
+            <span>28/02/2026</span>
             <span>•</span>
             <span>3 min read</span>
           </div>

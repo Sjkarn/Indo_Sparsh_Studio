@@ -95,7 +95,7 @@ export default function About() {
         <div className="leader-header">
           <h1>
             What Makes <span>Indo Sparsh Studio</span> <br />
-            The Leading Company?
+            The Leading Agency?
           </h1>
           <p>
             We don’t follow trends — we engineer digital dominance through
@@ -186,10 +186,10 @@ export default function About() {
             Let’s collaborate and build something extraordinary together.
           </p>
 
-          <button className="cta-btn">
+          <a href="https://wa.me/918005351770" className="cta-btn">
             Join Us
             <span className="cta-glow"></span>
-          </button>
+          </a>
         </div>
       </section>
     </>

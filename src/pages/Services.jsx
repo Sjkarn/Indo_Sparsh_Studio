@@ -53,7 +53,7 @@ export default function Services() {
             <p>
               Google Business Profile, Social Media Pages, WhatsApp Business
               Account, Professional Business Mail, Other Digital Solutions with
-              Integration & Automation
+              Integration & Automation.
             </p>
           </div>
 
