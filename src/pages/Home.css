@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.48);
   z-index: 1;
 }
 
@@ -328,20 +328,21 @@
 .hero-title {
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: 2px;
 }
 
 .empowering {
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(30px, 4vw, 48px);
   color: #ffffff;
 }
 
 .business {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(42px, 6vw, 72px);
   color: #22d3ee;
 }
 
 .digital {
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(32px, 4vw, 48px);
   color: #ffffff;
 }
 
@@ -350,11 +351,31 @@
   color: #ffffff;
 }
 
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .empowering {
+    font-size: 38px;
+  }
+
+  .business {
+    font-size: 52px;
+  }
+
+  .digital {
+    font-size: 40px;
+  }
+
+  .like {
+    font-size: 20px;
+  }
+}
+
 /* ================= DESCRIPTION ================= */
 
 .home-container p {
   font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.8;
+  line-height: 1.4;
   margin-bottom: 45px;
   color: #ffffff;
 }
@@ -1568,7 +1589,7 @@
   display: flex;
   justify-content: flex-start; /* LEFT ALIGN */
   width: 100%;
-  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 /* ================= TYPING TEXT ================= */
