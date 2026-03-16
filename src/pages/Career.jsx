@@ -7,6 +7,7 @@ import {
   FaGlobe,
   FaPaperPlane,
   FaComments,
+  FaUpload,
 } from "react-icons/fa";
 
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
@@ -14,6 +15,8 @@ import ScrollBeam from "./ScrollBeam";
 
 export default function Career() {
   const [success, setSuccess] = useState(false);
+  const [jobSuccess, setJobSuccess] = useState(false);
+  const [resume, setResume] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -21,7 +24,17 @@ export default function Career() {
     email: "",
     message: "",
   });
+  const [jobForm, setJobForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    experience: "",
+    description: "",
+  });
   const [loading, setLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [jobTitle, setJobTitle] = useState("");
+  const [fileName, setFileName] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,14 +45,11 @@ export default function Career() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://indosparsh-backend.onrender.com/send-email",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        },
-      );
+      const res = await fetch("https://indosparsh.com/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       const data = await res.json();
 
@@ -60,6 +70,62 @@ export default function Career() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleJobChange = (e) => {
+    setJobForm({
+      ...jobForm,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setResume(file);
+    setFileName(file?.name);
+  };
+
+  const handleJobSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+
+    data.append("jobTitle", jobTitle);
+    data.append("fullName", jobForm.fullName);
+    data.append("email", jobForm.email);
+    data.append("phone", jobForm.phone);
+    data.append("experience", jobForm.experience);
+    data.append("description", jobForm.description);
+    data.append("resume", resume);
+
+    try {
+      const res = await fetch("https://indosparsh.com/apply-job", {
+        method: "POST",
+        body: data,
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setJobSuccess(true);
+
+        setTimeout(() => {
+          setJobSuccess(false);
+          setShowForm(false);
+        }, 3000);
+      }
+    } catch (error) {
+      alert("❌ Application failed");
+    }
+  };
+
+  const openForm = (title) => {
+    setJobTitle(title);
+    setShowForm(true);
+  };
+
+  const closeForm = () => {
+    setShowForm(false);
   };
   return (
     <>
@@ -172,23 +238,107 @@ export default function Career() {
             <h3>Frontend Developer (React)</h3>
             <p>Build immersive, high-performance user interfaces.</p>
             <span>Experience: 1–3 Years</span>
-            <button>Apply Now</button>
+            <button onClick={() => openForm("Frontend Developer (React)")}>
+              Apply Now
+            </button>
           </div>
 
           <div className="job-card glow">
             <h3>Backend Developer (Node.js)</h3>
             <p>Design secure, scalable backend systems and APIs.</p>
             <span>Experience: 2–4 Years</span>
-            <button>Apply Now</button>
+            <button onClick={() => openForm("Backend Developer (Node.js)")}>
+              Apply Now
+            </button>
           </div>
 
           <div className="job-card">
             <h3>UI/UX Designer</h3>
             <p>Create futuristic, human-centered digital experiences.</p>
             <span>Experience: 1–3 Years</span>
-            <button>Apply Now</button>
+            <button onClick={() => openForm("UI/UX Designer")}>
+              Apply Now
+            </button>
           </div>
         </div>
+
+        {showForm && (
+          <div className="apply-modal">
+            <div className="apply-form">
+              <button className="close-btn" onClick={closeForm}>
+                ✕
+              </button>
+
+              <h2>Apply for {jobTitle}</h2>
+
+              <form onSubmit={handleJobSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    onChange={handleJobChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    onChange={handleJobChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    onChange={handleJobChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="text"
+                    placeholder="Years of Experience"
+                    onChange={handleJobChange}
+                  />
+                </div>
+
+                <div className="form-group file-upload">
+                  <label className="upload-label">
+                    <input type="file" onChange={handleFileChange} />
+                    <span className="upload-btn">
+                      <FaUpload /> Upload Resume
+                    </span>
+                  </label>
+
+                  {fileName && <p className="file-name">{fileName}</p>}
+                </div>
+
+                <div className="form-group">
+                  <textarea
+                    placeholder="Tell us about yourself"
+                    onChange={handleJobChange}
+                  ></textarea>
+                </div>
+
+                <button className="submit-btn">Submit Application</button>
+              </form>
+              {jobSuccess && (
+                <div className="success-overlay">
+                  <div className="success-box">
+                    <div className="success-check">✓</div>
+                    <h2>Application Sent</h2>
+                    <p>Our team will review your profile soon.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </section>
 
       <ScrollBeam />

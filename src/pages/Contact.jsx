@@ -23,7 +23,7 @@ export default function Contact() {
 
     try {
       const res = await fetch(
-        "https://indosparsh-backend.onrender.com/send-email",
+        "https://indosparsh.com/send-email",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

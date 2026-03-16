@@ -1928,3 +1928,94 @@ body.light-mode .blog-table td {
 body.light-mode .blog-table th {
   background: rgba(14, 165, 233, 0.08);
 }
+
+/* ================= LIGHT MODE - OPEN POSITIONs ================= */
+
+.light-mode .apply-modal {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.light-mode .apply-form {
+  background: rgba(255, 255, 255, 0.65);
+  color: #1a1a1a;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.15),
+    0 0 18px rgba(34, 211, 238, 0.25);
+}
+
+/* inner layer */
+
+.light-mode .apply-form::after {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* title */
+
+.light-mode .apply-form h2 {
+  color: #0ea5e9;
+}
+
+/* inputs */
+
+.light-mode .apply-form input,
+.light-mode .apply-form textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #222;
+}
+
+/* input focus */
+
+.light-mode .apply-form input:focus,
+.light-mode .apply-form textarea:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+/* close button */
+
+.light-mode .close-btn {
+  background: rgba(255, 255, 255, 0.6);
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* submit button */
+
+.light-mode .submit-btn {
+  background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+  color: #fff;
+}
+
+.light-mode .upload-btn {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+
+  background: rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(6px);
+
+  color: #1a1a1a;
+
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+/* HOVER EFFECT */
+
+.light-mode .upload-btn:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.6),
+    0 0 20px rgba(34, 211, 238, 0.35);
+}
+
+/* FILE NAME */
+
+.light-mode .file-name {
+  color: #0ea5e9;
+}
